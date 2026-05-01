@@ -124,80 +124,88 @@
   }
   .circuit-overlay svg { width: 100%; height: 100%; opacity: 0.07; }
 
-  /* ===== NAV ===== */
-  /* ===== FLOATING PILL NAV ===== */
+  /* ===== TWO-TIER COCKPIT NAV ===== */
   nav {
-    position: fixed; top: 0; z-index: 1000; width: 100%;
+    position: relative; z-index: 100;
     padding: 14px 40px 0;
     background: transparent;
-    pointer-events: none;
   }
   .nav-inner {
     max-width: 1200px; margin: 0 auto;
-    display: flex; justify-content: space-between; align-items: center;
     background: var(--nav-bg);
     backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
     border: 1px solid var(--border-bright);
-    border-radius: 100px;
-    padding: 0 8px 0 20px;
-    height: 54px;
+    border-radius: 14px;
+    overflow: hidden;
     box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-    pointer-events: all;
     transition: background 0.3s, border-color 0.3s;
   }
-  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .nav-logo-icon {
-    width: 34px; height: 34px;
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+  .aog-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; animation: pulse 1.5s infinite; flex-shrink: 0; }
+
+  /* TOP TIER — STATUS BAR */
+  .nav-status {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 30px; padding: 0 18px;
+    background: rgba(0,0,0,0.22);
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-mono); font-size: 9px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  [data-theme="light"] .nav-status { background: rgba(0,0,0,0.04); }
+  .nav-status-left, .nav-status-right { display: flex; align-items: center; gap: 14px; }
+  .nav-status-aog {
+    display: flex; align-items: center; gap: 6px;
+    color: var(--red); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-status-aog::before { content: ''; width: 5px; height: 5px; background: var(--red); border-radius: 50%; animation: pulse 1.5s infinite; flex-shrink: 0; }
+  .nav-status-aog:hover { color: var(--accent-bright); }
+  .nav-status-coords { color: var(--green); }
+  .nav-divider { width: 1px; height: 12px; background: var(--border-bright); flex-shrink: 0; }
+  .nav-status-link { color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+  .nav-status-link:hover { color: var(--accent); }
+
+  /* BOTTOM TIER — BRAND + LINKS */
+  .nav-main {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px; padding: 0 22px;
+  }
+  .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-brand-icon {
+    width: 32px; height: 32px; border-radius: 7px;
     background: linear-gradient(135deg, var(--accent), var(--amber));
-    border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: white;
+    font-family: var(--font-mono); font-weight: 700; font-size: 11px; color: white;
     box-shadow: 0 0 16px var(--accent-glow);
     flex-shrink: 0;
   }
-  .nav-logo-name { font-size: 15px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.2px; line-height: 1; }
-  .nav-logo-coords {
-    font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.1em;
-    color: var(--accent); margin-top: 3px; opacity: 0.8;
-  }
-  .nav-links { display: flex; gap: 2px; }
+  .nav-brand-name { font-size: 15px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.2px; }
+  .nav-links { display: flex; gap: 4px; }
   .nav-links a {
-    padding: 8px 14px; font-size: 13px; font-weight: 500; color: var(--text-mid);
-    text-decoration: none; border-radius: 100px; transition: all 0.2s;
-    letter-spacing: 0.01em;
+    padding: 8px 16px; font-size: 13px; font-weight: 500;
+    color: var(--text-mid); text-decoration: none;
+    border-radius: 8px; transition: all 0.2s; letter-spacing: 0.01em;
   }
   .nav-links a:hover { color: var(--text-primary); background: var(--accent-dim); }
-  .nav-right { display: flex; align-items: center; gap: 8px; }
-  .nav-aog {
-    display: flex; align-items: center; gap: 7px; padding: 7px 14px;
-    border: 1px solid rgba(217,95,75,0.35); border-radius: 100px;
-    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--red); text-decoration: none; transition: all 0.2s;
-  }
-  .nav-aog:hover { background: rgba(217,95,75,0.08); border-color: rgba(217,95,75,0.6); }
-  .aog-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; animation: pulse 1.5s infinite; flex-shrink: 0; }
-  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
 
-  /* Theme toggle */
+  /* THEME TOGGLE — slim icon in status bar */
   .theme-toggle {
-    width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--border-bright);
-    background: var(--card); cursor: pointer; display: flex; align-items: center; justify-content: center;
-    font-size: 14px; transition: all 0.25s; flex-shrink: 0;
+    width: 18px; height: 18px;
+    border: none; background: transparent;
+    cursor: pointer; padding: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: var(--text-mid); opacity: 0.75;
+    transition: opacity 0.2s, color 0.2s, transform 0.2s;
   }
-  .theme-toggle:hover { background: var(--accent-dim); border-color: var(--accent-border); transform: scale(1.05); }
-
-  .nav-cta {
-    padding: 9px 20px; background: var(--accent); color: white;
-    font-size: 13px; font-weight: 600; text-decoration: none; border-radius: 100px;
-    letter-spacing: 0.02em; transition: all 0.25s;
-    box-shadow: 0 0 24px var(--accent-glow);
-  }
-  .nav-cta:hover { background: var(--accent-bright); transform: translateY(-1px); box-shadow: 0 8px 32px var(--accent-glow); }
+  .theme-toggle:hover { opacity: 1; color: var(--accent); transform: scale(1.15); }
+  .theme-toggle-icon { line-height: 1; display: block; }
 
   /* ===== HERO ===== */
   .hero {
     min-height: 85vh; display: flex; align-items: center;
-    padding: 110px 0 90px; position: relative; z-index: 1; overflow: hidden;
+    padding: 60px 0 90px; position: relative; z-index: 1; overflow: hidden;
   }
   /* Animated gradient orbs */
   .hero-orb-1 {
@@ -785,6 +793,15 @@
     box-shadow: 0 0 24px var(--accent-glow);
   }
   .mobile-nav-cta:hover { background: var(--accent-bright); }
+  .mobile-nav-theme {
+    margin-top: 20px;
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid var(--border-bright);
+    background: var(--card); color: var(--text-mid);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    font-size: 16px; transition: all 0.2s;
+  }
+  .mobile-nav-theme:hover { color: var(--accent); border-color: var(--accent-border); background: var(--accent-dim); }
 
   /* ===== RESPONSIVE — TABLET (≤ 1024px) ===== */
   @media (max-width: 1024px) {
@@ -807,12 +824,12 @@
 
   /* ===== RESPONSIVE — MOBILE (≤ 768px) ===== */
   @media (max-width: 768px) {
-    /* Nav */
+    /* Nav — collapse two-tier into single bar */
     nav { padding: 10px 16px 0; }
-    .nav-inner { padding: 0 6px 0 14px; height: 50px; }
+    .nav-inner { padding: 0; }
+    .nav-status { display: none; }            /* hide top tier */
+    .nav-main { height: 50px; padding: 0 6px 0 14px; }
     .nav-links { display: none; }
-    .nav-aog { display: none; }
-    .nav-cta { display: none; }
     .hamburger { display: flex; }
     .mobile-nav { display: flex; }
 
@@ -823,7 +840,7 @@
     .section-desc { font-size: 0.95rem; }
 
     /* Hero */
-    .hero { padding: 86px 0 56px; }
+    .hero { padding: 40px 0 56px; }
     .hero-sub { font-size: 1rem; margin-bottom: 36px; }
     .hero-badge { margin-bottom: 24px; }
     .hero-actions { flex-direction: column; gap: 12px; }
@@ -866,17 +883,16 @@
   /* ===== RESPONSIVE — SMALL PHONE (≤ 480px) ===== */
   @media (max-width: 480px) {
     nav { padding: 8px 12px 0; }
-    .nav-inner { height: 46px; padding: 0 5px 0 12px; }
-    .nav-logo-coords { display: none; }
-    .nav-logo-name { font-size: 13px; }
-    .theme-toggle { width: 30px; height: 30px; font-size: 12px; }
+    .nav-main { height: 46px; padding: 0 5px 0 12px; }
+    .nav-brand-name { font-size: 13px; }
+    .nav-brand-icon { width: 28px; height: 28px; font-size: 10px; }
     .hamburger { width: 32px; height: 32px; }
 
     .container { padding: 0 16px; }
     section { padding: 48px 0; }
 
     /* Hero */
-    .hero { padding: 72px 0 44px; }
+    .hero { padding: 32px 0 44px; }
     .hero-badge { padding: 6px 14px; margin-bottom: 20px; }
     .hero-badge-text { font-size: 9px; letter-spacing: 0.06em; }
     .hero h1 { letter-spacing: -0.03em; }
@@ -922,28 +938,34 @@
 
 <div class="grid-bg"></div>
 
-<!-- NAV -->
+<!-- NAV — Two-Tier Cockpit -->
 <nav>
   <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <div class="nav-logo-icon">OC</div>
-      <div>
-        <div class="nav-logo-name">OnChain Aviation</div>
-        <div class="nav-logo-coords">32°07'N · 081°09'W · KSAV</div>
+    <!-- Top tier: status bar (utility) -->
+    <div class="nav-status">
+      <div class="nav-status-left">
+        <span class="nav-status-coords">32°07′N · 081°09′W · KSAV</span>
       </div>
-    </a>
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#platform">Platform</a>
-      <a href="#about">About</a>
-      <a href="#vision">Vision</a>
+      <div class="nav-status-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <span class="theme-toggle-icon">☀️</span>
+        </button>
+        <span class="nav-divider"></span>
+        <a href="login.html" class="nav-status-link">Login →</a>
+      </div>
     </div>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-        <span class="theme-toggle-icon">☀️</span>
-      </button>
-      <a href="tel:+19125957795" class="nav-aog"><span class="aog-dot"></span>24/7 AoG</a>
-      <a href="login.html" class="nav-cta">Login</a>
+    <!-- Bottom tier: brand + nav links -->
+    <div class="nav-main">
+      <a href="#" class="nav-brand">
+        <div class="nav-brand-icon">OC</div>
+        <div class="nav-brand-name">OnChain Aviation</div>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#platform">Platform</a>
+        <a href="#about">About</a>
+        <a href="#vision">Vision</a>
+      </div>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -960,6 +982,9 @@
   <a href="#vision" class="mobile-nav-link">Vision</a>
   <a href="tel:+19125957795" class="mobile-nav-aog"><span class="aog-dot"></span>24/7 AoG Hotline</a>
   <a href="login.html" class="mobile-nav-cta">Login →</a>
+  <button class="mobile-nav-theme theme-toggle" aria-label="Toggle dark/light mode">
+    <span class="theme-toggle-icon">☀️</span>
+  </button>
 </div>
 
 <!-- HERO -->
@@ -1469,30 +1494,30 @@
 <!-- Dark / Light mode toggle -->
 <script>
   (function() {
-    const root = document.documentElement;
-    const btn  = document.getElementById('themeToggle');
-    const icon = btn.querySelector('.theme-toggle-icon');
+    const root  = document.documentElement;
+    const btns  = document.querySelectorAll('.theme-toggle');
+    const icons = document.querySelectorAll('.theme-toggle-icon');
 
     // Restore saved preference, default = dark
     const saved = localStorage.getItem('oc-theme') || 'dark';
     applyTheme(saved);
 
-    btn.addEventListener('click', () => {
+    btns.forEach(btn => btn.addEventListener('click', () => {
       const current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
       const next    = current === 'dark' ? 'light' : 'dark';
       applyTheme(next);
       localStorage.setItem('oc-theme', next);
-    });
+    }));
 
     function applyTheme(theme) {
       if (theme === 'light') {
         root.setAttribute('data-theme', 'light');
-        icon.textContent = '🌙';
-        btn.setAttribute('aria-label', 'Switch to dark mode');
+        icons.forEach(i => i.textContent = '🌙');
+        btns.forEach(b => b.setAttribute('aria-label', 'Switch to dark mode'));
       } else {
         root.removeAttribute('data-theme');
-        icon.textContent = '☀️';
-        btn.setAttribute('aria-label', 'Switch to light mode');
+        icons.forEach(i => i.textContent = '☀️');
+        btns.forEach(b => b.setAttribute('aria-label', 'Switch to light mode'));
       }
     }
   })();
