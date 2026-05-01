@@ -48,7 +48,7 @@
 
     --text-primary: #F0EBE2;
     --text-mid:     #9A9FA8;
-    --text-dim:     #5A5F68;
+    --text-dim:     #828892;
 
     --grid-color:   rgba(196,129,58,0.07);
 
@@ -92,7 +92,7 @@
 
     --text-primary: #1E2226;
     --text-mid:     #68707A;
-    --text-dim:     #8892A0;
+    --text-dim:     #6E7686;
 
     --grid-color:   rgba(196,129,58,0.07);
   }
@@ -396,10 +396,11 @@
   /* ===== SERVICES ===== */
   .services { border-top: 1px solid var(--border); }
   .services-header { margin-bottom: 52px; }
-  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 1fr; gap: 16px; }
   .service-card {
     background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
     padding: 36px; position: relative; overflow: hidden; transition: all 0.35s;
+    display: flex; flex-direction: column;
   }
   .service-card:hover { border-color: var(--border-bright); background: var(--card); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.15); }
   .service-card::before {
@@ -413,12 +414,12 @@
   .service-card.aog::after { content: none; }
   .service-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 22px; background: var(--accent-glow); border: 1px solid var(--accent-border); }
   .service-icon.aog { background: var(--red-glow); border-color: rgba(224,80,80,0.25); }
-  .service-icon.project { background: var(--teal-dim); border-color: var(--teal-border); }
-  .service-icon.consult { background: var(--amber-dim); border-color: var(--amber-border); }
+  .service-icon.project { background: var(--green-dim); border-color: var(--green-border); }
+  .service-icon.consult { background: var(--purple-dim); border-color: rgba(155,114,207,0.25); }
   .service-card h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; }
   .service-card p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.65; font-weight: 300; margin-bottom: 22px; }
-  .service-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
-  .service-tag { padding: 4px 10px; background: rgba(180,200,230,0.05); border: 1px solid var(--border); border-radius: 100px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.04em; color: var(--text-dim); }
+  .service-tags { display: flex; flex-wrap: nowrap; gap: 5px; margin-top: auto; margin-bottom: 22px; padding-top: 22px; }
+  .service-tag { padding: 3px 8px; background: var(--green-dim); border: 1px solid var(--green-border); border-radius: 100px; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.02em; color: var(--green); white-space: nowrap; }
   .service-link { font-size: 13px; font-weight: 600; color: var(--accent-bright); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.25s; }
   .service-link:hover { gap: 10px; }
   .aog-link { color: var(--red) !important; }
@@ -582,19 +583,16 @@
     background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
     padding: 40px; position: relative; overflow: hidden;
   }
-  .about-visual::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(135deg, var(--accent-glow), var(--teal-dim)); pointer-events: none;
-  }
+  .about-visual::before { content: none; }
   /* HUD corner brackets */
   .hud-bracket { position: absolute; width: 24px; height: 24px; }
-  .hud-bracket.tl { top: 12px; left: 12px; border-top: 1px solid var(--teal); border-left: 1px solid var(--teal); }
-  .hud-bracket.tr { top: 12px; right: 12px; border-top: 1px solid var(--teal); border-right: 1px solid var(--teal); }
-  .hud-bracket.bl { bottom: 12px; left: 12px; border-bottom: 1px solid var(--teal); border-left: 1px solid var(--teal); }
-  .hud-bracket.br { bottom: 12px; right: 12px; border-bottom: 1px solid var(--teal); border-right: 1px solid var(--teal); }
+  .hud-bracket.tl { top: 12px; left: 12px; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); }
+  .hud-bracket.tr { top: 12px; right: 12px; border-top: 1px solid var(--accent); border-right: 1px solid var(--accent); }
+  .hud-bracket.bl { bottom: 12px; left: 12px; border-bottom: 1px solid var(--accent); border-left: 1px solid var(--accent); }
+  .hud-bracket.br { bottom: 12px; right: 12px; border-bottom: 1px solid var(--accent); border-right: 1px solid var(--accent); }
   .about-visual-inner { position: relative; z-index: 1; }
-  .about-eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
-  .about-eyebrow::before { content: ''; width: 16px; height: 1px; background: var(--teal); }
+  .about-eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-bright); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+  .about-eyebrow::before { content: ''; width: 16px; height: 1px; background: var(--accent-bright); }
   .about-visual h3 { font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 6px; }
   .about-visual-title { font-size: 0.9rem; color: var(--text-mid); font-weight: 300; margin-bottom: 28px; }
   .cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
@@ -604,11 +602,11 @@
   .hud-readout {
     margin-top: 20px; padding: 12px 14px; background: var(--surface);
     border: 1px solid var(--accent-border); border-radius: 8px; font-family: var(--font-mono); font-size: 9px;
-    letter-spacing: 0.1em; color: var(--teal); display: flex; flex-direction: column; gap: 4px;
+    letter-spacing: 0.1em; color: var(--accent-bright); display: flex; flex-direction: column; gap: 4px;
   }
   .hud-row { display: flex; justify-content: space-between; }
   .hud-key { color: var(--text-dim); }
-  .hud-val { color: var(--teal); }
+  .hud-val { color: var(--accent-bright); }
 
   .about-text blockquote { font-size: 1.5rem; font-weight: 700; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 28px; padding-left: 24px; border-left: 3px solid var(--accent); }
   .about-text p { font-size: 1rem; color: var(--text-mid); line-height: 1.8; font-weight: 300; margin-bottom: 18px; }
@@ -663,7 +661,7 @@
   .quote-mark { font-family: var(--font-mono); font-size: 60px; color: var(--accent); opacity: 0.3; line-height: 1; margin-bottom: -10px; }
   .quote-banner blockquote { font-size: clamp(1.4rem, 2.8vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.3; max-width: 800px; margin: 0 auto 24px; }
   .quote-banner blockquote .gradient-text { background: linear-gradient(135deg, var(--accent), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .quote-banner cite { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); font-style: normal; }
+  .quote-banner cite { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); font-style: normal; }
 
   /* ===== CONTACT ===== */
   .contact { }
@@ -830,8 +828,8 @@
     .hero-badge { margin-bottom: 24px; }
     .hero-actions { flex-direction: column; gap: 12px; }
     .btn-primary, .btn-aog { width: 100%; justify-content: center; text-align: center; padding: 15px 24px; }
-    .hero-stat-strip { flex-wrap: wrap; gap: 20px 0; margin-top: 40px; }
-    .hero-stat-item { width: 50%; padding-left: 14px; }
+    .hero-stat-strip { flex-wrap: wrap; gap: 20px 28px; margin-top: 40px; }
+    .hero-stat-item { flex: 1 1 calc(33.333% - 28px); padding-left: 14px; min-width: 130px; }
     .hero-stat-value { font-size: 1.7rem; }
 
     /* Services */
@@ -890,6 +888,7 @@
     /* Service cards */
     .service-card { padding: 22px 18px; }
     .service-icon { width: 42px; height: 42px; font-size: 17px; margin-bottom: 16px; }
+    .service-tags { flex-wrap: wrap; }
 
     /* Vision */
     .vision-card { padding: 28px 22px; }
@@ -974,7 +973,7 @@
         <span class="hero-badge-text">Veteran Owned · Gulfstream Specialist · Savannah, GA</span>
       </div>
       <h1>Elite Gulfstream<br>Maintenance.<br><span class="gradient-text">Future-Forward.</span></h1>
-      <p class="hero-sub">Where 25 years of hands-on large-cabin Gulfstream expertise meets blockchain verification, AI monitoring, and operational discipline. Premium maintenance for operators who demand the best.</p>
+      <p class="hero-sub">Where 25 years of hands-on aviation maintenance — specialized in Gulfstream — meets blockchain verification, AI monitoring, and operational discipline. Premium maintenance for operators who demand the best.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Request Service →</a>
         <a href="tel:+19125957795" class="btn-aog"><span class="aog-dot" style="background:#C94A3A;"></span>24/7 AoG Hotline</a>
@@ -986,12 +985,8 @@
           <div class="hero-stat-label">Years on the Flight Line</div>
         </div>
         <div class="hero-stat-item">
-          <div class="hero-stat-value sm">Gulfstream</div>
-          <div class="hero-stat-label">Large-Cabin Specialist</div>
-        </div>
-        <div class="hero-stat-item">
-          <div class="hero-stat-value">USMC</div>
-          <div class="hero-stat-label">Combat Veteran</div>
+          <div class="hero-stat-value sm">GIV – G800</div>
+          <div class="hero-stat-label">Gulfstream</div>
         </div>
         <div class="hero-stat-item">
           <div class="hero-stat-value">24/7</div>
@@ -1011,7 +1006,7 @@
     <span class="ribbon-item">Gulfstream G600 <span class="ribbon-sep">◆</span></span>
     <span class="ribbon-item">Gulfstream G650 <span class="ribbon-sep">◆</span></span>
     <span class="ribbon-item">Gulfstream G700 <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Phase Inspections <span class="ribbon-sep">◆</span></span>
+    <span class="ribbon-item">Scheduled Maintenance <span class="ribbon-sep">◆</span></span>
     <span class="ribbon-item">AoG Emergency <span class="ribbon-sep">◆</span></span>
     <span class="ribbon-item">Blockchain-Verified Records <span class="ribbon-sep">◆</span></span>
     <span class="ribbon-item">AI Predictive Monitoring <span class="ribbon-sep">◆</span></span>
@@ -1023,7 +1018,7 @@
     <span class="ribbon-item">Gulfstream G600 <span class="ribbon-sep">◆</span></span>
     <span class="ribbon-item">Gulfstream G650 <span class="ribbon-sep">◆</span></span>
     <span class="ribbon-item">Gulfstream G700 <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Phase Inspections <span class="ribbon-sep">◆</span></span>
+    <span class="ribbon-item">Scheduled Maintenance <span class="ribbon-sep">◆</span></span>
     <span class="ribbon-item">AoG Emergency <span class="ribbon-sep">◆</span></span>
     <span class="ribbon-item">Blockchain-Verified Records <span class="ribbon-sep">◆</span></span>
     <span class="ribbon-item">AI Predictive Monitoring <span class="ribbon-sep">◆</span></span>
@@ -1044,12 +1039,12 @@
       <div class="service-card">
         <div class="service-icon">🔧</div>
         <h3>Scheduled Maintenance</h3>
-        <p>Phase inspections, annual inspections, and progressive maintenance programs — every event immutably recorded on-chain and AI-monitored for developing anomalies.</p>
+        <p>Light scheduled maintenance for Gulfstream operators — calendar- and hourly-driven inspections, AD compliance, and parts planning and coordination, handled end-to-end so the aircraft stays on schedule.</p>
         <div class="service-tags">
-          <span class="service-tag">Phase Inspections</span>
-          <span class="service-tag">Annual Inspections</span>
-          <span class="service-tag">Blockchain Records</span>
+          <span class="service-tag">Calendar Inspections</span>
+          <span class="service-tag">Hourly Inspections</span>
           <span class="service-tag">AD Compliance</span>
+          <span class="service-tag">Parts Coordination</span>
         </div>
         <a href="#contact" class="service-link">Request Quote →</a>
       </div>
@@ -1068,12 +1063,12 @@
       <div class="service-card">
         <div class="service-icon project">📊</div>
         <h3>Aviation Project Management</h3>
-        <p>Major inspections, avionics upgrades, and refurbishment projects delivered on-time, on-budget, and on-chain. Full digital tracking from first squawk to final signoff.</p>
+        <p>Transactional support for Gulfstream buyers and sellers — pre-purchase inspections, on-site surveys, records review, and new aircraft delivery acceptance. Boots-on-the-ground due diligence and project management from LOI to closing.</p>
         <div class="service-tags">
-          <span class="service-tag">Major Inspections</span>
-          <span class="service-tag">Avionics Upgrades</span>
-          <span class="service-tag">Digital Tracking</span>
-          <span class="service-tag">Vendor Coordination</span>
+          <span class="service-tag">Pre-Purchase Inspection</span>
+          <span class="service-tag">On-Site Survey</span>
+          <span class="service-tag">Records Review</span>
+          <span class="service-tag">New Aircraft Delivery</span>
         </div>
         <a href="#contact" class="service-link">Learn More →</a>
       </div>
@@ -1137,7 +1132,7 @@
             <div class="node-icon aviation">✈️</div>
             <div class="node-content">
               <div class="node-label amber">Flight Line</div>
-              <div class="node-desc">25 years of Gulfstream expertise driving every decision. The tech serves the maintenance — not the other way around.</div>
+              <div class="node-desc">25 years of hands-on aviation maintenance — specialized in Gulfstream — driving every decision. The tech serves the maintenance, not the other way around.</div>
             </div>
             <div class="node-stat amber">25+<br><span style="font-size:8px;color:var(--text-dim);">YRS EXP</span></div>
           </div>
@@ -1154,7 +1149,7 @@
             <div class="ledger-entry">
               <div class="ledger-block-num">#18,472</div>
               <div class="ledger-info">
-                <div class="ledger-event">Phase 2 Inspection — N821CN G650</div>
+                <div class="ledger-event">2A / 3C Check — G650</div>
                 <div class="ledger-hash">0x3f8ac249e1b7d20459fa83c6e2d18f4a…</div>
               </div>
               <div class="ledger-verified">✓ VERIFIED</div>
@@ -1163,7 +1158,7 @@
             <div class="ledger-entry">
               <div class="ledger-block-num">#18,471</div>
               <div class="ledger-info">
-                <div class="ledger-event">Avionics Update — N452GV Gulfstream</div>
+                <div class="ledger-event">AD Compliance — G450</div>
                 <div class="ledger-hash">0x7d2bf831a90c45e12b6d38fa91c7e20d…</div>
               </div>
               <div class="ledger-verified">✓ VERIFIED</div>
@@ -1172,7 +1167,7 @@
             <div class="ledger-entry">
               <div class="ledger-block-num">#18,470</div>
               <div class="ledger-info">
-                <div class="ledger-event">Annual Inspection — N308GX G550</div>
+                <div class="ledger-event">Windshield R/R — G280</div>
                 <div class="ledger-hash">0x1e9ca04782d5f3b91c8e4a20d6f17b3c…</div>
               </div>
               <div class="ledger-verified">✓ VERIFIED</div>
@@ -1181,7 +1176,7 @@
             <div class="ledger-entry">
               <div class="ledger-block-num">#18,469</div>
               <div class="ledger-info">
-                <div class="ledger-event">AoG Repair — N774CK G600</div>
+                <div class="ledger-event">AoG GPS No Data — G500</div>
                 <div class="ledger-hash">0x5b3de918c0f2a74d3e9b12c8a4f60d81…</div>
               </div>
               <div class="ledger-verified">✓ VERIFIED</div>
@@ -1258,23 +1253,23 @@
       </div>
       <div class="diff-items">
         <div class="diff-item">
-          <div class="diff-num">01 ·</div>
+          <div class="diff-num">01</div>
           <h4>Operator-Built, Not Outsider-Pitched</h4>
           <p>Founded by a 25-year flight line veteran who has actually turned wrenches on G650s at 2am. Every process built from direct experience — not theory, not slide decks.</p>
         </div>
         <div class="diff-item">
-          <div class="diff-num">02 ·</div>
+          <div class="diff-num">02</div>
           <h4>Blockchain-Anchored Maintenance Records</h4>
           <p>Every work order, every inspection, every part replaced — cryptographically signed and anchored on-chain. Tamper-proof, instantly auditable, and transfer-ready at sale.</p>
         </div>
         <div class="diff-item">
-          <div class="diff-num">03 ·</div>
+          <div class="diff-num">03</div>
           <h4>AI-Powered Predictive Monitoring</h4>
           <p>Machine learning models trained on Gulfstream maintenance patterns flag developing anomalies before they become AOG events. The shift from reactive to preventive.</p>
         </div>
         <div class="diff-item">
-          <div class="diff-num">04 ·</div>
-          <h4>Veteran Discipline · SDVOSB Certified</h4>
+          <div class="diff-num">04</div>
+          <h4>Veteran Discipline · VOSB Certified</h4>
           <p>USMC combat veteran ownership. Discipline and accountability baked into every work order — not just stamped on a certificate. No shortcuts. Ever.</p>
         </div>
       </div>
@@ -1295,26 +1290,28 @@
         <div class="hud-bracket br"></div>
         <div class="about-visual-inner">
           <div class="about-eyebrow">Founder & Lead Technician</div>
-          <h3>Michael Brown</h3>
-          <div class="about-visual-title">25 Years of Large-Cabin Gulfstream Expertise · USMC Veteran</div>
+          <h3>Mike Brown</h3>
+          <div class="about-visual-title">25 Years of Hands-On Aviation Maintenance · Gulfstream Specialist · USMC Veteran</div>
           <div class="cred-grid">
-            <div class="cred-item"><span class="cred-dot"></span>A&P / IA</div>
-            <div class="cred-item"><span class="cred-dot"></span>Gulfstream Specialist</div>
+            <div class="cred-item"><span class="cred-dot"></span>A&P Certified</div>
+            <div class="cred-item"><span class="cred-dot"></span>NCATT AET</div>
+            <div class="cred-item"><span class="cred-dot"></span>G650 Master Tech</div>
+            <div class="cred-item"><span class="cred-dot"></span>Avionics Master Tech</div>
             <div class="cred-item"><span class="cred-dot"></span>USMC Veteran</div>
-            <div class="cred-item"><span class="cred-dot"></span>SDVOSB</div>
+            <div class="cred-item"><span class="cred-dot"></span>VOSB</div>
           </div>
           <!-- HUD readout -->
           <div class="hud-readout">
-            <div class="hud-row"><span class="hud-key">CERT STATUS</span><span class="hud-val">A&P/IA · CURRENT</span></div>
+            <div class="hud-row"><span class="hud-key">CERT STATUS</span><span class="hud-val">A&P · CURRENT</span></div>
             <div class="hud-row"><span class="hud-key">SPECIALIZATION</span><span class="hud-val">Gulfstream Fleet</span></div>
             <div class="hud-row"><span class="hud-key">YEARS EXP</span><span class="hud-val">25+ YRS</span></div>
-            <div class="hud-row"><span class="hud-key">ENTITY</span><span class="hud-val">SDVOSB · LLC</span></div>
+            <div class="hud-row"><span class="hud-key">ENTITY</span><span class="hud-val">VOSB · LLC</span></div>
           </div>
         </div>
       </div>
       <div class="about-text">
-        <blockquote>"The flight line doesn't care about your org chart. It cares about whether your people know the aircraft."</blockquote>
-        <p>OnChain Aviation was built on 25 years of hands-on large-cabin Gulfstream experience — not venture capital, not outside consultants. Every process, every tool, every decision traces back to time spent actually working on these aircraft.</p>
+        <blockquote>"I kept waiting for someone to build the maintenance company I wanted to work for. Eventually I figured I'd just build it myself."</blockquote>
+        <p>OnChain Aviation was built on 25 years of hands-on aviation maintenance, specialized in Gulfstream — not venture capital, not outside consultants. Every process, every tool, every decision traces back to time spent actually working on these aircraft.</p>
         <p>As a USMC combat veteran, discipline and accountability aren't buzzwords. They're the operating system. No shortcuts, no excuses, documented everything — every maintenance event, every client interaction, every work order — now anchored on the blockchain.</p>
         <p>The "OnChain" name reflects a commitment: every maintenance record cryptographically verified, every AI recommendation grounded in real aircraft data, every technology decision made by someone who has used it at 2am on a grounded G650.</p>
       </div>
@@ -1364,7 +1361,7 @@
   <div class="container" style="position:relative;z-index:1;">
     <div class="quote-mark">"</div>
     <blockquote>Everyone else brings technology to aviation.<br><span class="gradient-text">We bring aviation into technology.</span></blockquote>
-    <cite>— Michael Brown, Founder · OnChain Aviation LLC</cite>
+    <cite>— Mike Brown, Founder · OnChain Aviation LLC</cite>
   </div>
 </div>
 
@@ -1400,6 +1397,10 @@
       <div class="cta-info-wrap">
         <h3>Let's Talk About Your Aircraft.</h3>
         <div class="contact-item">
+          <div class="contact-icon">👤</div>
+          <div><div class="contact-label">Point of Contact</div><div class="contact-value">Mike Brown</div></div>
+        </div>
+        <div class="contact-item">
           <div class="contact-icon">📍</div>
           <div><div class="contact-label">Location</div><div class="contact-value">Savannah, GA</div></div>
         </div>
@@ -1409,7 +1410,7 @@
         </div>
         <div class="contact-item">
           <div class="contact-icon">✉️</div>
-          <div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:ops@onchainaviation.com">ops@onchainaviation.com</a></div></div>
+          <div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:mike@onchain.aero">mike@onchain.aero</a></div></div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">⏱️</div>
@@ -1452,8 +1453,8 @@
       </div>
       <div class="footer-col">
         <h4>Credentials</h4>
-        <a href="#">SDVOSB Certified</a>
-        <a href="#">A&P / IA Licensed</a>
+        <a href="#">VOSB Certified</a>
+        <a href="#">A&P Certified</a>
         <a href="#">Gulfstream Specialist</a>
         <a href="#">USMC Veteran</a>
       </div>
@@ -1508,12 +1509,12 @@
     '0xc9d12e47f830b205',
   ];
   const types = [
-    'Phase Insp · N821CN',
-    'Annual Insp · G650',
-    'Avionics Upd · G550',
-    'AoG Repair · G600',
+    '2A / 3C Check · G650',
+    'AD Compliance · G450',
+    'Windshield R/R · G280',
+    'AoG GPS No Data · G500',
     'Pre-Buy Insp · Gulfstream',
-    'AD Compl · N308GX',
+    'Avionics Upd · G550',
   ];
   let idx = 0;
   setInterval(() => {
