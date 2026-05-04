@@ -227,53 +227,61 @@
 
   .container { max-width: 1300px; margin: 0 auto; padding: 0 48px; position: relative; z-index: 1; }
 
-  .hero-layout { display: flex; flex-direction: column; align-items: flex-start; text-align: left; max-width: 820px; }
+  .hero-layout { display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 1000px; margin: 0 auto; }
 
-  /* Badge */
+  /* Editorial frame lines (above and below the meta tag) */
+  .hero-frame { height: 1px; max-width: 600px; width: 100%;
+    background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+  }
+
+  /* Meta tag (replaces pill badge — editorial feel) */
   .hero-badge {
-    display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px;
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 100px; margin-bottom: 36px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 14px;
+    padding: 18px 0; background: transparent; border: none; border-radius: 0; margin: 0;
   }
-  .hero-badge-icon {
-    width: 8px; height: 8px; background: var(--accent);
-    border-radius: 50%; flex-shrink: 0; animation: pulse 2s infinite;
+  .hero-badge-icon { display: none; }
+  .hero-badge-text {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--text-dim);
   }
-  .hero-badge-text { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); }
+  .hero-badge-text .sep { color: var(--accent); margin: 0 10px; }
 
   .hero h1 {
-    font-size: clamp(3.2rem, 6.5vw, 6.5rem);
-    font-weight: 800; line-height: 0.93; letter-spacing: -0.04em; margin-bottom: 28px;
+    font-size: clamp(3.2rem, 7vw, 7rem);
+    font-weight: 200; line-height: 1.05; letter-spacing: -0.04em;
+    padding: 50px 0 36px; margin: 0;
   }
   .hero h1 .gradient-text {
+    font-weight: 800; font-style: italic;
     background: linear-gradient(135deg, var(--accent), var(--amber));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
   .hero-sub {
     font-size: 1.2rem; color: var(--text-mid); line-height: 1.75; font-weight: 300;
-    margin-bottom: 52px; max-width: 540px;
+    margin: 0 auto 50px; max-width: 680px;
   }
-  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-start; }
-  /* Hero stat strip */
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-bottom: 64px; }
+
+  /* Hero stat strip — horizontal editorial divider style */
   .hero-stat-strip {
-    display: flex; gap: 56px; margin-top: 60px;
+    display: flex; gap: 0; justify-content: center; align-items: center;
+    border-top: 1px solid var(--border-bright); padding-top: 36px; margin-top: 0;
   }
   .hero-stat-item {
-    position: relative; padding-left: 16px;
+    position: relative; padding: 0 50px; border-right: 1px solid var(--border);
   }
-  .hero-stat-item::before {
-    content: ''; position: absolute; left: 0; top: 4px; bottom: 4px;
-    width: 2px; background: var(--accent); opacity: 0.55; border-radius: 1px;
-  }
+  .hero-stat-item:last-child { border-right: none; }
+  .hero-stat-item::before { display: none; }
   .hero-stat-value {
-    font-family: var(--font-mono); font-size: 2rem; font-weight: 700;
-    color: var(--text-primary); line-height: 1; margin-bottom: 6px; letter-spacing: -0.02em;
+    font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
+    color: var(--accent); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em;
   }
   .hero-stat-value.sm {
-    font-size: 1.25rem; letter-spacing: -0.01em;
+    font-size: 1.1rem; color: var(--text-primary); letter-spacing: -0.01em;
   }
   .hero-stat-label {
-    font-size: 12px; color: var(--text-dim); letter-spacing: 0.02em;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em;
+    color: var(--text-dim); text-transform: uppercase;
   }
   .btn-primary {
     padding: 16px 32px; background: var(--accent); color: #ffffff; text-decoration: none;
@@ -401,36 +409,100 @@
   .section-title .gradient { background: linear-gradient(135deg, var(--accent), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .section-desc { font-size: 1.05rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; max-width: 520px; }
 
-  /* ===== SERVICES ===== */
+  /* ===== SERVICES — Docs-style: big detail pane + floating index ===== */
   .services { border-top: 1px solid var(--border); }
-  .services-header { margin-bottom: 52px; }
-  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 1fr; gap: 16px; }
-  .service-card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-    padding: 36px; position: relative; overflow: hidden; transition: all 0.35s;
-    display: flex; flex-direction: column;
+  .services-header { margin-bottom: 56px; max-width: 720px; }
+
+  .docs-shell { display: grid; grid-template-columns: 1fr 240px; gap: 56px; align-items: start; }
+
+  .docs-pane { display: flex; flex-direction: column; gap: 22px; }
+  .docs-tag {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em;
+    color: var(--accent); text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 10px;
   }
-  .service-card:hover { border-color: var(--border-bright); background: var(--card); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.15); }
-  .service-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 1; transition: opacity 0.35s;
+  .docs-tag::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+  .docs-pane h3 {
+    font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em;
   }
-  .service-card:hover::before { opacity: 1; }
-  .service-card.aog::before { background: linear-gradient(90deg, transparent, var(--accent), transparent); }
-  /* Hex pattern in card corner — glow removed */
-  .service-card::after { content: none; }
-  .service-card.aog::after { content: none; }
-  .service-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 22px; background: var(--accent-glow); border: 1px solid var(--accent-border); }
-  .service-icon.aog { background: var(--red-glow); border-color: rgba(224,80,80,0.25); }
-  .service-icon.project { background: var(--green-dim); border-color: var(--green-border); }
-  .service-icon.consult { background: var(--purple-dim); border-color: rgba(155,114,207,0.25); }
-  .service-card h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; }
-  .service-card p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.65; font-weight: 300; margin-bottom: 22px; }
-  .service-tags { display: flex; flex-wrap: nowrap; gap: 5px; margin-top: auto; margin-bottom: 22px; padding-top: 22px; }
+  .docs-lead {
+    font-size: 1.05rem; color: var(--text-mid); line-height: 1.7; max-width: 620px; font-weight: 300;
+  }
+  .docs-meta {
+    display: flex; gap: 36px; padding: 18px 0;
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .docs-meta-cell { min-width: 140px; }
+  .docs-meta-label {
+    font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em;
+    color: var(--text-dim); text-transform: uppercase; margin-bottom: 4px;
+  }
+  .docs-meta-val { font-size: 14px; color: var(--text-primary); font-weight: 500; }
+
+  .docs-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+
+  .docs-features { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; margin-top: 4px; }
+  .docs-feature {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+  }
+  .docs-feature:nth-last-child(-n+2) { border-bottom: none; padding-bottom: 0; }
+  .docs-feature-check {
+    flex-shrink: 0; width: 20px; height: 20px; border-radius: 5px;
+    background: var(--green-dim); color: var(--green); margin-top: 2px;
+    display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;
+  }
+  .docs-feature-text { font-size: 14px; color: var(--text-primary); line-height: 1.45; font-weight: 500; }
+  .docs-feature-text small { display: block; color: var(--text-dim); font-size: 12.5px; font-weight: 300; margin-top: 2px; }
+
+  .docs-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--accent-bright); text-decoration: none;
+    font-weight: 600; font-size: 14px;
+    align-self: flex-start;
+    padding: 12px 18px;
+    background: var(--accent-dim); border: 1px solid var(--accent-border);
+    border-radius: 8px;
+    margin-top: 4px;
+    transition: background 0.2s, gap 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .docs-cta:hover { background: var(--accent-glow); gap: 12px; }
+  .docs-cta.aog {
+    color: var(--red); background: var(--red-glow); border-color: rgba(217,95,75,0.32);
+  }
+  .docs-cta.aog:hover { background: rgba(217,95,75,0.18); }
+
+  .docs-index {
+    position: sticky; top: 100px; align-self: start;
+    border-left: 1px solid var(--border-bright); padding-left: 24px;
+  }
+  .docs-index-label {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em;
+    color: var(--text-dim); text-transform: uppercase; margin-bottom: 18px;
+  }
+  .docs-index-item {
+    display: flex; align-items: baseline; gap: 12px;
+    padding: 12px 0;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.15s;
+  }
+  .docs-index-item:last-child { border-bottom: none; }
+  .docs-index-num {
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); flex-shrink: 0;
+    transition: color 0.15s;
+  }
+  .docs-index-name {
+    font-size: 14px; color: var(--text-mid); font-weight: 500;
+    transition: color 0.15s;
+  }
+  .docs-index-item:hover .docs-index-name { color: var(--text-primary); }
+  .docs-index-item.active .docs-index-num { color: var(--accent); }
+  .docs-index-item.active .docs-index-name { color: var(--accent-bright); font-weight: 600; }
+
+  /* Service tag pill — kept; reused inside docs-tags */
   .service-tag { padding: 3px 8px; background: var(--green-dim); border: 1px solid var(--green-border); border-radius: 100px; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.02em; color: var(--green); white-space: nowrap; }
-  .service-link { font-size: 13px; font-weight: 600; color: var(--accent-bright); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.25s; }
-  .service-link:hover { gap: 10px; }
-  .aog-link { color: var(--red) !important; }
 
   /* ===== TECH PLATFORM SECTION ===== */
   .platform {
@@ -814,11 +886,12 @@
     .about-layout { grid-template-columns: 1fr; gap: 40px; }
     .cta-layout { grid-template-columns: 1fr; gap: 32px; }
     .vision-grid { grid-template-columns: repeat(2, 1fr); }
-    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .docs-shell { grid-template-columns: 1fr; gap: 40px; }
+    .docs-index { position: static; border-left: none; padding-left: 0; border-top: 1px solid var(--border-bright); padding-top: 24px; }
     .footer-top { grid-template-columns: 1fr 1fr; }
     .radar-bg { display: none; }
     .diff-sticky { position: static; }
-    .hero-stat-strip { gap: 36px; }
+    .hero-stat-item { padding: 0 32px; }
     .quote-banner { padding: 80px 0; }
   }
 
@@ -841,17 +914,21 @@
 
     /* Hero */
     .hero { padding: 40px 0 56px; }
+    .hero h1 { padding: 32px 0 24px; }
     .hero-sub { font-size: 1rem; margin-bottom: 36px; }
-    .hero-badge { margin-bottom: 24px; }
-    .hero-actions { flex-direction: column; gap: 12px; }
+    .hero-badge { padding: 14px 0; }
+    .hero-badge-text { letter-spacing: 0.2em; }
+    .hero-actions { flex-direction: column; gap: 12px; margin-bottom: 44px; }
     .btn-primary, .btn-aog { width: 100%; justify-content: center; text-align: center; padding: 15px 24px; }
-    .hero-stat-strip { flex-wrap: wrap; gap: 20px 28px; margin-top: 40px; }
-    .hero-stat-item { flex: 1 1 calc(33.333% - 28px); padding-left: 14px; min-width: 130px; }
+    .hero-stat-strip { flex-direction: column; gap: 0; padding-top: 24px; }
+    .hero-stat-item { padding: 18px 0; border-right: none; border-bottom: 1px solid var(--border); width: 100%; }
+    .hero-stat-item:last-child { border-bottom: none; }
     .hero-stat-value { font-size: 1.7rem; }
 
     /* Services */
-    .services-grid { grid-template-columns: 1fr; }
-    .service-card { padding: 28px 24px; }
+    .docs-features { grid-template-columns: 1fr; }
+    .docs-meta { gap: 22px; }
+    .docs-meta-cell { min-width: 100px; }
 
     /* Vision */
     .vision-grid { grid-template-columns: 1fr; }
@@ -893,18 +970,17 @@
 
     /* Hero */
     .hero { padding: 32px 0 44px; }
-    .hero-badge { padding: 6px 14px; margin-bottom: 20px; }
-    .hero-badge-text { font-size: 9px; letter-spacing: 0.06em; }
-    .hero h1 { letter-spacing: -0.03em; }
+    .hero-badge { padding: 12px 0; }
+    .hero-badge-text { font-size: 9px; letter-spacing: 0.18em; }
+    .hero-frame { max-width: 320px; }
+    .hero h1 { letter-spacing: -0.03em; padding: 24px 0 20px; }
     .hero-sub { font-size: 0.9rem; }
-    .hero-stat-strip { gap: 16px 0; margin-top: 32px; }
     .hero-stat-value { font-size: 1.5rem; }
     .hero-stat-label { font-size: 10px; }
 
-    /* Service cards */
-    .service-card { padding: 22px 18px; }
-    .service-icon { width: 42px; height: 42px; font-size: 17px; margin-bottom: 16px; }
-    .service-tags { flex-wrap: wrap; }
+    /* Services */
+    .docs-pane h3 { font-size: clamp(1.6rem, 7vw, 2rem); }
+    .docs-lead { font-size: 0.95rem; }
 
     /* Vision */
     .vision-card { padding: 28px 22px; }
@@ -993,11 +1069,12 @@
   <div class="hero-orb-2"></div>
   <div class="container">
     <div class="hero-layout">
+      <div class="hero-frame"></div>
       <div class="hero-badge">
-        <div class="hero-badge-icon"></div>
-        <span class="hero-badge-text">Veteran Owned · Gulfstream Specialist · Savannah, GA</span>
+        <span class="hero-badge-text">Veteran Owned <span class="sep">·</span> Gulfstream Specialist <span class="sep">·</span> Savannah, GA</span>
       </div>
-      <h1>Elite Gulfstream<br>Maintenance.<br><span class="gradient-text">Future-Forward.</span></h1>
+      <div class="hero-frame"></div>
+      <h1>Elite Gulfstream Maintenance.<br><span class="gradient-text">Future-Forward.</span></h1>
       <p class="hero-sub">Where 25 years of hands-on aviation maintenance — specialized in Gulfstream — meets blockchain verification, AI monitoring, and operational discipline. Premium maintenance for operators who demand the best.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Request Service →</a>
@@ -1007,11 +1084,11 @@
       <div class="hero-stat-strip">
         <div class="hero-stat-item">
           <div class="hero-stat-value">25+</div>
-          <div class="hero-stat-label">Years on the Flight Line</div>
+          <div class="hero-stat-label">Years · Flight Line</div>
         </div>
         <div class="hero-stat-item">
           <div class="hero-stat-value sm">GIV – G800</div>
-          <div class="hero-stat-label">Gulfstream</div>
+          <div class="hero-stat-label">Gulfstream Coverage</div>
         </div>
         <div class="hero-stat-item">
           <div class="hero-stat-value">24/7</div>
@@ -1052,62 +1129,55 @@
   </div>
 </div>
 
-<!-- SERVICES -->
+<!-- SERVICES — Docs-style with floating index -->
 <section class="services" id="services">
   <div class="container">
     <div class="services-header">
       <div class="section-label">What We Do</div>
-      <h2 class="section-title">Comprehensive Gulfstream <span class="gradient">Support</span></h2>
+      <h2 class="section-title">Four lines of work, <span class="gradient">documented.</span></h2>
       <p class="section-desc">From routine maintenance to emergency AoG response — every service backed by deep Gulfstream expertise, blockchain-verified records, and AI-assisted monitoring.</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">🔧</div>
-        <h3>Scheduled Maintenance</h3>
-        <p>Light scheduled maintenance for Gulfstream operators — calendar- and hourly-driven inspections, AD compliance, and parts planning and coordination, handled end-to-end so the aircraft stays on schedule.</p>
-        <div class="service-tags">
-          <span class="service-tag">Calendar Inspections</span>
-          <span class="service-tag">Hourly Inspections</span>
-          <span class="service-tag">AD Compliance</span>
-          <span class="service-tag">Parts Coordination</span>
+    <div class="docs-shell">
+      <div class="docs-pane">
+        <span class="docs-tag" id="docs-tag">Capability 02 · 24/7 Coverage</span>
+        <h3 id="docs-title">AoG Emergency Response</h3>
+        <p class="docs-lead" id="docs-lead">When your Gulfstream is grounded, every minute counts. Rapid remote diagnosis, on-site repair, and parts sourcing — backed by 25 years of flight line expertise. One call, one number, any hour.</p>
+        <div class="docs-meta">
+          <div class="docs-meta-cell">
+            <div class="docs-meta-label">Availability</div>
+            <div class="docs-meta-val" id="docs-meta-1">24/7 · Live Hotline</div>
+          </div>
+          <div class="docs-meta-cell">
+            <div class="docs-meta-label">Response</div>
+            <div class="docs-meta-val" id="docs-meta-2">&lt;1h Triage Target</div>
+          </div>
+          <div class="docs-meta-cell">
+            <div class="docs-meta-label">Coverage</div>
+            <div class="docs-meta-val" id="docs-meta-3">Mobile · Southeast</div>
+          </div>
         </div>
-        <a href="#contact" class="service-link">Request Quote →</a>
+        <div class="docs-tags" id="docs-tags"></div>
+        <div class="docs-features" id="docs-features"></div>
+        <a href="tel:+19125957795" class="docs-cta aog" id="docs-cta">Call AoG Hotline →</a>
       </div>
-      <div class="service-card aog">
-        <div class="service-icon aog">🚨</div>
-        <h3>24/7 AoG Emergency Response</h3>
-        <p>When your Gulfstream is grounded, every minute counts. Rapid remote diagnosis, on-site repair, and parts sourcing — backed by 25 years of flight line expertise.</p>
-        <div class="service-tags">
-          <span class="service-tag">24/7 Availability</span>
-          <span class="service-tag">Remote Diagnosis</span>
-          <span class="service-tag">Mobile Repair</span>
-          <span class="service-tag">Parts Sourcing</span>
+      <div class="docs-index">
+        <div class="docs-index-label">Service Lines</div>
+        <div class="docs-index-item docs-idx" data-cap="maintain">
+          <span class="docs-index-num">01</span>
+          <span class="docs-index-name">Scheduled Maintenance</span>
         </div>
-        <a href="tel:+19125957795" class="service-link aog-link">Call AoG Hotline →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-icon project">📊</div>
-        <h3>Aviation Project Management</h3>
-        <p>Transactional support for Gulfstream buyers and sellers — pre-purchase inspections, on-site surveys, records review, and new aircraft delivery acceptance. Boots-on-the-ground due diligence and project management from LOI to closing.</p>
-        <div class="service-tags">
-          <span class="service-tag">Pre-Purchase Inspection</span>
-          <span class="service-tag">On-Site Survey</span>
-          <span class="service-tag">Records Review</span>
-          <span class="service-tag">New Aircraft Delivery</span>
+        <div class="docs-index-item docs-idx active" data-cap="aog">
+          <span class="docs-index-num">02</span>
+          <span class="docs-index-name">24/7 AoG Response</span>
         </div>
-        <a href="#contact" class="service-link">Learn More →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-icon consult">💡</div>
-        <h3>Operations Consulting</h3>
-        <p>Optimize your maintenance operations with AI-powered analytics and strategic consulting. Cost optimization, digital transformation, and vendor strategy for your fleet.</p>
-        <div class="service-tags">
-          <span class="service-tag">AI Analytics</span>
-          <span class="service-tag">Cost Optimization</span>
-          <span class="service-tag">Digital Tracking</span>
-          <span class="service-tag">Vendor Strategy</span>
+        <div class="docs-index-item docs-idx" data-cap="acquire">
+          <span class="docs-index-num">03</span>
+          <span class="docs-index-name">Project Management</span>
         </div>
-        <a href="#contact" class="service-link">Schedule Call →</a>
+        <div class="docs-index-item docs-idx" data-cap="optimize">
+          <span class="docs-index-num">04</span>
+          <span class="docs-index-name">Operations Consulting</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1561,6 +1631,117 @@
       }
     }
   }, 2500);
+</script>
+
+<!-- What We Do · capability switcher -->
+<script>
+(function() {
+  const data = {
+    maintain: {
+      tag: 'Capability 01 · Routine',
+      title: 'Scheduled Maintenance',
+      lead: 'Light scheduled maintenance for Gulfstream operators — calendar- and hourly-driven inspections, AD compliance, and parts planning and coordination, handled end-to-end so the aircraft stays on schedule.',
+      meta: ['Calendar + Hourly', 'AD-Aware', 'End-to-End'],
+      tags: ['Calendar Inspections', 'Hourly Inspections', 'AD Compliance', 'Parts Coordination'],
+      features: [
+        ['Calendar Inspections', 'Light scheduled events on the calendar plan'],
+        ['Hourly Inspections', 'Hour-driven tasks tracked and timed'],
+        ['AD Compliance', 'Tracking, accomplishment, and sign-off'],
+        ['Parts Planning', 'Sourced and staged before downtime'],
+      ],
+      cta: { text: 'Request Quote →', href: '#contact', aog: false },
+    },
+    aog: {
+      tag: 'Capability 02 · 24/7 Coverage',
+      title: 'AoG Emergency Response',
+      lead: 'When your Gulfstream is grounded, every minute counts. Rapid remote diagnosis, on-site repair, and parts sourcing — backed by 25 years of flight line expertise. One call, one number, any hour.',
+      meta: ['24/7 · Live Hotline', '<1h Triage Target', 'Mobile · Southeast'],
+      tags: ['24/7 Availability', 'Remote Diagnosis', 'Mobile Repair', 'Parts Sourcing'],
+      features: [
+        ['24/7 Hotline', 'Live triage from a real Gulfstream tech'],
+        ['Remote Diagnosis', 'Direction before parts ship'],
+        ['On-Site Repair', 'Mobile response across the Southeast'],
+        ['Parts Sourcing', 'Network access when you need it now'],
+      ],
+      cta: { text: 'Call AoG Hotline →', href: 'tel:+19125957795', aog: true },
+    },
+    acquire: {
+      tag: 'Capability 03 · Transactional',
+      title: 'Aviation Project Management',
+      lead: 'Transactional support for Gulfstream buyers and sellers — pre-purchase inspections, on-site surveys, records review, and new aircraft delivery acceptance. Boots-on-the-ground due diligence and project management from LOI to closing.',
+      meta: ['LOI to Closing', 'Boots on the Ground', 'Buyer + Seller Side'],
+      tags: ['Pre-Purchase Inspection', 'On-Site Survey', 'Records Review', 'New Aircraft Delivery'],
+      features: [
+        ['Pre-Purchase Inspection', 'Hands-on, technical due diligence'],
+        ['On-Site Survey', 'In-person walk and condition report'],
+        ['Records Review', 'Logbook, AD, and compliance audit'],
+        ['New Aircraft Delivery', 'Acceptance, oversight, and turnover'],
+      ],
+      cta: { text: 'Learn More →', href: '#contact', aog: false },
+    },
+    optimize: {
+      tag: 'Capability 04 · Strategic',
+      title: 'Operations Consulting',
+      lead: 'Optimize your maintenance operations with AI-powered analytics and strategic consulting. Cost optimization, digital transformation, and vendor strategy across your fleet — informed by an operator who built the tools.',
+      meta: ['Fleet Strategy', 'AI-Powered', 'Operator-Led'],
+      tags: ['AI Analytics', 'Cost Optimization', 'Digital Tracking', 'Vendor Strategy'],
+      features: [
+        ['AI Analytics', 'Predictive maintenance and trend monitoring'],
+        ['Cost Optimization', 'Spend visibility across the program'],
+        ['Digital Tracking', 'On-chain records and audit trail'],
+        ['Vendor Strategy', 'Network and pricing leverage'],
+      ],
+      cta: { text: 'Schedule Call →', href: '#contact', aog: false },
+    },
+  };
+
+  const tagEl    = document.getElementById('docs-tag');
+  const titleEl  = document.getElementById('docs-title');
+  const leadEl   = document.getElementById('docs-lead');
+  const m1El     = document.getElementById('docs-meta-1');
+  const m2El     = document.getElementById('docs-meta-2');
+  const m3El     = document.getElementById('docs-meta-3');
+  const tagsEl   = document.getElementById('docs-tags');
+  const featsEl  = document.getElementById('docs-features');
+  const ctaEl    = document.getElementById('docs-cta');
+  const idxItems = document.querySelectorAll('.docs-idx');
+
+  function tagPill(text) {
+    const span = document.createElement('span');
+    span.className = 'service-tag';
+    span.textContent = text;
+    return span;
+  }
+  function featureRow(head, sub) {
+    const row = document.createElement('div');
+    row.className = 'docs-feature';
+    row.innerHTML = `<span class="docs-feature-check">✓</span><span class="docs-feature-text">${head}<small>${sub}</small></span>`;
+    return row;
+  }
+  function set(cap) {
+    const d = data[cap];
+    if (!d) return;
+    idxItems.forEach(i => i.classList.toggle('active', i.dataset.cap === cap));
+    tagEl.textContent = d.tag;
+    titleEl.textContent = d.title;
+    leadEl.textContent = d.lead;
+    m1El.textContent = d.meta[0];
+    m2El.textContent = d.meta[1];
+    m3El.textContent = d.meta[2];
+    tagsEl.innerHTML = '';
+    d.tags.forEach(t => tagsEl.appendChild(tagPill(t)));
+    featsEl.innerHTML = '';
+    d.features.forEach(([h, s]) => featsEl.appendChild(featureRow(h, s)));
+    ctaEl.textContent = d.cta.text;
+    ctaEl.setAttribute('href', d.cta.href);
+    ctaEl.classList.toggle('aog', d.cta.aog);
+  }
+
+  idxItems.forEach(i => i.addEventListener('click', () => set(i.dataset.cap)));
+  // Initialize from the active item in markup (defaults to AoG)
+  const init = document.querySelector('.docs-idx.active');
+  set(init ? init.dataset.cap : 'aog');
+})();
 </script>
 
 <!-- Hamburger / Mobile Nav Toggle -->
