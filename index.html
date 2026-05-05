@@ -409,100 +409,146 @@
   .section-title .gradient { background: linear-gradient(135deg, var(--accent), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .section-desc { font-size: 1.05rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; max-width: 520px; }
 
-  /* ===== SERVICES — Docs-style: big detail pane + floating index ===== */
+  /* ===== SERVICES — Rail + Live Widget ===== */
   .services { border-top: 1px solid var(--border); }
-  .services-header { margin-bottom: 56px; max-width: 720px; }
+  .services-header { margin-bottom: 48px; max-width: 720px; }
 
-  .docs-shell { display: grid; grid-template-columns: 1fr 240px; gap: 56px; align-items: start; }
+  .cap-shell {
+    display: grid; grid-template-columns: 300px 1fr;
+    border: 1px solid var(--border-bright);
+    border-radius: 16px; background: var(--surface);
+    overflow: hidden;
+  }
 
-  .docs-pane { display: flex; flex-direction: column; gap: 22px; }
-  .docs-tag {
+  /* RAIL */
+  .cap-rail {
+    background: var(--bg-alt);
+    border-right: 1px solid var(--border);
+    padding: 16px 0;
+  }
+  .cap-rail-label {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em;
+    color: var(--text-dim); text-transform: uppercase;
+    padding: 0 22px 14px; border-bottom: 1px solid var(--border);
+  }
+  .cap-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 22px; cursor: pointer;
+    border-left: 2px solid transparent;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .cap-item:hover { background: var(--card); }
+  .cap-item.active { background: var(--card); border-left-color: var(--accent); }
+  .cap-item.active.aog { border-left-color: var(--red); }
+  .cap-item-num {
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); width: 22px;
+    transition: color 0.15s;
+  }
+  .cap-item.active .cap-item-num { color: var(--accent); }
+  .cap-item.active.aog .cap-item-num { color: var(--red); }
+  .cap-item-icon {
+    width: 28px; height: 28px; border-radius: 6px;
+    background: var(--accent-dim); border: 1px solid var(--accent-border);
+    display: flex; align-items: center; justify-content: center; font-size: 13px;
+    flex-shrink: 0;
+  }
+  .cap-item.aog .cap-item-icon { background: var(--red-glow); border-color: rgba(217,95,75,0.32); }
+  .cap-item-name { font-size: 14px; font-weight: 500; flex: 1; color: var(--text-primary); }
+
+  /* DETAIL PANE */
+  .cap-detail {
+    display: grid; grid-template-columns: 1fr 320px;
+    gap: 36px; padding: 36px;
+  }
+  .cap-copy { display: flex; flex-direction: column; gap: 16px; }
+  .cap-tag {
     font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em;
     color: var(--accent); text-transform: uppercase;
-    display: inline-flex; align-items: center; gap: 10px;
   }
-  .docs-tag::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
-  .docs-pane h3 {
-    font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em;
+  .cap-copy h3 {
+    font-size: clamp(1.6rem, 2.5vw, 2rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em;
   }
-  .docs-lead {
-    font-size: 1.05rem; color: var(--text-mid); line-height: 1.7; max-width: 620px; font-weight: 300;
-  }
-  .docs-meta {
-    display: flex; gap: 36px; padding: 18px 0;
-    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-    flex-wrap: wrap;
-  }
-  .docs-meta-cell { min-width: 140px; }
-  .docs-meta-label {
-    font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em;
-    color: var(--text-dim); text-transform: uppercase; margin-bottom: 4px;
-  }
-  .docs-meta-val { font-size: 14px; color: var(--text-primary); font-weight: 500; }
-
-  .docs-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
-
-  .docs-features { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; margin-top: 4px; }
-  .docs-feature {
+  .cap-lead { font-size: 0.98rem; color: var(--text-mid); line-height: 1.65; font-weight: 300; }
+  .cap-features { display: flex; flex-direction: column; }
+  .cap-feature {
     display: flex; gap: 12px; align-items: flex-start;
-    padding: 14px 0; border-bottom: 1px solid var(--border);
+    padding: 10px 0; border-bottom: 1px solid var(--border);
   }
-  .docs-feature:nth-last-child(-n+2) { border-bottom: none; padding-bottom: 0; }
-  .docs-feature-check {
+  .cap-feature:last-child { border-bottom: none; }
+  .cap-feature-check {
     flex-shrink: 0; width: 20px; height: 20px; border-radius: 5px;
     background: var(--green-dim); color: var(--green); margin-top: 2px;
     display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;
   }
-  .docs-feature-text { font-size: 14px; color: var(--text-primary); line-height: 1.45; font-weight: 500; }
-  .docs-feature-text small { display: block; color: var(--text-dim); font-size: 12.5px; font-weight: 300; margin-top: 2px; }
+  .cap-feature-text { font-size: 13.5px; color: var(--text-primary); line-height: 1.4; font-weight: 500; }
+  .cap-feature-text small { display: block; color: var(--text-dim); font-size: 12px; font-weight: 300; margin-top: 2px; }
 
-  .docs-cta {
+  .cap-cta {
     display: inline-flex; align-items: center; gap: 8px;
     color: var(--accent-bright); text-decoration: none;
     font-weight: 600; font-size: 14px;
     align-self: flex-start;
-    padding: 12px 18px;
+    padding: 11px 16px;
     background: var(--accent-dim); border: 1px solid var(--accent-border);
     border-radius: 8px;
-    margin-top: 4px;
+    margin-top: 6px;
     transition: background 0.2s, gap 0.2s, color 0.2s, border-color 0.2s;
   }
-  .docs-cta:hover { background: var(--accent-glow); gap: 12px; }
-  .docs-cta.aog {
-    color: var(--red); background: var(--red-glow); border-color: rgba(217,95,75,0.32);
-  }
-  .docs-cta.aog:hover { background: rgba(217,95,75,0.18); }
+  .cap-cta:hover { background: var(--accent-glow); gap: 12px; }
+  .cap-cta.aog { color: var(--red); background: var(--red-glow); border-color: rgba(217,95,75,0.32); }
+  .cap-cta.aog:hover { background: rgba(217,95,75,0.18); }
 
-  .docs-index {
-    position: sticky; top: 100px; align-self: start;
-    border-left: 1px solid var(--border-bright); padding-left: 24px;
+  /* WIDGET */
+  .widget {
+    background: var(--bg-alt); border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px;
+    display: flex; flex-direction: column; gap: 10px;
+    align-self: start;
   }
-  .docs-index-label {
-    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em;
-    color: var(--text-dim); text-transform: uppercase; margin-bottom: 18px;
+  .widget-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 10px; border-bottom: 1px solid var(--border);
   }
-  .docs-index-item {
-    display: flex; align-items: baseline; gap: 12px;
-    padding: 12px 0;
-    cursor: pointer;
-    border-bottom: 1px solid var(--border);
-    transition: color 0.15s;
+  .widget-title {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em;
+    color: var(--text-dim); text-transform: uppercase;
   }
-  .docs-index-item:last-child { border-bottom: none; }
-  .docs-index-num {
-    font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); flex-shrink: 0;
-    transition: color 0.15s;
+  .widget-status {
+    font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em;
+    display: flex; align-items: center; gap: 6px; text-transform: uppercase;
   }
-  .docs-index-name {
-    font-size: 14px; color: var(--text-mid); font-weight: 500;
-    transition: color 0.15s;
+  .widget-status-dot {
+    width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
   }
-  .docs-index-item:hover .docs-index-name { color: var(--text-primary); }
-  .docs-index-item.active .docs-index-num { color: var(--accent); }
-  .docs-index-item.active .docs-index-name { color: var(--accent-bright); font-weight: 600; }
-
-  /* Service tag pill — kept; reused inside docs-tags */
-  .service-tag { padding: 3px 8px; background: var(--green-dim); border: 1px solid var(--green-border); border-radius: 100px; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.02em; color: var(--green); white-space: nowrap; }
+  .widget-row {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono); font-size: 11px;
+    padding: 4px 0;
+  }
+  .widget-row-label { flex: 1; color: var(--text-mid); }
+  .widget-row-val { color: var(--text-primary); white-space: nowrap; }
+  .widget-bar { height: 4px; background: rgba(255,255,255,0.06); border-radius: 2px; flex: 1; max-width: 110px; overflow: hidden; }
+  [data-theme="light"] .widget-bar { background: rgba(0,0,0,0.06); }
+  .widget-bar-fill {
+    height: 100%; border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--amber));
+    transition: width 0.4s ease;
+  }
+  .widget-bar-fill.full {
+    background: linear-gradient(90deg, var(--green), var(--green));
+  }
+  .widget-event {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 8px 0; border-bottom: 1px solid var(--border);
+  }
+  .widget-event:last-child { border-bottom: none; padding-bottom: 0; }
+  .widget-event-time {
+    font-family: var(--font-mono); font-size: 9px; color: var(--text-dim);
+    text-transform: uppercase; letter-spacing: 0.1em; flex-shrink: 0; width: 56px;
+    padding-top: 2px;
+  }
+  .widget-event-text { font-size: 12px; line-height: 1.4; color: var(--text-primary); font-weight: 500; }
+  .widget-event-text small { display: block; color: var(--text-dim); font-size: 10.5px; font-weight: 300; margin-top: 1px; }
 
   /* ===== TECH PLATFORM SECTION ===== */
   .platform {
@@ -886,8 +932,9 @@
     .about-layout { grid-template-columns: 1fr; gap: 40px; }
     .cta-layout { grid-template-columns: 1fr; gap: 32px; }
     .vision-grid { grid-template-columns: repeat(2, 1fr); }
-    .docs-shell { grid-template-columns: 1fr; gap: 40px; }
-    .docs-index { position: static; border-left: none; padding-left: 0; border-top: 1px solid var(--border-bright); padding-top: 24px; }
+    .cap-shell { grid-template-columns: 1fr; }
+    .cap-rail { border-right: none; border-bottom: 1px solid var(--border); padding: 8px 0; }
+    .cap-detail { grid-template-columns: 1fr; gap: 24px; padding: 28px; }
     .footer-top { grid-template-columns: 1fr 1fr; }
     .radar-bg { display: none; }
     .diff-sticky { position: static; }
@@ -926,9 +973,9 @@
     .hero-stat-value { font-size: 1.7rem; }
 
     /* Services */
-    .docs-features { grid-template-columns: 1fr; }
-    .docs-meta { gap: 22px; }
-    .docs-meta-cell { min-width: 100px; }
+    .cap-detail { padding: 22px; gap: 22px; }
+    .cap-rail-label { padding: 0 18px 12px; }
+    .cap-item { padding: 12px 18px; }
 
     /* Vision */
     .vision-grid { grid-template-columns: 1fr; }
@@ -979,8 +1026,10 @@
     .hero-stat-label { font-size: 10px; }
 
     /* Services */
-    .docs-pane h3 { font-size: clamp(1.6rem, 7vw, 2rem); }
-    .docs-lead { font-size: 0.95rem; }
+    .cap-copy h3 { font-size: clamp(1.4rem, 7vw, 1.75rem); }
+    .cap-lead { font-size: 0.92rem; }
+    .widget { padding: 14px; }
+    .widget-event-time { width: 48px; }
 
     /* Vision */
     .vision-card { padding: 28px 22px; }
@@ -1129,55 +1178,50 @@
   </div>
 </div>
 
-<!-- SERVICES — Docs-style with floating index -->
+<!-- SERVICES — Rail + Live Widget -->
 <section class="services" id="services">
   <div class="container">
     <div class="services-header">
       <div class="section-label">What We Do</div>
-      <h2 class="section-title">Four lines of work, <span class="gradient">documented.</span></h2>
-      <p class="section-desc">From routine maintenance to emergency AoG response — every service backed by deep Gulfstream expertise, blockchain-verified records, and AI-assisted monitoring.</p>
+      <h2 class="section-title">Pick a capability. <span class="gradient">See it live.</span></h2>
+      <p class="section-desc">Each service line shaped by hands-on Gulfstream maintenance and the digital tooling we're building around it.</p>
     </div>
-    <div class="docs-shell">
-      <div class="docs-pane">
-        <span class="docs-tag" id="docs-tag">Capability 02 · 24/7 Coverage</span>
-        <h3 id="docs-title">AoG Emergency Response</h3>
-        <p class="docs-lead" id="docs-lead">When your Gulfstream is grounded, every minute counts. Rapid remote diagnosis, on-site repair, and parts sourcing — backed by 25 years of flight line expertise. One call, one number, any hour.</p>
-        <div class="docs-meta">
-          <div class="docs-meta-cell">
-            <div class="docs-meta-label">Availability</div>
-            <div class="docs-meta-val" id="docs-meta-1">24/7 · Live Hotline</div>
-          </div>
-          <div class="docs-meta-cell">
-            <div class="docs-meta-label">Response</div>
-            <div class="docs-meta-val" id="docs-meta-2">&lt;1h Triage Target</div>
-          </div>
-          <div class="docs-meta-cell">
-            <div class="docs-meta-label">Coverage</div>
-            <div class="docs-meta-val" id="docs-meta-3">Mobile · Southeast</div>
-          </div>
+    <div class="cap-shell">
+      <!-- RAIL -->
+      <div class="cap-rail">
+        <div class="cap-rail-label">Capabilities</div>
+        <div class="cap-item cap-idx active" data-cap="maintain">
+          <span class="cap-item-num">01</span>
+          <span class="cap-item-icon">🔧</span>
+          <span class="cap-item-name">Scheduled Maintenance</span>
         </div>
-        <div class="docs-tags" id="docs-tags"></div>
-        <div class="docs-features" id="docs-features"></div>
-        <a href="tel:+19125957795" class="docs-cta aog" id="docs-cta">Call AoG Hotline →</a>
+        <div class="cap-item cap-idx aog" data-cap="aog">
+          <span class="cap-item-num">02</span>
+          <span class="cap-item-icon">🚨</span>
+          <span class="cap-item-name">24/7 AoG Response</span>
+        </div>
+        <div class="cap-item cap-idx" data-cap="acquire">
+          <span class="cap-item-num">03</span>
+          <span class="cap-item-icon">📊</span>
+          <span class="cap-item-name">Project Management</span>
+        </div>
+        <div class="cap-item cap-idx" data-cap="optimize">
+          <span class="cap-item-num">04</span>
+          <span class="cap-item-icon">💡</span>
+          <span class="cap-item-name">Operations Consulting</span>
+        </div>
       </div>
-      <div class="docs-index">
-        <div class="docs-index-label">Service Lines</div>
-        <div class="docs-index-item docs-idx" data-cap="maintain">
-          <span class="docs-index-num">01</span>
-          <span class="docs-index-name">Scheduled Maintenance</span>
+
+      <!-- DETAIL -->
+      <div class="cap-detail">
+        <div class="cap-copy">
+          <span class="cap-tag" id="cap-tag">Capability 01 · Routine</span>
+          <h3 id="cap-title">Scheduled Maintenance</h3>
+          <p class="cap-lead" id="cap-lead">Light scheduled maintenance for Gulfstream operators — calendar- and hourly-driven inspections, AD compliance, and parts planning and coordination, handled end-to-end so the aircraft stays on schedule.</p>
+          <div class="cap-features" id="cap-features"></div>
+          <a href="#contact" class="cap-cta" id="cap-cta">Request Quote →</a>
         </div>
-        <div class="docs-index-item docs-idx active" data-cap="aog">
-          <span class="docs-index-num">02</span>
-          <span class="docs-index-name">24/7 AoG Response</span>
-        </div>
-        <div class="docs-index-item docs-idx" data-cap="acquire">
-          <span class="docs-index-num">03</span>
-          <span class="docs-index-name">Project Management</span>
-        </div>
-        <div class="docs-index-item docs-idx" data-cap="optimize">
-          <span class="docs-index-num">04</span>
-          <span class="docs-index-name">Operations Consulting</span>
-        </div>
+        <div class="widget" id="cap-widget"></div>
       </div>
     </div>
   </div>
@@ -1633,15 +1677,16 @@
   }, 2500);
 </script>
 
-<!-- What We Do · capability switcher -->
+<!-- What We Do · capability switcher (Rail + Live Widget) -->
 <script>
 (function() {
+  // Bar widget rows: [label, percent, isFull?]
+  // Event widget rows: [time, headline, sub]
   const data = {
     maintain: {
       tag: 'Capability 01 · Routine',
       title: 'Scheduled Maintenance',
       lead: 'Light scheduled maintenance for Gulfstream operators — calendar- and hourly-driven inspections, AD compliance, and parts planning and coordination, handled end-to-end so the aircraft stays on schedule.',
-      meta: ['Calendar + Hourly', 'AD-Aware', 'End-to-End'],
       tags: ['Calendar Inspections', 'Hourly Inspections', 'AD Compliance', 'Parts Coordination'],
       features: [
         ['Calendar Inspections', 'Light scheduled events on the calendar plan'],
@@ -1650,12 +1695,23 @@
         ['Parts Planning', 'Sourced and staged before downtime'],
       ],
       cta: { text: 'Request Quote →', href: '#contact', aog: false },
+      widget: {
+        type: 'bars',
+        title: 'Inspection Schedule',
+        status: 'On Plan',
+        statusColor: 'var(--green)',
+        rows: [
+          ['12-mo Calendar', 74],
+          ['36-mo Calendar', 42],
+          ['600-hr', 88],
+          ['AD Compliance', 100, true],
+        ],
+      },
     },
     aog: {
       tag: 'Capability 02 · 24/7 Coverage',
       title: 'AoG Emergency Response',
       lead: 'When your Gulfstream is grounded, every minute counts. Rapid remote diagnosis, on-site repair, and parts sourcing — backed by 25 years of flight line expertise. One call, one number, any hour.',
-      meta: ['24/7 · Live Hotline', '<1h Triage Target', 'Mobile · Southeast'],
       tags: ['24/7 Availability', 'Remote Diagnosis', 'Mobile Repair', 'Parts Sourcing'],
       features: [
         ['24/7 Hotline', 'Live triage from a real Gulfstream tech'],
@@ -1664,12 +1720,23 @@
         ['Parts Sourcing', 'Network access when you need it now'],
       ],
       cta: { text: 'Call AoG Hotline →', href: 'tel:+19125957795', aog: true },
+      widget: {
+        type: 'events',
+        title: 'AoG Activity · Live',
+        status: 'Active',
+        statusColor: 'var(--red)',
+        statusPulse: true,
+        rows: [
+          ['2m ago',  'Triage opened — G650', 'SAV → Diagnostic in flight'],
+          ['38m ago', 'Parts sourced — G450', 'Hyd. pump shipped overnight'],
+          ['2h ago',  'On-site repair — G280', 'Aircraft returned to service'],
+        ],
+      },
     },
     acquire: {
       tag: 'Capability 03 · Transactional',
       title: 'Aviation Project Management',
       lead: 'Transactional support for Gulfstream buyers and sellers — pre-purchase inspections, on-site surveys, records review, and new aircraft delivery acceptance. Boots-on-the-ground due diligence and project management from LOI to closing.',
-      meta: ['LOI to Closing', 'Boots on the Ground', 'Buyer + Seller Side'],
       tags: ['Pre-Purchase Inspection', 'On-Site Survey', 'Records Review', 'New Aircraft Delivery'],
       features: [
         ['Pre-Purchase Inspection', 'Hands-on, technical due diligence'],
@@ -1678,12 +1745,24 @@
         ['New Aircraft Delivery', 'Acceptance, oversight, and turnover'],
       ],
       cta: { text: 'Learn More →', href: '#contact', aog: false },
+      widget: {
+        type: 'status',
+        title: 'PPI Checklist',
+        status: 'Template',
+        statusColor: 'var(--accent-bright)',
+        rows: [
+          ['Records Audit',   '✓ Complete',   'var(--green)'],
+          ['AD Compliance',   '✓ Complete',   'var(--green)'],
+          ['Logbook Review',  'In Progress',  'var(--accent-bright)'],
+          ['Borescope',       'Scheduled',    'var(--text-dim)'],
+          ['Test Flight',     'Pending',      'var(--text-dim)'],
+        ],
+      },
     },
     optimize: {
       tag: 'Capability 04 · Strategic',
       title: 'Operations Consulting',
       lead: 'Optimize your maintenance operations with AI-powered analytics and strategic consulting. Cost optimization, digital transformation, and vendor strategy across your fleet — informed by an operator who built the tools.',
-      meta: ['Fleet Strategy', 'AI-Powered', 'Operator-Led'],
       tags: ['AI Analytics', 'Cost Optimization', 'Digital Tracking', 'Vendor Strategy'],
       features: [
         ['AI Analytics', 'Predictive maintenance and trend monitoring'],
@@ -1692,31 +1771,72 @@
         ['Vendor Strategy', 'Network and pricing leverage'],
       ],
       cta: { text: 'Schedule Call →', href: '#contact', aog: false },
+      widget: {
+        type: 'bars',
+        title: 'Fleet Health Scanner',
+        status: 'Monitoring 4',
+        statusColor: 'var(--green)',
+        rows: [
+          ['Engine Trend', 92],
+          ['Avionics',     87],
+          ['Structure',    99],
+          ['AD Status',    100, true],
+        ],
+      },
     },
   };
 
-  const tagEl    = document.getElementById('docs-tag');
-  const titleEl  = document.getElementById('docs-title');
-  const leadEl   = document.getElementById('docs-lead');
-  const m1El     = document.getElementById('docs-meta-1');
-  const m2El     = document.getElementById('docs-meta-2');
-  const m3El     = document.getElementById('docs-meta-3');
-  const tagsEl   = document.getElementById('docs-tags');
-  const featsEl  = document.getElementById('docs-features');
-  const ctaEl    = document.getElementById('docs-cta');
-  const idxItems = document.querySelectorAll('.docs-idx');
+  const tagEl    = document.getElementById('cap-tag');
+  const titleEl  = document.getElementById('cap-title');
+  const leadEl   = document.getElementById('cap-lead');
+  const featsEl  = document.getElementById('cap-features');
+  const ctaEl    = document.getElementById('cap-cta');
+  const widgetEl = document.getElementById('cap-widget');
+  const idxItems = document.querySelectorAll('.cap-idx');
 
-  function tagPill(text) {
-    const span = document.createElement('span');
-    span.className = 'service-tag';
-    span.textContent = text;
-    return span;
-  }
   function featureRow(head, sub) {
     const row = document.createElement('div');
-    row.className = 'docs-feature';
-    row.innerHTML = `<span class="docs-feature-check">✓</span><span class="docs-feature-text">${head}<small>${sub}</small></span>`;
+    row.className = 'cap-feature';
+    row.innerHTML = '<span class="cap-feature-check">✓</span><span class="cap-feature-text">' +
+      head + '<small>' + sub + '</small></span>';
     return row;
+  }
+  function renderWidget(w) {
+    let body = '';
+    if (w.type === 'bars') {
+      body = w.rows.map(([label, pct, full]) =>
+        '<div class="widget-row">' +
+          '<span class="widget-row-label">' + label + '</span>' +
+          '<div class="widget-bar"><div class="widget-bar-fill ' + (full ? 'full' : '') +
+          '" style="width:' + pct + '%"></div></div>' +
+          '<span class="widget-row-val">' + pct + '%</span>' +
+        '</div>'
+      ).join('');
+    } else if (w.type === 'events') {
+      body = w.rows.map(([time, head, sub]) =>
+        '<div class="widget-event">' +
+          '<span class="widget-event-time">' + time + '</span>' +
+          '<span class="widget-event-text">' + head + '<small>' + sub + '</small></span>' +
+        '</div>'
+      ).join('');
+    } else if (w.type === 'status') {
+      body = w.rows.map(([label, value, color]) =>
+        '<div class="widget-row">' +
+          '<span class="widget-row-label">' + label + '</span>' +
+          '<span class="widget-row-val" style="color:' + color + ';">' + value + '</span>' +
+        '</div>'
+      ).join('');
+    }
+    const dotStyle = 'background:' + w.statusColor + ';box-shadow:0 0 8px ' + w.statusColor + ';' +
+      (w.statusPulse ? 'animation: pulse 1.5s infinite;' : '');
+    widgetEl.innerHTML =
+      '<div class="widget-header">' +
+        '<span class="widget-title">' + w.title + '</span>' +
+        '<span class="widget-status" style="color:' + w.statusColor + ';">' +
+          '<span class="widget-status-dot" style="' + dotStyle + '"></span>' +
+          w.status +
+        '</span>' +
+      '</div>' + body;
   }
   function set(cap) {
     const d = data[cap];
@@ -1725,22 +1845,17 @@
     tagEl.textContent = d.tag;
     titleEl.textContent = d.title;
     leadEl.textContent = d.lead;
-    m1El.textContent = d.meta[0];
-    m2El.textContent = d.meta[1];
-    m3El.textContent = d.meta[2];
-    tagsEl.innerHTML = '';
-    d.tags.forEach(t => tagsEl.appendChild(tagPill(t)));
     featsEl.innerHTML = '';
     d.features.forEach(([h, s]) => featsEl.appendChild(featureRow(h, s)));
     ctaEl.textContent = d.cta.text;
     ctaEl.setAttribute('href', d.cta.href);
     ctaEl.classList.toggle('aog', d.cta.aog);
+    renderWidget(d.widget);
   }
 
   idxItems.forEach(i => i.addEventListener('click', () => set(i.dataset.cap)));
-  // Initialize from the active item in markup (defaults to AoG)
-  const init = document.querySelector('.docs-idx.active');
-  set(init ? init.dataset.cap : 'aog');
+  const init = document.querySelector('.cap-idx.active');
+  set(init ? init.dataset.cap : 'maintain');
 })();
 </script>
 
