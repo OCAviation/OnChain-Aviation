@@ -720,6 +720,20 @@
   .about-eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-bright); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
   .about-eyebrow::before { content: ''; width: 16px; height: 1px; background: var(--accent-bright); }
   .about-visual h3 { font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 6px; }
+  .founder-handle-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: lowercase; color: var(--accent-bright); text-decoration: none;
+    padding: 5px 12px; margin: 4px 0 16px;
+    background: var(--accent-dim); border: 1px solid var(--accent-border);
+    border-radius: 999px;
+    transition: background 0.2s, color 0.2s, transform 0.2s, gap 0.2s;
+  }
+  .founder-handle-link:hover {
+    background: var(--accent-glow); color: var(--accent);
+    transform: translateY(-1px); gap: 9px;
+  }
+  .founder-handle-link span { font-family: var(--font); text-transform: none; }
   .about-visual-title { font-size: 0.9rem; color: var(--text-mid); font-weight: 300; margin-bottom: 28px; }
   .cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   .cred-item { padding: 10px 14px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--silver, #B8C4D6); display: flex; align-items: center; gap: 8px; }
@@ -1430,6 +1444,7 @@
         <div class="about-visual-inner">
           <div class="about-eyebrow">Founder & Lead Technician</div>
           <h3>Mike Brown</h3>
+          <a href="gulfstreamguru.html" class="founder-handle-link">@gulfstreamguru <span aria-hidden="true">→</span></a>
           <div class="about-visual-title">25 Years of Hands-On Aviation Maintenance · Gulfstream Specialist · USMC Veteran</div>
           <div class="cred-grid">
             <div class="cred-item"><span class="cred-dot"></span>A&P Certified</div>
