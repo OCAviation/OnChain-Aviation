@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@GulfstreamGuru — Mike Brown · Founder, OnChain Aviation</title>
-<meta name="description" content="Personal page for Mike Brown — @GulfstreamGuru. Founder & Lead Technician, OnChain Aviation LLC. 25 years on Gulfstream, USMC veteran, A&P certified.">
+<title>@GulfstreamGuru — Mike Brown</title>
+<meta name="description" content="Personal page for Mike Brown — @GulfstreamGuru. Founder and lead technician at OnChain Aviation, his Gulfstream shop. 22+ years on Gulfstream, USMC veteran, A&P.">
+<link rel="canonical" href="https://onchain.aero/gulfstreamguru.html">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://onchain.aero/gulfstreamguru.html">
+<meta property="og:title" content="@GulfstreamGuru — Mike Brown">
+<meta property="og:description" content="Personal page for Mike Brown — @GulfstreamGuru. Founder and lead technician at OnChain Aviation. 22+ years on Gulfstream, USMC veteran, A&P.">
+<meta property="og:image" content="https://onchain.aero/assets/mike-brown.jpg">
+<meta property="og:site_name" content="OnChain Aviation">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="@GulfstreamGuru — Mike Brown">
+<meta name="twitter:description" content="Personal page for Mike Brown — @GulfstreamGuru. Founder and lead technician at OnChain Aviation. 22+ years on Gulfstream, USMC veteran, A&P.">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   /* ── OCA tokens (dark default + light) ── */
@@ -225,6 +235,33 @@
   }
   .btn-primary:hover { background: var(--accent-bright); transform: translateY(-2px); }
 
+  /* Shop nav — personal page, shop is a link not a second landing */
+  .gg-nav {
+    position: relative; z-index: 10; padding: 16px 40px 0;
+  }
+  .gg-nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--nav-bg); backdrop-filter: blur(28px);
+    border: 1px solid var(--border-bright); border-radius: 100px;
+    padding: 0 8px 0 20px; height: 54px;
+  }
+  .gg-nav a { text-decoration: none; }
+  .gg-nav-brand { display: flex; align-items: center; gap: 10px; }
+  .gg-nav-icon {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--amber));
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: white;
+  }
+  .gg-nav-name { font-size: 14px; font-weight: 700; color: var(--text-primary); }
+  .gg-nav-links { display: flex; align-items: center; gap: 6px; }
+  .gg-nav-links a {
+    padding: 8px 16px; font-size: 13px; font-weight: 500;
+    color: var(--text-mid); border-radius: 8px;
+  }
+  .gg-nav-links a:hover { color: var(--text-primary); background: var(--accent-dim); }
+
   /* Footer */
   footer {
     background: var(--bg-alt); border-top: 1px solid var(--border);
@@ -238,12 +275,26 @@
     .v-a-layout { grid-template-columns: 1fr; gap: 36px; }
     .v-a-content { grid-template-columns: 1fr; }
     .container { padding: 0 24px; }
+    .gg-nav { padding: 12px 16px 0; }
+    .v-a { padding: 48px 0 80px; }
   }
 </style>
 </head>
 <body>
 
 <div class="grid-bg"></div>
+<nav class="gg-nav" aria-label="Site">
+  <div class="gg-nav-inner">
+    <a href="index.html" class="gg-nav-brand">
+      <div class="gg-nav-icon">OC</div>
+      <div class="gg-nav-name">OnChain Aviation</div>
+    </a>
+    <div class="gg-nav-links">
+      <a href="index.html">Shop</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
 
 <!-- SVG SYMBOL DEFS — outline brand glyphs -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -294,7 +345,7 @@
             <div class="hud-row"><span class="hud-key">CALLSIGN</span><span class="hud-val">GULFSTREAMGURU</span></div>
             <div class="hud-row"><span class="hud-key">BASE</span><span class="hud-val">KSAV · SAVANNAH GA</span></div>
             <div class="hud-row"><span class="hud-key">SPECIALIZATION</span><span class="hud-val">GULFSTREAM FLEET</span></div>
-            <div class="hud-row"><span class="hud-key">YEARS EXP</span><span class="hud-val">25+ YRS</span></div>
+            <div class="hud-row"><span class="hud-key">YEARS EXP</span><span class="hud-val">22+ YRS</span></div>
             <div class="hud-row"><span class="hud-key">STATUS</span><span class="hud-val" style="color:var(--teal)">● ACTIVE</span></div>
           </div>
         </div>
@@ -304,7 +355,7 @@
       <div class="v-a-text">
         <div class="section-label">The Founder · Off-Hours</div>
         <h1>The hands behind <span class="gradient-text">@gulfstreamguru</span>.</h1>
-        <p class="lead">Twenty-five years on Gulfstream taught me how the work actually gets done. This is where I share the lessons, the squawks, and the systems behind them — and OnChain Aviation is the company I built around them.</p>
+        <p class="lead">Twenty-two-plus years on Gulfstream taught me how the work actually gets done. This is where I share the lessons and the squawks — and OnChain Aviation is the shop I built around them.</p>
 
         <div class="cred-grid" style="max-width:520px">
           <div class="cred-item"><span class="cred-dot"></span>A&P Certified</div>
@@ -327,7 +378,7 @@
     <div class="v-a-content">
       <div class="content-card">
         <span class="kind">Latest Video</span>
-        <h4>Why Gulfstream's "phase" inspections never fit my hangar</h4>
+        <h4>Why Gulfstream's "phase" inspections never fit how I actually work</h4>
         <p>Walking through the calendar/hourly/light-scheduled model and why it actually maps to how operators fly.</p>
         <span class="meta">VIDEO · 11 MIN</span>
       </div>
@@ -349,7 +400,7 @@
     <div class="oca-cta">
       <div class="oca-cta-text">
         <h3>Looking for actual maintenance work?</h3>
-        <p>The day job lives at <strong style="color:var(--accent-bright)">onchain.aero</strong> — Gulfstream maintenance, blockchain-anchored records, and AI-assisted fleet ops out of KSAV.</p>
+        <p>The day job lives at <strong style="color:var(--accent-bright)">onchain.aero</strong> — OnChain Aviation, my Gulfstream shop out of KSAV. Elite Gulfstream maintenance. Future-forward.</p>
       </div>
       <a href="https://onchain.aero" class="btn-primary">Visit OnChain Aviation →</a>
     </div>
