@@ -1,199 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark" class="no-js">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OnChain Aviation — Crew Access</title>
-<meta name="description" content="Crew access for OnChain Aviation. Elite Gulfstream Maintenance. Future-Forward. Savannah / KSAV.">
-<link rel="canonical" href="https://onchain.aero/login.html">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://onchain.aero/login.html">
-<meta property="og:title" content="OnChain Aviation — Crew Access">
-<meta property="og:description" content="Crew access for OnChain Aviation. Elite Gulfstream Maintenance. Future-Forward.">
-<meta property="og:site_name" content="OnChain Aviation">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OnChain Aviation — Crew Access">
-<meta name="twitter:description" content="Crew access for OnChain Aviation. Elite Gulfstream Maintenance. Future-Forward.">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Operator access — OnChain Aviation</title>
+<meta name="description" content="Operator access to aircraft records, due lists and work orders for aircraft managed by OnChain Aviation, on IronFleet aviOS.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A0A0B" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EEEBE4" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 47'%3E%3Crect x='1.6' y='1.6' width='60.8' height='43.8' rx='2' fill='%230A0A0B' stroke='%23C4813A' stroke-width='2.4'/%3E%3Ctext x='32' y='31' text-anchor='middle' font-family='Georgia,serif' font-size='24' fill='%23EFECE6'%3EOA%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/d2-prod.css">
+<script>(function(){try{var t=localStorage.getItem('oc-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}document.documentElement.classList.remove('no-js')})();</script>
 <style>
-  :root {
-    --bg:            #3A3D42;
-    --bg-alt:        #2E3136;
-    --surface:       #2C2F34;
-    --card:          #303438;
-    --card-hover:    #34383D;
-    --nav-bg:        rgba(46,49,54,0.96);
-    --accent:        #C4813A;
-    --accent-bright: #D4924A;
-    --accent-glow:   rgba(196,129,58,0.20);
-    --accent-border: rgba(196,129,58,0.32);
-    --accent-dim:    rgba(196,129,58,0.10);
-    --border:        rgba(196,129,58,0.10);
-    --border-bright: rgba(196,129,58,0.22);
-    --text-primary:  #F0EBE2;
-    --text-mid:      #9A9FA8;
-    --text-dim:      #5A5F68;
-    --red:           #D95F4B;
-    --red-dim:       rgba(217,95,75,0.12);
-    --red-border:    rgba(217,95,75,0.35);
-    --grid-color:    rgba(196,129,58,0.07);
-    --font:      'Outfit', sans-serif;
-    --font-mono: 'Space Mono', monospace;
+  .sub-hdr{border-bottom:1px solid var(--rule-2)}
+  .sub-hdr .hdr-in{padding-block:var(--s-5)}
+  .sub-hdr .back{font-family:var(--f-ui);font-size:14.5px;color:var(--tx-2)}
+  .sub-hdr .back:hover{color:var(--tx)}
+  .acc{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 80px)}
+  .acc-fig{position:relative;overflow:hidden;border-right:1px solid var(--rule-2);isolation:isolate}
+  .acc-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.6) contrast(1.05);opacity:.55}
+  [data-theme="light"] .acc-fig img{opacity:.4}
+  .acc-fig .v{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.1),rgba(10,10,11,.9))}
+  [data-theme="light"] .acc-fig .v{background:linear-gradient(180deg,rgba(238,235,228,.1),rgba(238,235,228,.92))}
+  .acc-fig .cap{position:absolute;left:var(--gutter);right:var(--gutter);bottom:var(--s-12);z-index:2}
+  .acc-fig .cap p{margin-top:var(--s-4);color:var(--tx-2);max-width:42ch;line-height:1.6;font-size:var(--t-sm)}
+  .acc-body{display:grid;align-content:center;padding:var(--s-24) var(--gutter)}
+  .card{max-width:460px;margin-inline:auto;width:100%}
+  .card .lede{margin-top:var(--s-5)}
+  .ways{margin-top:var(--s-10);border-top:1px solid var(--rule)}
+  .way{display:grid;grid-template-columns:36px 1fr;gap:var(--s-4);padding:var(--s-6) 0;border-bottom:1px solid var(--rule-2)}
+  .way .n{font-family:var(--f-mono);font-size:11px;color:var(--mut);letter-spacing:.1em;padding-top:6px}
+  .way h2{font-family:var(--f-serif);font-weight:400;font-size:var(--t-h4);line-height:1.15}
+  .way p{font-size:var(--t-sm);line-height:1.6;color:var(--tx-2);margin-top:var(--s-2);max-width:46ch}
+  .way .btn{margin-top:var(--s-5)}
+  .note{margin-top:var(--s-8);color:var(--mut);font-size:13px;line-height:1.6;max-width:46ch}
+  .note a{color:var(--tx-2)}.note a:hover{color:var(--tx)}
+  .lockup{margin-top:var(--s-10)}
+  @media(max-width:900px){
+    .acc{grid-template-columns:1fr;min-height:0}
+    .acc-fig{min-height:300px;border-right:0;border-bottom:1px solid var(--rule-2)}
+    .acc-fig .cap{bottom:var(--s-8)}
+    .acc-body{padding:var(--s-16) var(--gutter) var(--s-20)}
   }
-  [data-theme="light"] {
-    --bg:            #E8EAEC;
-    --bg-alt:        #DDDFE2;
-    --surface:       #DDDFE2;
-    --card:          #D2D5D9;
-    --card-hover:    #C6CAD0;
-    --nav-bg:        rgba(221,223,226,0.96);
-    --accent-bright: #B3722F;
-    --accent-glow:   rgba(196,129,58,0.14);
-    --accent-border: rgba(196,129,58,0.38);
-    --accent-dim:    rgba(196,129,58,0.08);
-    --border:        rgba(58,61,66,0.10);
-    --border-bright: rgba(58,61,66,0.20);
-    --text-primary:  #1E2226;
-    --text-mid:      #68707A;
-    --text-dim:      #8892A0;
-    --red-dim:       rgba(217,95,75,0.08);
-    --red-border:    rgba(217,95,75,0.3);
-    --grid-color:    rgba(196,129,58,0.07);
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-  body { background: var(--bg); color: var(--text-primary); font-family: var(--font); min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
-  .grid-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; background-image: linear-gradient(var(--grid-color) 1px, transparent 1px), linear-gradient(90deg, var(--grid-color) 1px, transparent 1px); background-size: 56px 56px; }
-  nav { position: fixed; top: 0; z-index: 1000; width: 100%; padding: 14px 40px 0; background: transparent; pointer-events: none; }
-  .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; background: var(--nav-bg); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid var(--border-bright); border-radius: 100px; padding: 0 8px 0 20px; height: 54px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); pointer-events: all; }
-  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .nav-logo-icon { width: 34px; height: 34px; background: linear-gradient(135deg, var(--accent), #E0A55A); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: white; box-shadow: 0 0 16px var(--accent-glow); flex-shrink: 0; }
-  .nav-logo-name { font-size: 15px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.2px; line-height: 1; }
-  .nav-logo-coords { font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.1em; color: var(--accent); margin-top: 3px; opacity: 0.8; }
-  .theme-toggle { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--border-bright); background: var(--card); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; transition: all 0.25s; flex-shrink: 0; }
-  .theme-toggle:hover { background: var(--accent-dim); border-color: var(--accent-border); transform: scale(1.05); }
-  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 100px 24px 60px; position: relative; z-index: 1; }
-  .login-wrap { width: 100%; max-width: 440px; display: flex; flex-direction: column; align-items: center; gap: 32px; }
-  .login-badge { display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 100px; }
-  .badge-dot { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-  .badge-text { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-mid); }
-  .login-card { width: 100%; background: var(--card); border: 1px solid var(--border-bright); border-radius: 20px; padding: 40px; box-shadow: 0 24px 80px rgba(0,0,0,0.25), 0 0 0 1px var(--border); position: relative; overflow: hidden; }
-  .login-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.6; }
-  .card-header { margin-bottom: 32px; }
-  .card-title { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.03em; color: var(--text-primary); line-height: 1.1; margin-bottom: 8px; }
-  .card-title span { background: linear-gradient(135deg, var(--accent), #E0A55A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .card-sub { font-size: 0.875rem; color: var(--text-mid); font-weight: 300; }
-  .form-group { margin-bottom: 20px; }
-  .form-label { display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); margin-bottom: 8px; }
-  .form-input { width: 100%; padding: 13px 16px; background: var(--surface); border: 1px solid var(--border-bright); border-radius: 10px; color: var(--text-primary); font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.08em; outline: none; transition: border-color 0.2s, box-shadow 0.2s, background 0.2s; }
-  .form-input::placeholder { color: var(--text-dim); letter-spacing: 0.04em; font-size: 13px; }
-  .form-input:focus { border-color: var(--accent-border); box-shadow: 0 0 0 3px var(--accent-dim); background: var(--bg-alt); }
-  .form-input.error { border-color: var(--red-border); box-shadow: 0 0 0 3px var(--red-dim); }
-  .error-msg { display: none; align-items: center; gap: 8px; padding: 11px 14px; background: var(--red-dim); border: 1px solid var(--red-border); border-radius: 8px; font-size: 13px; color: var(--red); margin-bottom: 16px; }
-  .error-msg.visible { display: flex; }
-  .error-icon { font-size: 15px; flex-shrink: 0; }
-  .btn-login { width: 100%; padding: 14px; background: var(--accent); color: white; font-family: var(--font); font-size: 14px; font-weight: 700; letter-spacing: 0.04em; border: none; border-radius: 100px; cursor: pointer; box-shadow: 0 0 24px var(--accent-glow); transition: all 0.25s; position: relative; overflow: hidden; }
-  .btn-login:hover { background: var(--accent-bright); transform: translateY(-1px); box-shadow: 0 8px 32px var(--accent-glow); }
-  .btn-login:active { transform: translateY(0); }
-  .btn-login:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-  .btn-login .spinner { display: none; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .btn-login.loading .btn-text { display: none; }
-  .btn-login.loading .spinner { display: block; }
-  .login-footer { font-size: 12px; color: var(--text-dim); text-align: center; font-family: var(--font-mono); letter-spacing: 0.04em; }
-  .login-footer a { color: var(--accent); text-decoration: none; }
-  .login-footer a:hover { text-decoration: underline; }
-  @media (max-width: 600px) { nav { padding: 12px 16px 0; } .login-card { padding: 28px 24px; } }
 </style>
 </head>
 <body>
-<div class="grid-bg"></div>
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <div class="nav-logo-icon">OC</div>
-      <div>
-        <div class="nav-logo-name">OnChain Aviation</div>
-        <div class="nav-logo-coords">32°07′N · 081°09′W · KSAV</div>
-      </div>
-    </a>
-    <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn" title="Toggle theme">🌙</button>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr sub-hdr">
+  <div class="wrap"><div class="hdr-in">
+    <a href="/" class="brand" aria-label="OnChain Aviation — home"><span class="brand-mark" aria-hidden="true">OA</span><span class="brand-name">OnChain Aviation</span></a>
+    <div class="hdr-r">
+      <button class="theme" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to light theme"><i aria-hidden="true"></i><span class="theme-txt">Theme</span></button>
+      <a href="/" class="back">← Site</a>
+    </div>
+  </div></div>
+</header>
+
+<main id="main" class="acc">
+  <div class="acc-fig">
+    <img src="assets/photos/turbine-dark.jpg" width="1400" height="933" alt="" loading="eager" decoding="async">
+    <div class="v" aria-hidden="true"></div>
+    <div class="cap">
+      <p class="label micro">Operator access</p>
+      <h1 class="d2">Your aircraft. Its schedule. Its record.</h1>
+      <p>Next-due items, open discrepancies, work orders and the full maintenance history — one aircraft per screen, in the same language as the paperwork. Delivered on IronFleet aviOS.</p>
+    </div>
   </div>
-</nav>
-<main>
-  <div class="login-wrap">
-    <div class="login-badge">
-      <div class="badge-dot"></div>
-      <span class="badge-text">Crew Access · KSAV</span>
-    </div>
-    <div class="login-card">
-      <div class="card-header">
-        <h1 class="card-title">Welcome back,<br><span>let's fly.</span></h1>
-        <p class="card-sub">Enter your access code to reach the AMT Agent.</p>
+  <div class="acc-body">
+    <div class="card">
+      <p class="label micro">Sign in</p>
+      <h2 class="d3">Access is provisioned per aircraft.</h2>
+      <p class="lede">Owners, their authorised representatives and flight-department staff of aircraft we manage receive IronFleet aviOS credentials from the shop. Nothing public lives behind this page.</p>
+      <div class="ways">
+        <div class="way"><span class="n">01</span><div><h2>Already provisioned</h2><p>Sign in with the IronFleet credentials you were issued. Your aircraft appears after sign-in.</p><a class="btn btn-fill" href="https://ironfleet.ai" rel="noopener">Sign in on IronFleet →</a></div></div>
+        <div class="way"><span class="n">02</span><div><h2>Managed aircraft, no access yet</h2><p>Email the shop from the address on file and we will provision you within one business day.</p><a class="btn btn-line" href="mailto:mike@onchain.aero?subject=Operator%20access%20request">Request access</a></div></div>
+        <div class="way"><span class="n">03</span><div><h2>Not a customer yet</h2><p>Operator access comes with an aircraft management agreement. Start with a service request.</p><a class="btn btn-line" href="/#contact">Request service</a></div></div>
       </div>
-      <form id="loginForm" onsubmit="handleLogin(event)">
-        <div class="form-group">
-          <label class="form-label" for="passphrase">Access Code</label>
-          <input type="password" id="passphrase" class="form-input" placeholder="Enter access code" autocomplete="current-password" autofocus />
-        </div>
-        <div class="error-msg" id="errorMsg">
-          <span class="error-icon">⚠</span>
-          <span id="errorText">Incorrect access code. Try again.</span>
-        </div>
-        <button type="submit" class="btn-login" id="loginBtn">
-          <span class="btn-text">Access Agent →</span>
-          <span class="spinner"></span>
-        </button>
-      </form>
+      <p class="note">Aircraft on the ground? Skip this page: <a href="tel:+19125957795">(912) 595-7795</a>, any hour.</p>
+      <p class="lockup"><span class="micro">Powered by</span><a class="lockup-brand" href="https://ironfleet.ai" rel="noopener" aria-label="IronFleet"><img class="if-dark" src="assets/logos/ironfleet-color-on-dark.svg" width="114" height="32" alt="IronFleet" decoding="async"><img class="if-light" src="assets/logos/ironfleet-color-on-light.svg" width="114" height="32" alt="" aria-hidden="true" decoding="async"></a></p>
     </div>
-    <p class="login-footer">Need access? <a href="mailto:mike@onchainaviation.com">Request from ops →</a><br><br><a href="index.html">OnChain Aviation</a> · Elite Gulfstream Maintenance. Future-Forward.</p>
   </div>
 </main>
 <script>
-  const ACCESS_CODE = 'onchain2026';
-  const AGENT_URL = 'https://amt-agent-production.up.railway.app/';
-  const SESSION_KEY = 'oca_auth';
-  if (sessionStorage.getItem(SESSION_KEY) === 'true') { window.location.href = AGENT_URL; }
-  function handleLogin(e) {
-    e.preventDefault();
-    const input = document.getElementById('passphrase');
-    const btn = document.getElementById('loginBtn');
-    const errMsg = document.getElementById('errorMsg');
-    const errTxt = document.getElementById('errorText');
-    input.classList.remove('error');
-    errMsg.classList.remove('visible');
-    btn.disabled = true;
-    btn.classList.add('loading');
-    setTimeout(() => {
-      if (input.value === ACCESS_CODE) {
-        sessionStorage.setItem(SESSION_KEY, 'true');
-        window.location.href = AGENT_URL;
-      } else {
-        btn.disabled = false;
-        btn.classList.remove('loading');
-        input.classList.add('error');
-        errTxt.textContent = 'Incorrect access code. Try again.';
-        errMsg.classList.add('visible');
-        input.value = '';
-        input.focus();
-      }
-    }, 600);
-  }
-  function applyTheme(t) {
-    document.documentElement.setAttribute('data-theme', t);
-    document.getElementById('themeBtn').textContent = t === 'light' ? '☀️' : '🌙';
-    try { localStorage.setItem('oca-theme', t); } catch(e) {}
-  }
-  function toggleTheme() {
-    const current = document.documentElement.getAttribute('data-theme');
-    applyTheme(current === 'light' ? 'dark' : 'light');
-  }
-  (function() {
-    let saved = 'dark';
-    try { saved = localStorage.getItem('oca-theme') || 'dark'; } catch(e) {}
-    applyTheme(saved);
-  })();
+(function(){var r=document.documentElement,b=document.getElementById('themeToggle');function sync(){var l=r.getAttribute('data-theme')==='light';b.setAttribute('aria-pressed',String(l));b.setAttribute('aria-label',l?'Switch to dark theme':'Switch to light theme')}
+b.addEventListener('click',function(){var n=r.getAttribute('data-theme')==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('oc-theme',n)}catch(e){}sync()});sync()})();
 </script>
 </body>
 </html>

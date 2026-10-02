@@ -1,1853 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark" class="no-js">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OnChain Aviation — Elite Gulfstream Maintenance. Future-Forward.</title>
-<meta name="description" content="OnChain Aviation is Mike Brown’s shop: elite Gulfstream maintenance, future-forward. Maintenance management, technical support, and AOG for the flight department. Transparency. Provenance. Truth. Truth over trust. VOSB. Savannah / KSAV.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>OnChain Aviation — Gulfstream Maintenance, Savannah GA</title>
+<meta name="description" content="Founder-operated Gulfstream maintenance in Savannah, Georgia. Aircraft management, calendar and hourly inspections and 24/7 AoG response — powered by IronFleet aviOS.">
 <link rel="canonical" href="https://onchain.aero/">
+<meta name="theme-color" content="#0A0A0B" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EEEBE4" media="(prefers-color-scheme: light)">
 <meta property="og:type" content="website">
+<meta property="og:title" content="OnChain Aviation — Gulfstream Maintenance">
+<meta property="og:description" content="Elite Gulfstream maintenance. Future-forward. Maintained by hand, verified for life — founder-operated out of Savannah (KSAV), powered by IronFleet.">
 <meta property="og:url" content="https://onchain.aero/">
-<meta property="og:title" content="OnChain Aviation — Elite Gulfstream Maintenance. Future-Forward.">
-<meta property="og:description" content="Elite Gulfstream maintenance. Future-forward. Maintenance management, technical support, and AOG. Transparency. Provenance. Truth. Truth over trust.">
-<meta property="og:site_name" content="OnChain Aviation">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OnChain Aviation — Elite Gulfstream Maintenance. Future-Forward.">
-<meta name="twitter:description" content="Elite Gulfstream maintenance. Future-forward. Maintenance management, technical support, and AOG. Transparency. Provenance. Truth. Truth over trust.">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  /* ── DARK MODE (default) ── */
-  :root {
-    --bg:           #3A3D42;
-    --bg-alt:       #2E3136;
-    --surface:      #2C2F34;
-    --card:         #303438;
-    --card-hover:   #34383D;
-    --nav-bg:       rgba(46,49,54,0.96);
-
-    --accent:       #C4813A;
-    --accent-bright:#D4924A;
-    --accent-glow:  rgba(196,129,58,0.20);
-    --accent-border:rgba(196,129,58,0.32);
-    --accent-dim:   rgba(196,129,58,0.10);
-
-    --silver:       #A8AEBA;
-    --silver-dim:   rgba(168,174,186,0.10);
-    --silver-border:rgba(168,174,186,0.22);
-
-    --teal:         #4ECBA1;
-    --teal-dim:     rgba(78,203,161,0.10);
-    --teal-border:  rgba(78,203,161,0.28);
-
-    --green:        #4ECBA1;
-    --green-dim:    rgba(78,203,161,0.10);
-    --green-border: rgba(78,203,161,0.25);
-
-    --amber:        #E0A55A;
-    --amber-dim:    rgba(224,165,90,0.10);
-    --amber-border: rgba(224,165,90,0.25);
-
-    --red:          #D95F4B;
-    --red-glow:     rgba(217,95,75,0.12);
-
-    --purple:       #9B72CF;
-    --purple-dim:   rgba(155,114,207,0.10);
-
-    --border:       rgba(196,129,58,0.10);
-    --border-bright:rgba(196,129,58,0.22);
-
-    --text-primary: #F0EBE2;
-    --text-mid:     #9A9FA8;
-    --text-dim:     #828892;
-
-    --grid-color:   rgba(196,129,58,0.07);
-
-    --font:      'Outfit', sans-serif;
-    --font-mono: 'Space Mono', monospace;
-  }
-
-  /* ── LIGHT MODE ── */
-  [data-theme="light"] {
-    --bg:           #E8EAEC;
-    --bg-alt:       #DDDFE2;
-    --surface:      #DDDFE2;
-    --card:         #D2D5D9;
-    --card-hover:   #C6CAD0;
-    --nav-bg:       rgba(221,223,226,0.96);
-
-    --accent-bright:#B3722F;
-    --accent-glow:  rgba(196,129,58,0.14);
-    --accent-border:rgba(196,129,58,0.38);
-    --accent-dim:   rgba(196,129,58,0.08);
-
-    --silver-dim:   rgba(58,61,66,0.06);
-    --silver-border:rgba(58,61,66,0.18);
-
-    --teal:         #2EA882;
-    --teal-dim:     rgba(46,168,130,0.08);
-    --teal-border:  rgba(46,168,130,0.3);
-
-    --green:        #2EA882;
-    --green-dim:    rgba(46,168,130,0.10);
-    --green-border: rgba(46,168,130,0.25);
-
-    --amber-dim:    rgba(196,129,58,0.08);
-    --amber-border: rgba(196,129,58,0.22);
-
-    --red-glow:     rgba(217,95,75,0.08);
-    --purple-dim:   rgba(155,114,207,0.08);
-
-    --border:       rgba(58,61,66,0.10);
-    --border-bright:rgba(58,61,66,0.20);
-
-    --text-primary: #1E2226;
-    --text-mid:     #68707A;
-    --text-dim:     #6E7686;
-
-    --grid-color:   rgba(196,129,58,0.07);
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  *, *::before, *::after { transition: background-color 0.3s, border-color 0.3s, color 0.2s; }
-  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-  body {
-    background: var(--bg);
-    color: var(--text-primary);
-    font-family: var(--font);
-    line-height: 1.6;
-    overflow-x: hidden;
-    transition: background 0.3s, color 0.3s;
-  }
-
-  /* ===== GRID TEXTURE ===== */
-  .grid-bg {
-    position: fixed; inset: 0; z-index: 0; pointer-events: none;
-    background-image:
-      linear-gradient(var(--grid-color) 1px, transparent 1px),
-      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-    background-size: 56px 56px;
-  }
-
-  /* ===== CIRCUIT LINES (decorative SVG overlay) ===== */
-  .circuit-overlay {
-    position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0;
-  }
-  .circuit-overlay svg { width: 100%; height: 100%; opacity: 0.07; }
-
-  /* ===== TWO-TIER COCKPIT NAV ===== */
-  nav {
-    position: relative; z-index: 100;
-    padding: 14px 40px 0;
-    background: transparent;
-  }
-  .nav-inner {
-    max-width: 1200px; margin: 0 auto;
-    background: var(--nav-bg);
-    backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
-    border: 1px solid var(--border-bright);
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-    transition: background 0.3s, border-color 0.3s;
-  }
-  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
-  .aog-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; animation: pulse 1.5s infinite; flex-shrink: 0; }
-
-  /* TOP TIER — STATUS BAR */
-  .nav-status {
-    display: flex; align-items: center; justify-content: space-between;
-    height: 30px; padding: 0 18px;
-    background: rgba(0,0,0,0.22);
-    border-bottom: 1px solid var(--border);
-    font-family: var(--font-mono); font-size: 9px;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--text-dim);
-  }
-  [data-theme="light"] .nav-status { background: rgba(0,0,0,0.04); }
-  .nav-status-left, .nav-status-right { display: flex; align-items: center; gap: 14px; }
-  .nav-status-aog {
-    display: flex; align-items: center; gap: 6px;
-    color: var(--red); text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-status-aog::before { content: ''; width: 5px; height: 5px; background: var(--red); border-radius: 50%; animation: pulse 1.5s infinite; flex-shrink: 0; }
-  .nav-status-aog:hover { color: var(--accent-bright); }
-  .nav-status-coords { color: var(--green); }
-  .nav-divider { width: 1px; height: 12px; background: var(--border-bright); flex-shrink: 0; }
-  .nav-status-link { color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
-  .nav-status-link:hover { color: var(--accent); }
-
-  /* BOTTOM TIER — BRAND + LINKS */
-  .nav-main {
-    display: flex; align-items: center; justify-content: space-between;
-    height: 56px; padding: 0 22px;
-  }
-  .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .nav-brand-icon {
-    width: 32px; height: 32px; border-radius: 7px;
-    background: linear-gradient(135deg, var(--accent), var(--amber));
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-mono); font-weight: 700; font-size: 11px; color: white;
-    box-shadow: 0 0 16px var(--accent-glow);
-    flex-shrink: 0;
-  }
-  .nav-brand-name { font-size: 15px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.2px; }
-  .nav-links { display: flex; gap: 4px; }
-  .nav-links a {
-    padding: 8px 16px; font-size: 13px; font-weight: 500;
-    color: var(--text-mid); text-decoration: none;
-    border-radius: 8px; transition: all 0.2s; letter-spacing: 0.01em;
-  }
-  .nav-links a:hover { color: var(--text-primary); background: var(--accent-dim); }
-
-  /* THEME TOGGLE — slim icon in status bar */
-  .theme-toggle {
-    width: 18px; height: 18px;
-    border: none; background: transparent;
-    cursor: pointer; padding: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px; color: var(--text-mid); opacity: 0.75;
-    transition: opacity 0.2s, color 0.2s, transform 0.2s;
-  }
-  .theme-toggle:hover { opacity: 1; color: var(--accent); transform: scale(1.15); }
-  .theme-toggle-icon { line-height: 1; display: block; }
-
-  /* ===== HERO ===== */
-  .hero {
-    min-height: 85vh; display: flex; align-items: center;
-    padding: 60px 0 90px; position: relative; z-index: 1; overflow: hidden;
-  }
-  /* Animated gradient orbs */
-  .hero-orb-1 {
-    position: absolute; top: 5%; left: -8%;
-    width: 700px; height: 700px; border-radius: 50%;
-    background: transparent;
-    pointer-events: none; animation: orbFloat 8s ease-in-out infinite;
-  }
-  .hero-orb-2 {
-    position: absolute; bottom: -10%; right: -5%;
-    width: 600px; height: 600px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(168,174,186,0.10) 0%, transparent 65%);
-    pointer-events: none; animation: orbFloat 10s ease-in-out infinite reverse;
-  }
-  @keyframes orbFloat {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(20px, -20px); }
-  }
-
-  .container { max-width: 1300px; margin: 0 auto; padding: 0 48px; position: relative; z-index: 1; }
-
-  .hero-layout { display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 1000px; margin: 0 auto; }
-
-  /* Editorial frame lines (above and below the meta tag) */
-  .hero-frame { height: 1px; max-width: 600px; width: 100%;
-    background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
-  }
-
-  /* Meta tag (replaces pill badge — editorial feel) */
-  .hero-badge {
-    display: inline-flex; align-items: center; justify-content: center; gap: 14px;
-    padding: 18px 0; background: transparent; border: none; border-radius: 0; margin: 0;
-  }
-  .hero-badge-icon { display: none; }
-  .hero-badge-text {
-    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.3em;
-    text-transform: uppercase; color: var(--text-dim);
-  }
-  .hero-badge-text .sep { color: var(--accent); margin: 0 10px; }
-
-  .hero h1 {
-    font-size: clamp(3.2rem, 7vw, 7rem);
-    font-weight: 200; line-height: 1.05; letter-spacing: -0.04em;
-    padding: 50px 0 36px; margin: 0;
-  }
-  .hero h1 .gradient-text {
-    font-weight: 800; font-style: italic;
-    background: linear-gradient(135deg, var(--accent), var(--amber));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  }
-  .hero-sub {
-    font-size: 1.2rem; color: var(--text-mid); line-height: 1.75; font-weight: 300;
-    margin: 0 auto 22px; max-width: 720px;
-  }
-  .hero-triad {
-    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em;
-    text-transform: uppercase; color: var(--accent); margin: 0 auto 10px;
-  }
-  .hero-triad .sep { color: var(--text-dim); margin: 0 10px; }
-  .hero-punch {
-    font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em;
-    color: var(--text-primary); margin: 0 auto 44px;
-  }
-  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-bottom: 64px; }
-
-  /* Hero stat strip — horizontal editorial divider style */
-  .hero-stat-strip {
-    display: flex; gap: 0; justify-content: center; align-items: center;
-    border-top: 1px solid var(--border-bright); padding-top: 36px; margin-top: 0;
-  }
-  .hero-stat-item {
-    position: relative; padding: 0 50px; border-right: 1px solid var(--border);
-  }
-  .hero-stat-item:last-child { border-right: none; }
-  .hero-stat-item::before { display: none; }
-  .hero-stat-value {
-    font-family: var(--font-mono); font-size: 1.8rem; font-weight: 700;
-    color: var(--accent); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em;
-  }
-  .hero-stat-value.sm {
-    font-size: 1.1rem; color: var(--text-primary); letter-spacing: -0.01em;
-  }
-  .hero-stat-label {
-    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em;
-    color: var(--text-dim); text-transform: uppercase;
-  }
-  .btn-primary {
-    padding: 16px 32px; background: var(--accent); color: #ffffff; text-decoration: none;
-    font-weight: 700; font-size: 15px; border-radius: 10px; letter-spacing: 0.02em;
-    transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
-  }
-  .btn-primary:hover { background: var(--accent-bright); transform: translateY(-2px); }
-  .btn-aog {
-    padding: 16px 28px; background: rgba(201,74,58,0.1); color: #C94A3A; text-decoration: none;
-    font-weight: 700; font-size: 15px; border-radius: 10px; border: 1px solid rgba(201,74,58,0.3);
-    display: flex; align-items: center; gap: 10px; transition: all 0.3s;
-    animation: aogPulse 3s infinite;
-  }
-  @keyframes aogPulse { 0%, 100% { box-shadow: none; } 50% { box-shadow: 0 0 20px rgba(201,74,58,0.15); } }
-  .btn-aog:hover { background: rgba(201,74,58,0.2); border-color: rgba(201,74,58,0.55); }
-
-  /* ===== HERO PANEL (right side) ===== */
-  .hero-panel {
-    background: var(--surface); border: 1px solid var(--border-bright);
-    border-radius: 20px; overflow: hidden; position: relative;
-  }
-  .hero-panel::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent), var(--amber), transparent);
-  }
-  .panel-header {
-    padding: 16px 22px; border-bottom: 1px solid var(--border);
-    display: flex; align-items: center; gap: 10px;
-  }
-  .panel-dots { display: flex; gap: 6px; }
-  .panel-dot { width: 10px; height: 10px; border-radius: 50%; }
-  .panel-dot:nth-child(1) { background: #FF5F57; }
-  .panel-dot:nth-child(2) { background: #FFBD2E; }
-  .panel-dot:nth-child(3) { background: #28CA42; }
-  .panel-id { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-left: auto; }
-
-  /* Chain verification feed */
-  .chain-feed {
-    padding: 16px 20px; border-bottom: 1px solid var(--border);
-    background: rgba(0,0,0,0.08);
-  }
-  .chain-feed-label {
-    font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--teal); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
-  }
-  .chain-feed-label::before { content: ''; width: 8px; height: 8px; background: var(--teal); border-radius: 50%; animation: pulse 2s infinite; }
-  .chain-entry {
-    display: flex; align-items: center; gap: 10px; padding: 6px 0;
-    border-bottom: 1px solid var(--border); font-family: var(--font-mono); font-size: 10px;
-  }
-  .chain-entry:last-child { border-bottom: none; }
-  .chain-hash { color: var(--teal); letter-spacing: 0.05em; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .chain-type { color: var(--text-dim); font-size: 9px; letter-spacing: 0.08em; flex-shrink: 0; }
-  .chain-status { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
-
-  .panel-body { padding: 20px; }
-  .panel-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
-  .panel-stat {
-    background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px;
-    position: relative; overflow: hidden; transition: all 0.25s;
-  }
-  .panel-stat:hover { border-color: var(--border-bright); }
-  .panel-stat::after {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.4;
-  }
-  .panel-stat-value { font-size: 1.8rem; font-weight: 800; color: var(--text-primary); letter-spacing: -0.03em; line-height: 1; margin-bottom: 5px; }
-  .panel-stat-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); }
-
-  /* AI confidence meter */
-  .ai-meter {
-    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-    padding: 16px 18px; margin-bottom: 12px;
-  }
-  .ai-meter-header {
-    display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;
-  }
-  .ai-meter-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); display: flex; align-items: center; gap: 6px; }
-  .ai-meter-label span { color: var(--purple); }
-  .ai-meter-val { font-family: var(--font-mono); font-size: 12px; color: var(--teal); font-weight: 700; }
-  .ai-bar { height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
-  .ai-bar-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--accent), var(--amber)); animation: barFill 3s ease-out forwards; }
-  @keyframes barFill { from { width: 0%; } to { width: 100%; } }
-
-  .panel-status-list { display: flex; flex-direction: column; gap: 8px; }
-  .status-item {
-    display: flex; align-items: center; gap: 12px; padding: 11px 14px;
-    background: var(--card); border: 1px solid var(--border); border-radius: 8px; transition: all 0.25s;
-  }
-  .status-item:hover { border-color: var(--border-bright); background: var(--card-hover); }
-  .status-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-  .status-dot.live { background: var(--green); box-shadow: 0 0 8px var(--green-dim); }
-  .status-dot.aog-live { background: var(--red); animation: pulse 1.2s infinite; }
-  .status-dot.booking { background: var(--purple); }
-  .status-text { font-size: 13px; color: var(--text-mid); font-weight: 500; flex: 1; }
-  .status-badge { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; flex-shrink: 0; }
-  .badge-teal { background: var(--green-dim); color: var(--green); border: 1px solid var(--green-border); }
-  .badge-red { background: var(--red-glow); color: var(--red); border: 1px solid rgba(224,80,80,0.2); }
-  .badge-blue { background: var(--purple-dim); color: var(--purple); border: 1px solid rgba(155,114,207,0.25); }
-
-  /* ===== RIBBON ===== */
-  .ribbon {
-    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-    background: var(--bg-alt); padding: 14px 0; overflow: hidden; position: relative; z-index: 1;
-  }
-  .ribbon-track { display: flex; animation: ribbonScroll 35s linear infinite; width: max-content; }
-  @keyframes ribbonScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .ribbon-item {
-    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--text-dim); padding: 0 28px; display: flex; align-items: center; gap: 28px; white-space: nowrap;
-  }
-  .ribbon-sep { color: var(--accent); font-size: 5px; }
-
-  /* ===== SECTIONS ===== */
-  section { padding: 100px 0; position: relative; z-index: 1; }
-  .section-label {
-    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 12px;
-  }
-  .section-label::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--accent); }
-  .section-title {
-    font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; letter-spacing: -0.04em;
-    line-height: 1.0; color: var(--text-primary); margin-bottom: 20px;
-  }
-  .section-title .gradient { background: linear-gradient(135deg, var(--accent), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .section-desc { font-size: 1.05rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; max-width: 520px; }
-
-  /* ===== SERVICES — Rail + Live Widget ===== */
-  .services { border-top: 1px solid var(--border); }
-  .services-header { margin-bottom: 48px; max-width: 720px; }
-
-  .cap-shell {
-    display: grid; grid-template-columns: 300px 1fr;
-    border: 1px solid var(--border-bright);
-    border-radius: 16px; background: var(--surface);
-    overflow: hidden;
-  }
-
-  /* RAIL */
-  .cap-rail {
-    background: var(--bg-alt);
-    border-right: 1px solid var(--border);
-    padding: 16px 0;
-  }
-  .cap-rail-label {
-    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em;
-    color: var(--text-dim); text-transform: uppercase;
-    padding: 0 22px 14px; border-bottom: 1px solid var(--border);
-  }
-  .cap-item {
-    display: flex; align-items: center; gap: 12px;
-    padding: 14px 22px; cursor: pointer;
-    border-left: 2px solid transparent;
-    transition: background 0.15s, border-color 0.15s;
-  }
-  .cap-item:hover { background: var(--card); }
-  .cap-item.active { background: var(--card); border-left-color: var(--accent); }
-  .cap-item.active.aog { border-left-color: var(--red); }
-  .cap-item-num {
-    font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); width: 22px;
-    transition: color 0.15s;
-  }
-  .cap-item.active .cap-item-num { color: var(--accent); }
-  .cap-item.active.aog .cap-item-num { color: var(--red); }
-  .cap-item-icon {
-    width: 28px; height: 28px; border-radius: 6px;
-    background: var(--accent-dim); border: 1px solid var(--accent-border);
-    display: flex; align-items: center; justify-content: center; font-size: 13px;
-    flex-shrink: 0;
-  }
-  .cap-item.aog .cap-item-icon { background: var(--red-glow); border-color: rgba(217,95,75,0.32); }
-  .cap-item-name { font-size: 14px; font-weight: 500; flex: 1; color: var(--text-primary); }
-
-  /* DETAIL PANE */
-  .cap-detail {
-    display: grid; grid-template-columns: 1fr 320px;
-    gap: 36px; padding: 36px;
-  }
-  .cap-copy { display: flex; flex-direction: column; gap: 16px; }
-  .cap-tag {
-    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em;
-    color: var(--accent); text-transform: uppercase;
-  }
-  .cap-copy h3 {
-    font-size: clamp(1.6rem, 2.5vw, 2rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em;
-  }
-  .cap-lead { font-size: 0.98rem; color: var(--text-mid); line-height: 1.65; font-weight: 300; }
-  .cap-features { display: flex; flex-direction: column; }
-  .cap-feature {
-    display: flex; gap: 12px; align-items: flex-start;
-    padding: 10px 0; border-bottom: 1px solid var(--border);
-  }
-  .cap-feature:last-child { border-bottom: none; }
-  .cap-feature-check {
-    flex-shrink: 0; width: 20px; height: 20px; border-radius: 5px;
-    background: var(--green-dim); color: var(--green); margin-top: 2px;
-    display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;
-  }
-  .cap-feature-text { font-size: 13.5px; color: var(--text-primary); line-height: 1.4; font-weight: 500; }
-  .cap-feature-text small { display: block; color: var(--text-dim); font-size: 12px; font-weight: 300; margin-top: 2px; }
-
-  .cap-cta {
-    display: inline-flex; align-items: center; gap: 8px;
-    color: var(--accent-bright); text-decoration: none;
-    font-weight: 600; font-size: 14px;
-    align-self: flex-start;
-    padding: 11px 16px;
-    background: var(--accent-dim); border: 1px solid var(--accent-border);
-    border-radius: 8px;
-    margin-top: 6px;
-    transition: background 0.2s, gap 0.2s, color 0.2s, border-color 0.2s;
-  }
-  .cap-cta:hover { background: var(--accent-glow); gap: 12px; }
-  .cap-cta.aog { color: var(--red); background: var(--red-glow); border-color: rgba(217,95,75,0.32); }
-  .cap-cta.aog:hover { background: rgba(217,95,75,0.18); }
-
-  /* WIDGET */
-  .widget {
-    background: var(--bg-alt); border: 1px solid var(--border);
-    border-radius: 12px; padding: 18px;
-    display: flex; flex-direction: column; gap: 10px;
-    align-self: start;
-  }
-  .widget-header {
-    display: flex; align-items: center; justify-content: space-between;
-    padding-bottom: 10px; border-bottom: 1px solid var(--border);
-  }
-  .widget-title {
-    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em;
-    color: var(--text-dim); text-transform: uppercase;
-  }
-  .widget-status {
-    font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em;
-    display: flex; align-items: center; gap: 6px; text-transform: uppercase;
-  }
-  .widget-status-dot {
-    width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
-  }
-  .widget-row {
-    display: flex; align-items: center; gap: 10px;
-    font-family: var(--font-mono); font-size: 11px;
-    padding: 4px 0;
-  }
-  .widget-row-label { flex: 1; color: var(--text-mid); }
-  .widget-row-val { color: var(--text-primary); white-space: nowrap; }
-  .widget-bar { height: 4px; background: rgba(255,255,255,0.06); border-radius: 2px; flex: 1; max-width: 110px; overflow: hidden; }
-  [data-theme="light"] .widget-bar { background: rgba(0,0,0,0.06); }
-  .widget-bar-fill {
-    height: 100%; border-radius: 2px;
-    background: linear-gradient(90deg, var(--accent), var(--amber));
-    transition: width 0.4s ease;
-  }
-  .widget-bar-fill.full {
-    background: linear-gradient(90deg, var(--green), var(--green));
-  }
-  .widget-event {
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 8px 0; border-bottom: 1px solid var(--border);
-  }
-  .widget-event:last-child { border-bottom: none; padding-bottom: 0; }
-  .widget-event-time {
-    font-family: var(--font-mono); font-size: 9px; color: var(--text-dim);
-    text-transform: uppercase; letter-spacing: 0.1em; flex-shrink: 0; width: 56px;
-    padding-top: 2px;
-  }
-  .widget-event-text { font-size: 12px; line-height: 1.4; color: var(--text-primary); font-weight: 500; }
-  .widget-event-text small { display: block; color: var(--text-dim); font-size: 10.5px; font-weight: 300; margin-top: 1px; }
-
-  /* ===== TECH PLATFORM SECTION ===== */
-  .platform {
-    background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-    position: relative; overflow: hidden;
-  }
-  /* Animated radar sweep background */
-  .radar-bg {
-    position: absolute; top: 50%; right: 5%; transform: translateY(-50%);
-    width: 500px; height: 500px; pointer-events: none; opacity: 0.08;
-  }
-  .radar-circle {
-    position: absolute; top: 50%; left: 50%; border-radius: 50%;
-    border: 1px solid var(--teal); transform: translate(-50%, -50%);
-  }
-  .radar-circle:nth-child(1) { width: 100px; height: 100px; }
-  .radar-circle:nth-child(2) { width: 200px; height: 200px; }
-  .radar-circle:nth-child(3) { width: 300px; height: 300px; }
-  .radar-circle:nth-child(4) { width: 400px; height: 400px; }
-  .radar-circle:nth-child(5) { width: 500px; height: 500px; }
-  .radar-crosshair-h {
-    position: absolute; top: 50%; left: 0; right: 0; height: 1px;
-    background: var(--teal); transform: translateY(-50%);
-  }
-  .radar-crosshair-v {
-    position: absolute; left: 50%; top: 0; bottom: 0; width: 1px;
-    background: var(--teal); transform: translateX(-50%);
-  }
-  .radar-sweep {
-    position: absolute; top: 50%; left: 50%;
-    width: 250px; height: 1px;
-    transform-origin: left center;
-    animation: sweep 4s linear infinite;
-    background: linear-gradient(90deg, rgba(196,129,58,0.7), transparent);
-    box-shadow: 0 0 8px var(--teal);
-  }
-  @keyframes sweep {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-  /* Radar blip */
-  .radar-blip {
-    position: absolute;
-    width: 6px; height: 6px; border-radius: 50%; background: var(--teal);
-    box-shadow: 0 0 12px var(--teal);
-    animation: blipFade 4s ease-in infinite;
-  }
-  .radar-blip:nth-child(7) { top: 30%; left: 65%; animation-delay: 1s; }
-  .radar-blip:nth-child(8) { top: 60%; left: 45%; animation-delay: 2.5s; }
-  .radar-blip:nth-child(9) { top: 45%; left: 70%; animation-delay: 0.5s; }
-  @keyframes blipFade { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; } }
-
-  .platform-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
-  .platform-left { }
-  .platform-nodes { margin-top: 40px; display: flex; flex-direction: column; gap: 14px; }
-  .platform-node {
-    display: flex; align-items: center; gap: 16px; padding: 18px 22px;
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; transition: all 0.3s; position: relative; overflow: hidden;
-  }
-  .platform-node:hover { border-color: var(--border-bright); transform: translateX(6px); background: var(--card); }
-  .platform-node::before {
-    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
-    border-radius: 2px 0 0 2px;
-  }
-  .platform-node.blockchain::before { background: var(--green); }
-  .platform-node.ai::before { background: var(--purple); }
-  .platform-node.aviation::before { background: var(--amber); }
-  .node-icon {
-    width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
-    font-size: 18px; flex-shrink: 0;
-  }
-  .node-icon.blockchain { background: var(--green-dim); border: 1px solid var(--green-border); }
-  .node-icon.ai { background: var(--purple-dim); border: 1px solid rgba(139,92,246,0.25); }
-  .node-icon.aviation { background: var(--amber-dim); border: 1px solid var(--amber-border); }
-  .node-content { flex: 1; }
-  .node-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 3px; }
-  .node-label.teal { color: var(--green); }
-  .node-label.purple { color: var(--purple); }
-  .node-label.amber { color: var(--amber); }
-  .node-desc { font-size: 13px; color: var(--text-mid); font-weight: 300; }
-  .node-stat { font-family: var(--font-mono); font-size: 12px; font-weight: 700; flex-shrink: 0; }
-  .node-stat.teal { color: var(--green); }
-  .node-stat.purple { color: var(--purple); }
-  .node-stat.amber { color: var(--amber); }
-
-  /* Blockchain ledger widget */
-  .platform-right { }
-  .ledger-widget {
-    background: var(--surface); border: 1px solid var(--border-bright); border-radius: 16px; overflow: hidden;
-  }
-  .ledger-header {
-    padding: 16px 22px; border-bottom: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between;
-    background: rgba(0,0,0,0.08);
-  }
-  .ledger-title { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: flex; align-items: center; gap: 8px; }
-  .ledger-title::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
-  .ledger-block-count { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
-  .ledger-body { padding: 0; }
-  .ledger-entry {
-    padding: 14px 22px; border-bottom: 1px solid var(--border); display: flex; gap: 14px; align-items: center; transition: background 0.2s;
-  }
-  .ledger-entry:last-child { border-bottom: none; }
-  .ledger-entry:hover { background: var(--accent-dim); }
-  .ledger-block-num {
-    font-family: var(--font-mono); font-size: 10px; color: var(--green);
-    width: 60px; flex-shrink: 0;
-  }
-  .ledger-info { flex: 1; min-width: 0; }
-  .ledger-event { font-size: 12px; color: var(--text-primary); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .ledger-hash { font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .ledger-verified {
-    flex-shrink: 0; display: flex; align-items: center; gap: 4px;
-    font-family: var(--font-mono); font-size: 9px; color: var(--green); letter-spacing: 0.06em;
-    background: var(--green-dim); border: 1px solid var(--green-border); padding: 3px 8px; border-radius: 4px;
-  }
-  .ledger-time { font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); flex-shrink: 0; }
-
-  /* AI scanner strip */
-  .ai-scanner-strip {
-    margin: 16px 22px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
-  }
-  .ai-scanner-header {
-    padding: 10px 14px; display: flex; justify-content: space-between; align-items: center;
-    border-bottom: 1px solid var(--border);
-  }
-  .ai-scanner-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: flex; align-items: center; gap: 6px; }
-  .ai-scanner-label::before { content: ''; width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 1.8s infinite; }
-  .ai-scanner-status { font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); }
-  .ai-lines { padding: 10px 14px; display: flex; flex-direction: column; gap: 6px; }
-  .ai-line { display: flex; align-items: center; gap: 8px; }
-  .ai-line-label { font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); width: 120px; flex-shrink: 0; letter-spacing: 0.05em; }
-  .ai-line-bar { flex: 1; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
-  .ai-line-fill { height: 100%; border-radius: 2px; }
-  .ai-line-val { font-family: var(--font-mono); font-size: 9px; width: 34px; text-align: right; flex-shrink: 0; }
-
-  /* ===== DIFF ===== */
-  .diff { border-top: 1px solid var(--border); }
-  .diff-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-  .diff-sticky { position: sticky; top: 100px; }
-  .diff-tagline { margin-top: 32px; padding: 24px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; border-left: 3px solid var(--accent); }
-  .diff-tagline p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.65; font-weight: 300; margin-bottom: 12px; }
-  .diff-tagline strong { color: var(--text-primary); font-weight: 700; }
-  .diff-items { display: flex; flex-direction: column; gap: 14px; }
-  .diff-item {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px;
-    transition: all 0.3s; cursor: default;
-  }
-  .diff-item:hover { border-color: var(--border-bright); background: var(--card); transform: translateX(4px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-  .diff-num { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 10px; }
-  .diff-item h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
-  .diff-item p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.65; font-weight: 300; }
-
-  /* ===== ABOUT ===== */
-  .about { border-top: 1px solid var(--border); }
-  .about-layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; align-items: center; }
-  .about-visual {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-    padding: 40px; position: relative; overflow: hidden;
-  }
-  .about-visual::before { content: none; }
-  /* HUD corner brackets */
-  .hud-bracket { position: absolute; width: 24px; height: 24px; }
-  .hud-bracket.tl { top: 12px; left: 12px; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); }
-  .hud-bracket.tr { top: 12px; right: 12px; border-top: 1px solid var(--accent); border-right: 1px solid var(--accent); }
-  .hud-bracket.bl { bottom: 12px; left: 12px; border-bottom: 1px solid var(--accent); border-left: 1px solid var(--accent); }
-  .hud-bracket.br { bottom: 12px; right: 12px; border-bottom: 1px solid var(--accent); border-right: 1px solid var(--accent); }
-  .about-visual-inner { position: relative; z-index: 1; }
-  .about-eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-bright); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
-  .about-eyebrow::before { content: ''; width: 16px; height: 1px; background: var(--accent-bright); }
-  .about-visual h3 { font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 6px; }
-  .founder-handle-link {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em;
-    text-transform: lowercase; color: var(--accent-bright); text-decoration: none;
-    padding: 5px 12px; margin: 4px 0 16px;
-    background: var(--accent-dim); border: 1px solid var(--accent-border);
-    border-radius: 999px;
-    transition: background 0.2s, color 0.2s, transform 0.2s, gap 0.2s;
-  }
-  .founder-handle-link:hover {
-    background: var(--accent-glow); color: var(--accent);
-    transform: translateY(-1px); gap: 9px;
-  }
-  .founder-handle-link span { font-family: var(--font); text-transform: none; }
-  .about-visual-title { font-size: 0.9rem; color: var(--text-mid); font-weight: 300; margin-bottom: 28px; }
-  .cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .cred-item { padding: 10px 14px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--silver, #B8C4D6); display: flex; align-items: center; gap: 8px; }
-  .cred-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-  /* HUD readout under creds */
-  .hud-readout {
-    margin-top: 20px; padding: 12px 14px; background: var(--surface);
-    border: 1px solid var(--accent-border); border-radius: 8px; font-family: var(--font-mono); font-size: 9px;
-    letter-spacing: 0.1em; color: var(--accent-bright); display: flex; flex-direction: column; gap: 4px;
-  }
-  .hud-row { display: flex; justify-content: space-between; }
-  .hud-key { color: var(--text-dim); }
-  .hud-val { color: var(--accent-bright); }
-
-  .about-text blockquote { font-size: 1.5rem; font-weight: 700; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 28px; padding-left: 24px; border-left: 3px solid var(--accent); }
-  .about-text p { font-size: 1rem; color: var(--text-mid); line-height: 1.8; font-weight: 300; margin-bottom: 18px; }
-
-  /* ===== VISION ===== */
-  .vision { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
-  .vision::before {
-    content: ''; position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%); width: 800px; height: 800px; border-radius: 50%;
-    background: radial-gradient(circle, var(--accent-dim) 0%, transparent 60%); pointer-events: none;
-  }
-  .vision-center { text-align: center; max-width: 640px; margin: 0 auto 52px; }
-  .vision-center .section-label { justify-content: center; }
-  .vision-center .section-label::before { display: none; }
-  .vision-center .section-desc { margin: 0 auto; }
-  .vision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .vision-card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 36px;
-    text-align: center; transition: all 0.35s; position: relative; overflow: hidden;
-  }
-  .vision-card:hover { border-color: var(--border-bright); background: var(--card); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
-  /* Animated connection lines between vision cards via pseudo */
-  .vision-icon {
-    width: 60px; height: 60px; border-radius: 16px; margin: 0 auto 20px;
-    display: flex; align-items: center; justify-content: center; font-size: 26px;
-    position: relative;
-  }
-  .vision-icon.chain { background: var(--teal-dim); border: 1px solid var(--teal-border); }
-  .vision-icon.ai-icon { background: var(--purple-dim); border: 1px solid rgba(139,92,246,0.25); }
-  .vision-icon.ops-icon { background: var(--amber-dim); border: 1px solid var(--amber-border); }
-  /* Pulsing ring on icons */
-  .vision-icon::after {
-    content: ''; position: absolute; inset: -6px; border-radius: 20px;
-    border: 1px solid var(--teal-border); animation: iconRing 3s ease-in-out infinite; opacity: 0;
-  }
-  .vision-card:hover .vision-icon::after { animation: iconRingActive 1.5s ease-in-out infinite; }
-  @keyframes iconRingActive { 0% { opacity: 0; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.08); } 100% { opacity: 0; transform: scale(1.15); } }
-  .vision-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
-  .vision-card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.65; font-weight: 300; }
-  /* Tech detail tag */
-  .vision-tag { display: inline-block; margin-top: 14px; padding: 4px 10px; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 100px; }
-  .vision-tag.chain { background: var(--teal-dim); color: var(--teal); border: 1px solid var(--teal-border); }
-  .vision-tag.ai { background: var(--purple-dim); color: var(--purple); border: 1px solid rgba(139,92,246,0.25); }
-  .vision-tag.ops { background: var(--amber-dim); color: var(--amber); border: 1px solid var(--amber-border); }
-
-  /* ===== QUOTE ===== */
-  .quote-banner { padding: 100px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; position: relative; z-index: 1; overflow: hidden; }
-  /* Animated flight path lines */
-  .flight-path-svg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; opacity: 0.06; }
-  .flight-path { fill: none; stroke: var(--accent); stroke-width: 1; stroke-dasharray: 8 4; animation: dashAnim 4s linear infinite; }
-  @keyframes dashAnim { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -96; } }
-  .quote-mark { font-family: var(--font-mono); font-size: 60px; color: var(--accent); opacity: 0.3; line-height: 1; margin-bottom: -10px; }
-  .quote-banner blockquote { font-size: clamp(1.4rem, 2.8vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.3; max-width: 800px; margin: 0 auto 24px; }
-  .quote-banner blockquote .gradient-text { background: linear-gradient(135deg, var(--accent), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .quote-banner cite { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); font-style: normal; }
-
-  /* ===== CONTACT ===== */
-  .contact { }
-  .cta-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; }
-  .cta-form-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 48px; position: relative; overflow: hidden; }
-  .cta-form-wrap::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), var(--amber), transparent); }
-  .form-field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 16px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .form-field label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); }
-  .form-field input, .form-field select, .form-field textarea {
-    padding: 13px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-    color: var(--text-primary); font-family: var(--font); font-size: 15px; outline: none; transition: border-color 0.25s;
-  }
-  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
-  .form-field textarea { min-height: 120px; resize: vertical; }
-  .form-field select option { background: var(--card); }
-  .form-submit {
-    width: 100%; padding: 16px; background: linear-gradient(135deg, var(--accent), var(--accent-bright)); color: white;
-    border: none; border-radius: 10px; font-family: var(--font); font-size: 15px; font-weight: 700;
-    letter-spacing: 0.02em; cursor: pointer; margin-top: 8px; transition: all 0.25s;
-    box-shadow: 0 0 24px var(--accent-glow);
-  }
-  .form-submit:hover { transform: translateY(-1px); box-shadow: 0 8px 32px var(--accent-glow); }
-  .cta-info-wrap { display: flex; flex-direction: column; gap: 14px; }
-  .cta-info-wrap h3 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; }
-  .contact-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; align-items: flex-start; gap: 16px; transition: all 0.25s; }
-  .contact-item:hover { border-color: var(--border-bright); background: var(--card); }
-  .contact-icon { width: 40px; height: 40px; background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
-  .contact-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px; }
-  .contact-value { font-size: 0.95rem; font-weight: 600; }
-  .contact-value a { color: var(--accent-bright); text-decoration: none; }
-
-  /* ===== FOOTER ===== */
-  footer { background: var(--bg-alt); border-top: 1px solid var(--border); padding: 64px 0 36px; position: relative; z-index: 1; }
-  .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--border); }
-  .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-  .footer-logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--amber)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: white; }
-  .footer-logo-name { font-size: 16px; font-weight: 700; }
-  .footer-brand p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.65; }
-  .footer-col h4 { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 18px; }
-  .footer-col a { display: block; font-size: 14px; color: var(--text-mid); text-decoration: none; margin-bottom: 10px; font-weight: 300; transition: color 0.2s; }
-  .footer-col a:hover { color: var(--accent-bright); }
-  /* Tech stack footer strip */
-  .footer-tech {
-    display: flex; gap: 12px; flex-wrap: nowrap; margin-top: 20px;
-  }
-  .footer-tech-tag {
-    padding: 4px 10px; border-radius: 100px; font-family: var(--font-mono); font-size: 9px;
-    letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;
-  }
-  .footer-tech-tag.chain { background: var(--teal-dim); color: var(--teal); border: 1px solid var(--teal-border); }
-  .footer-tech-tag.ai { background: var(--purple-dim); color: var(--purple); border: 1px solid rgba(139,92,246,0.2); }
-  .footer-tech-tag.avi { background: var(--amber-dim); color: var(--amber); border: 1px solid var(--amber-border); }
-  .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; color: var(--text-dim); }
-
-  /* ===== HAMBURGER BUTTON ===== */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    cursor: pointer;
-    padding: 8px;
-    background: none;
-    border: 1px solid var(--border-bright);
-    border-radius: 8px;
-    width: 36px; height: 36px;
-    flex-shrink: 0;
-    transition: background 0.2s;
-  }
-  .hamburger:hover { background: var(--accent-dim); }
-  .hamburger span {
-    display: block; width: 16px; height: 2px;
-    background: var(--text-primary); border-radius: 2px;
-    transition: all 0.3s; margin: 0 auto;
-  }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-  /* ===== MOBILE NAV OVERLAY ===== */
-  .mobile-nav {
-    display: none;
-    position: fixed; inset: 0;
-    background: var(--nav-bg);
-    backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px);
-    z-index: 1100;
-    flex-direction: column; align-items: center; justify-content: center;
-    gap: 8px;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.25s;
-  }
-  .mobile-nav.open { opacity: 1; pointer-events: all; }
-  .mobile-nav-close {
-    position: absolute; top: 20px; right: 20px;
-    background: var(--card); border: 1px solid var(--border-bright);
-    border-radius: 50%; width: 40px; height: 40px;
-    font-size: 16px; color: var(--text-mid); cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    transition: all 0.2s;
-  }
-  .mobile-nav-close:hover { color: var(--text-primary); background: var(--accent-dim); }
-  .mobile-nav-link {
-    font-size: 2rem; font-weight: 800; letter-spacing: -0.03em;
-    color: var(--text-primary); text-decoration: none;
-    padding: 10px 24px; border-radius: 12px; transition: all 0.2s;
-  }
-  .mobile-nav-link:hover { color: var(--accent); background: var(--accent-dim); }
-  .mobile-nav-aog {
-    margin-top: 16px; display: flex; align-items: center; gap: 8px;
-    padding: 14px 28px;
-    border: 1px solid rgba(217,95,75,0.35); border-radius: 100px;
-    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em;
-    text-transform: uppercase; color: var(--red); text-decoration: none; transition: all 0.2s;
-  }
-  .mobile-nav-aog:hover { background: rgba(217,95,75,0.08); }
-  .mobile-nav-cta {
-    padding: 14px 32px; background: var(--accent); color: white;
-    font-size: 15px; font-weight: 700; border-radius: 100px; text-decoration: none;
-    letter-spacing: 0.02em; transition: all 0.25s; margin-top: 4px;
-    box-shadow: 0 0 24px var(--accent-glow);
-  }
-  .mobile-nav-cta:hover { background: var(--accent-bright); }
-  .mobile-nav-theme {
-    margin-top: 20px;
-    width: 44px; height: 44px; border-radius: 50%;
-    border: 1px solid var(--border-bright);
-    background: var(--card); color: var(--text-mid);
-    cursor: pointer; display: flex; align-items: center; justify-content: center;
-    font-size: 16px; transition: all 0.2s;
-  }
-  .mobile-nav-theme:hover { color: var(--accent); border-color: var(--accent-border); background: var(--accent-dim); }
-
-  /* ===== RESPONSIVE — TABLET (≤ 1024px) ===== */
-  @media (max-width: 1024px) {
-    .container { padding: 0 32px; }
-    section { padding: 80px 0; }
-    nav { padding: 12px 24px 0; }
-
-    .platform-inner { grid-template-columns: 1fr; gap: 48px; }
-    .diff-layout { grid-template-columns: 1fr; gap: 48px; }
-    .about-layout { grid-template-columns: 1fr; gap: 40px; }
-    .cta-layout { grid-template-columns: 1fr; gap: 32px; }
-    .vision-grid { grid-template-columns: repeat(2, 1fr); }
-    .cap-shell { grid-template-columns: 1fr; }
-    .cap-rail { border-right: none; border-bottom: 1px solid var(--border); padding: 8px 0; }
-    .cap-detail { grid-template-columns: 1fr; gap: 24px; padding: 28px; }
-    .footer-top { grid-template-columns: 1fr 1fr; }
-    .radar-bg { display: none; }
-    .diff-sticky { position: static; }
-    .hero-stat-item { padding: 0 32px; }
-    .quote-banner { padding: 80px 0; }
-  }
-
-  /* ===== RESPONSIVE — MOBILE (≤ 768px) ===== */
-  @media (max-width: 768px) {
-    /* Nav — collapse two-tier into single bar */
-    nav { padding: 10px 16px 0; }
-    .nav-inner { padding: 0; }
-    .nav-status { display: none; }            /* hide top tier */
-    .nav-main { height: 50px; padding: 0 6px 0 14px; }
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
-    .mobile-nav { display: flex; }
-
-    /* Container & Sections */
-    .container { padding: 0 20px; }
-    section { padding: 60px 0; }
-    .section-title { font-size: clamp(1.75rem, 7vw, 2.6rem); }
-    .section-desc { font-size: 0.95rem; }
-
-    /* Hero */
-    .hero { padding: 40px 0 56px; }
-    .hero h1 { padding: 32px 0 24px; }
-    .hero-sub { font-size: 1rem; margin-bottom: 36px; }
-    .hero-badge { padding: 14px 0; }
-    .hero-badge-text { letter-spacing: 0.2em; }
-    .hero-actions { flex-direction: column; gap: 12px; margin-bottom: 44px; }
-    .btn-primary, .btn-aog { width: 100%; justify-content: center; text-align: center; padding: 15px 24px; }
-    .hero-stat-strip { flex-direction: column; gap: 0; padding-top: 24px; }
-    .hero-stat-item { padding: 18px 0; border-right: none; border-bottom: 1px solid var(--border); width: 100%; }
-    .hero-stat-item:last-child { border-bottom: none; }
-    .hero-stat-value { font-size: 1.7rem; }
-
-    /* Services */
-    .cap-detail { padding: 22px; gap: 22px; }
-    .cap-rail-label { padding: 0 18px 12px; }
-    .cap-item { padding: 12px 18px; }
-
-    /* Vision */
-    .vision-grid { grid-template-columns: 1fr; }
-
-    /* Platform */
-    .platform-inner { gap: 40px; }
-    .platform-node { padding: 14px 16px; }
-    .node-icon { width: 38px; height: 38px; font-size: 15px; }
-    .ledger-entry { flex-wrap: wrap; gap: 6px; align-items: center; }
-    .ledger-verified { display: none; }
-    .ledger-time { font-size: 8px; }
-
-    /* About */
-    .about-visual { padding: 28px 24px; }
-    .cred-grid { grid-template-columns: 1fr 1fr; }
-
-    /* Form / Contact */
-    .form-row { grid-template-columns: 1fr; }
-    .cta-form-wrap { padding: 28px 22px; }
-
-    /* Quote */
-    .quote-banner { padding: 60px 0; }
-
-    /* Footer */
-    .footer-top { grid-template-columns: 1fr; gap: 28px; }
-    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; font-size: 10px; }
-  }
-
-  /* ===== RESPONSIVE — SMALL PHONE (≤ 480px) ===== */
-  @media (max-width: 480px) {
-    nav { padding: 8px 12px 0; }
-    .nav-main { height: 46px; padding: 0 5px 0 12px; }
-    .nav-brand-name { font-size: 13px; }
-    .nav-brand-icon { width: 28px; height: 28px; font-size: 10px; }
-    .hamburger { width: 32px; height: 32px; }
-
-    .container { padding: 0 16px; }
-    section { padding: 48px 0; }
-
-    /* Hero */
-    .hero { padding: 32px 0 44px; }
-    .hero-badge { padding: 12px 0; }
-    .hero-badge-text { font-size: 9px; letter-spacing: 0.18em; }
-    .hero-frame { max-width: 320px; }
-    .hero h1 { letter-spacing: -0.03em; padding: 24px 0 20px; }
-    .hero-sub { font-size: 0.9rem; }
-    .hero-stat-value { font-size: 1.5rem; }
-    .hero-stat-label { font-size: 10px; }
-
-    /* Services */
-    .cap-copy h3 { font-size: clamp(1.4rem, 7vw, 1.75rem); }
-    .cap-lead { font-size: 0.92rem; }
-    .widget { padding: 14px; }
-    .widget-event-time { width: 48px; }
-
-    /* Vision */
-    .vision-card { padding: 28px 22px; }
-
-    /* Platform widget */
-    .ai-line-label { width: 80px; font-size: 8px; }
-    .ledger-time { display: none; }
-    .ledger-block-num { width: 48px; font-size: 9px; }
-
-    /* Form */
-    .cta-form-wrap { padding: 20px 16px; }
-    .form-field input, .form-field select, .form-field textarea { font-size: 14px; padding: 11px 13px; }
-
-    /* Quote */
-    .quote-banner { padding: 48px 0; }
-    .quote-mark { font-size: 40px; }
-
-    /* Footer */
-    .footer-top { gap: 24px; }
-    .footer-bottom { font-size: 9px; gap: 6px; }
-
-    /* About */
-    .about-visual { padding: 22px 18px; }
-    .about-visual h3 { font-size: 1.6rem; }
-    .cred-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
-    .cred-item { font-size: 9px; padding: 8px 10px; }
-  }
-</style>
+<meta property="og:image" content="https://onchain.aero/assets/photos/hangar-nose.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://onchain.aero/#org","name":"OnChain Aviation LLC","alternateName":"OnChain Aviation","url":"https://onchain.aero/","logo":"https://onchain.aero/assets/photos/hangar-nose.jpg","image":"https://onchain.aero/assets/photos/hangar-nose.jpg","description":"Founder-operated Gulfstream maintenance in Savannah, Georgia — aircraft management, calendar and hourly inspections, pre-purchase inspection oversight and 24/7 AoG response. Powered by IronFleet aviOS.","telephone":"+1-912-595-7795","email":"mike@onchain.aero","address":{"@type":"PostalAddress","addressLocality":"Savannah","addressRegion":"GA","addressCountry":"US"},"areaServed":[{"@type":"Country","name":"United States"}],"founder":{"@type":"Person","name":"Mike Brown","jobTitle":"Founder, FAA A&P","sameAs":["https://www.linkedin.com/in/gulfstreamguru","https://x.com/GulfstreamGuru"]},"memberOf":{"@type":"Organization","name":"National Business Aviation Association","alternateName":"NBAA","url":"https://nbaa.org/"},"knowsAbout":["Gulfstream maintenance","Aircraft on ground response","Pre-purchase inspection","Aircraft records"],"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"},"sameAs":["https://www.linkedin.com/in/gulfstreamguru","https://x.com/GulfstreamGuru","https://ironfleet.ai"]}
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 47'%3E%3Crect x='1.6' y='1.6' width='60.8' height='43.8' rx='2' fill='%230A0A0B' stroke='%23C4813A' stroke-width='2.4'/%3E%3Ctext x='32' y='31' text-anchor='middle' font-family='Georgia,serif' font-size='24' fill='%23EFECE6'%3EOA%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/InstrumentSerif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/InstrumentSerif-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/InstrumentSans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/photos/hangar-nose.jpg" as="image" fetchpriority="high">
+<link rel="stylesheet" href="assets/d2-prod.css">
+<script>
+  // theme + js flag before paint — avoids flash
+  (function(){try{var t=localStorage.getItem('oc-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}
+  document.documentElement.classList.remove('no-js')})();
+</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="grid-bg"></div>
-
-<!-- NAV — Two-Tier Cockpit -->
-<nav>
-  <div class="nav-inner">
-    <!-- Top tier: status bar (utility) -->
-    <div class="nav-status">
-      <div class="nav-status-left">
-        <span class="nav-status-coords">32°07′N · 081°09′W · KSAV</span>
-      </div>
-      <div class="nav-status-right">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-          <span class="theme-toggle-icon">☀️</span>
-        </button>
-        <span class="nav-divider"></span>
-        <a href="login.html" class="nav-status-link">Login →</a>
-      </div>
-    </div>
-    <!-- Bottom tier: brand + nav links -->
-    <div class="nav-main">
-      <a href="#" class="nav-brand">
-        <div class="nav-brand-icon">OC</div>
-        <div class="nav-brand-name">OnChain Aviation</div>
-      </a>
-      <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#approach">Approach</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
-
-<!-- MOBILE NAV OVERLAY -->
-<div class="mobile-nav" id="mobileNav">
-  <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
-  <a href="#services" class="mobile-nav-link">Services</a>
-  <a href="#approach" class="mobile-nav-link">Approach</a>
-  <a href="#about" class="mobile-nav-link">About</a>
-  <a href="#contact" class="mobile-nav-link">Contact</a>
-  <a href="tel:+19125957795" class="mobile-nav-aog"><span class="aog-dot"></span>24/7 AoG Hotline</a>
-  <a href="login.html" class="mobile-nav-cta">Login →</a>
-  <button class="mobile-nav-theme theme-toggle" aria-label="Toggle dark/light mode">
-    <span class="theme-toggle-icon">☀️</span>
-  </button>
+<div class="util" role="region" aria-label="Utility">
+  <div class="wrap micro"><div class="util-in">
+    <span class="l">32°07′N · 081°09′W &nbsp;·&nbsp; KSAV</span>
+    <span class="r">
+      <button class="theme" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to light theme"><i aria-hidden="true"></i><span class="theme-txt">Theme</span></button>
+      <span class="util-div" aria-hidden="true"></span>
+      <a href="login.html">Operator access →</a>
+    </span>
+  </div></div>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-orb-1"></div>
-  <div class="hero-orb-2"></div>
-  <div class="container">
-    <div class="hero-layout">
-      <div class="hero-frame"></div>
-      <div class="hero-badge">
-        <span class="hero-badge-text">VOSB <span class="sep">·</span> Gulfstream Specialist <span class="sep">·</span> Savannah, GA</span>
-      </div>
-      <div class="hero-frame"></div>
-      <h1>Elite Gulfstream Maintenance.<br><span class="gradient-text">Future-Forward.</span></h1>
-      <p class="hero-sub">Maintenance management, technical support, and AOG for the flight department — airworthiness, vendors, and a shop that answers when the airplane is on the line.</p>
-      <p class="hero-triad">Transparency <span class="sep">/</span> Provenance <span class="sep">/</span> Truth</p>
-      <p class="hero-punch">Truth over trust.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Request Service →</a>
-        <a href="tel:+19125957795" class="btn-aog"><span class="aog-dot" style="background:#C94A3A;"></span>24/7 AoG Hotline</a>
-      </div>
-      <!-- Stat strip -->
-      <div class="hero-stat-strip">
-        <div class="hero-stat-item">
-          <div class="hero-stat-value">22+</div>
-          <div class="hero-stat-label">Years · Flight Line</div>
-        </div>
-        <div class="hero-stat-item">
-          <div class="hero-stat-value sm">GIV – G800</div>
-          <div class="hero-stat-label">Gulfstream Coverage</div>
-        </div>
-        <div class="hero-stat-item">
-          <div class="hero-stat-value">24/7</div>
-          <div class="hero-stat-label">AoG Response</div>
-        </div>
-      </div>
+<header class="hdr" id="hdr">
+  <div class="wrap"><div class="hdr-in">
+    <a href="#top" class="brand" aria-label="OnChain Aviation — home"><span class="brand-mark" aria-hidden="true">OA</span><span class="brand-name">OnChain Aviation</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#services">Services</a><a href="#platform">Platform</a><a href="#records">Records</a><a href="#about">About</a>
+    </nav>
+    <div class="hdr-r">
+      <a href="tel:+19125957795" class="aog-pill"><span class="pulse" aria-hidden="true"></span>AOG 24/7</a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span aria-hidden="true"></span></button>
     </div>
-  </div>
-</section>
+  </div></div>
+</header>
 
-<!-- RIBBON -->
-<div class="ribbon">
-  <div class="ribbon-track">
-    <span class="ribbon-item">Gulfstream G450 <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Gulfstream G500 <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Gulfstream G550 <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Gulfstream G600 <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Gulfstream G650 <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Gulfstream G700 <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Scheduled Maintenance <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">AoG Emergency <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Transparency <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Provenance <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Truth <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Project Management <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Maintenance Management <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Gulfstream G450 <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Gulfstream G500 <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Gulfstream G550 <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Gulfstream G600 <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Gulfstream G650 <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Gulfstream G700 <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Scheduled Maintenance <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">AoG Emergency <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Transparency <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Provenance <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Truth <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Project Management <span class="ribbon-sep">◆</span></span>
-    <span class="ribbon-item">Maintenance Management <span class="ribbon-sep">◆</span></span>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" hidden>
+  <div class="menu-top">
+    <span class="brand"><span class="brand-mark" aria-hidden="true">OA</span><span class="brand-name">OnChain Aviation</span></span>
+    <button class="burger" type="button" id="menuClose" aria-expanded="true" aria-label="Close menu"><span aria-hidden="true"></span></button>
+  </div>
+  <nav class="menu-list" aria-label="Site">
+    <a href="#services"><span class="n">01</span>Services<span class="go">→</span></a>
+    <a href="#platform"><span class="n">02</span>Platform<span class="go">→</span></a>
+    <a href="#records"><span class="n">03</span>Records<span class="go">→</span></a>
+    <a href="#about"><span class="n">04</span>About<span class="go">→</span></a>
+    <a href="#contact"><span class="n">05</span>Contact<span class="go">→</span></a>
+  </nav>
+  <div class="menu-foot">
+    <a href="tel:+19125957795" class="aog"><span>AoG 24/7</span><span>(912) 595-7795</span></a>
+    <div class="row micro"><a href="login.html">Operator access →</a><button class="theme" type="button" data-theme-alt aria-label="Toggle theme"><i aria-hidden="true"></i><span>Theme</span></button></div>
   </div>
 </div>
 
-<!-- SERVICES — Rail + Live Widget -->
-<section class="services" id="services">
-  <div class="container">
-    <div class="services-header">
-      <div class="section-label">What We Do</div>
-      <h2 class="section-title">Pick a capability. <span class="gradient">See it live.</span></h2>
-      <p class="section-desc">Mobile Gulfstream large-cabin maintenance, AOG, scheduled work, and technical support to the flight department — from Savannah / KSAV.</p>
-    </div>
-    <div class="cap-shell">
-      <!-- RAIL -->
-      <div class="cap-rail">
-        <div class="cap-rail-label">Capabilities</div>
-        <div class="cap-item cap-idx active" data-cap="maintain">
-          <span class="cap-item-num">01</span>
-          <span class="cap-item-icon">🔧</span>
-          <span class="cap-item-name">Scheduled Maintenance</span>
-        </div>
-        <div class="cap-item cap-idx aog" data-cap="aog">
-          <span class="cap-item-num">02</span>
-          <span class="cap-item-icon">🚨</span>
-          <span class="cap-item-name">24/7 AoG Response</span>
-        </div>
-        <div class="cap-item cap-idx" data-cap="acquire">
-          <span class="cap-item-num">03</span>
-          <span class="cap-item-icon">📊</span>
-          <span class="cap-item-name">Project Management</span>
-        </div>
-        <div class="cap-item cap-idx" data-cap="optimize">
-          <span class="cap-item-num">04</span>
-          <span class="cap-item-icon">💡</span>
-          <span class="cap-item-name">Technical Support</span>
-        </div>
-      </div>
+<main id="main">
 
-      <!-- DETAIL -->
-      <div class="cap-detail">
-        <div class="cap-copy">
-          <span class="cap-tag" id="cap-tag">Capability 01 · Routine</span>
-          <h3 id="cap-title">Scheduled Maintenance</h3>
-          <p class="cap-lead" id="cap-lead">Light scheduled maintenance for Gulfstream operators — calendar- and hourly-driven inspections, AD compliance, and parts planning and coordination, handled end-to-end so the aircraft stays on schedule.</p>
-          <div class="cap-features" id="cap-features"></div>
-          <a href="#contact" class="cap-cta" id="cap-cta">Request Quote →</a>
-        </div>
-        <div class="widget" id="cap-widget"></div>
-      </div>
-    </div>
+<section class="hero" id="top" aria-labelledby="h-hero">
+  <img class="hero-img" src="assets/photos/hangar-nose.jpg" width="1792" height="1008" alt="" fetchpriority="high" decoding="async">
+  <div class="hero-v1" aria-hidden="true"></div><div class="hero-v2" aria-hidden="true"></div><div class="gridbg" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <p class="badge micro">Maintained by hand <span class="sep">·</span> Verified for life <span class="sep">·</span> Veteran Owned</p>
+    <h1 class="d1" id="h-hero">Elite Gulfstream Maintenance.<br><em class="grad">Future‑Forward.</em></h1>
+    <p class="lede">Twenty-five years in aviation maintenance, twenty of them on Gulfstream. Aircraft management, calendar and hourly inspections, and 24/7 AoG response — every event captured in a record that travels with the tail number.</p>
+    <div class="cta"><a href="#contact" class="btn btn-fill">Request service</a><a href="tel:+19125957795" class="btn btn-aog"><span class="pulse" aria-hidden="true"></span>24/7 AoG Hotline</a></div>
+    <p class="lockup"><span class="micro">Powered by</span><a class="lockup-brand" href="https://ironfleet.ai" rel="noopener" aria-label="IronFleet"><img class="if-dark" src="assets/logos/ironfleet-color-on-dark.svg" width="114" height="32" alt="IronFleet" decoding="async"><img class="if-light" src="assets/logos/ironfleet-color-on-light.svg" width="114" height="32" alt="" aria-hidden="true" decoding="async"></a></p>
   </div>
 </section>
 
-<!-- APPROACH — triad + records discipline -->
-<section class="platform" id="approach">
-  <div class="radar-bg">
-    <div class="radar-circle"></div>
-    <div class="radar-circle"></div>
-    <div class="radar-circle"></div>
-    <div class="radar-circle"></div>
-    <div class="radar-circle"></div>
-    <div class="radar-crosshair-h"></div>
-    <div class="radar-crosshair-v"></div>
-    <div class="radar-sweep"></div>
-    <div class="radar-blip"></div>
-    <div class="radar-blip"></div>
-    <div class="radar-blip"></div>
+<div class="ribbon" aria-hidden="true"><div class="ribbon-track" id="ribbon"></div></div>
+
+<div class="rail" role="region" aria-label="Credentials"><div class="wrap"><div class="rail-in">
+  <div><div class="v">25<small>yrs</small></div><div class="k micro">Aviation maintenance</div></div>
+  <div><div class="v">20<small>yrs</small></div><div class="k micro">On Gulfstream</div></div>
+  <div><div class="v">GIV–G800</div><div class="k micro">Coverage</div></div>
+  <div><div class="v">24/7</div><div class="k micro">AoG response</div></div>
+</div></div></div>
+
+<section class="sec" id="services" aria-labelledby="h-services"><div class="wrap">
+  <div class="sec-head rv">
+    <p class="label micro">What we do</p>
+    <h2 class="d2" id="h-services">Pick a capability. <span class="grad">See it live.</span></h2>
+    <p class="lede">Three tiers, one operator. Managed aircraft, per-event technical work, and advisory — all run on the same platform.</p>
   </div>
+  <div class="cap-shell rv">
+    <div class="cap-rail" role="tablist" aria-label="Capabilities" aria-orientation="vertical">
+      <button class="tab" role="tab" id="tab-manage" aria-controls="panel-manage" aria-selected="true" tabindex="0"><span class="n">01</span><span class="nm">Aircraft Management</span></button>
+      <button class="tab aog" role="tab" id="tab-aog" aria-controls="panel-aog" aria-selected="false" tabindex="-1"><span class="n">02</span><span class="nm">24/7 AoG Response</span></button>
+      <button class="tab" role="tab" id="tab-technical" aria-controls="panel-technical" aria-selected="false" tabindex="-1"><span class="n">03</span><span class="nm">Technical Services</span></button>
+      <button class="tab" role="tab" id="tab-consult" aria-controls="panel-consult" aria-selected="false" tabindex="-1"><span class="n">04</span><span class="nm">Ops &amp; AI Consulting</span></button>
+    </div>
+    <div id="panels"></div>
+  </div>
+</div></section>
 
-  <div class="container">
-    <div class="platform-inner">
-      <div class="platform-left">
-        <div class="section-label">How We Work</div>
-        <h2 class="section-title">Transparency.<br>Provenance.<br><span class="gradient">Truth.</span></h2>
-        <p class="section-desc">The shop is built for a Director of Maintenance: airworthiness, vendors, AOG, and technical support to the flight department. Records discipline — not a live chain, not cryptographic theater.</p>
-        <div class="platform-nodes">
-          <div class="platform-node blockchain">
-            <div class="node-icon blockchain">01</div>
-            <div class="node-content">
-              <div class="node-label teal">Transparency</div>
-              <div class="node-desc">The flight department sees the work, the parts, and the sign-off. No black box. No “trust us.”</div>
-            </div>
-          </div>
-          <div class="platform-node aviation">
-            <div class="node-icon aviation">02</div>
-            <div class="node-content">
-              <div class="node-label amber">Provenance</div>
-              <div class="node-desc">Traceability of work, parts, and who signed what. Records discipline — not immutability-as-blockchain.</div>
-            </div>
-          </div>
-          <div class="platform-node ai">
-            <div class="node-icon ai">03</div>
-            <div class="node-content">
-              <div class="node-label purple">Truth</div>
-              <div class="node-desc">We say what we do. Truth over trust — the punch line, not a slogan on a fake ledger.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="platform-right">
-        <div class="ledger-widget">
-          <div class="ledger-header">
-            <div class="ledger-title">What provenance means here</div>
-          </div>
-          <div class="ledger-body">
-            <div class="ledger-entry">
-              <div class="ledger-block-num">WORK</div>
-              <div class="ledger-info">
-                <div class="ledger-event">What was done</div>
-                <div class="ledger-hash">The inspection, the squawk, the release — written so the next tech can follow it.</div>
-              </div>
-            </div>
-            <div class="ledger-entry">
-              <div class="ledger-block-num">PARTS</div>
-              <div class="ledger-info">
-                <div class="ledger-event">What went on the airplane</div>
-                <div class="ledger-hash">Traceability of parts and paperwork — source, identity, and where they landed.</div>
-              </div>
-            </div>
-            <div class="ledger-entry">
-              <div class="ledger-block-num">SIGN</div>
-              <div class="ledger-info">
-                <div class="ledger-event">Who signed what</div>
-                <div class="ledger-hash">Name, certificate, and authority on the work — not a hash on a public chain.</div>
-              </div>
-            </div>
-            <div class="ledger-entry">
-              <div class="ledger-block-num">TRUTH</div>
-              <div class="ledger-info">
-                <div class="ledger-event">Truth over trust</div>
-                <div class="ledger-hash">The record should stand on its own. That is the discipline. That is the name.</div>
-              </div>
-            </div>
-          </div>
-          <div style="padding: 16px 20px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px;">
-            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);margin-bottom:4px;">What we do</div>
-            <div class="status-item">
-              <div class="status-dot live"></div>
-              <div class="status-text">Scheduled Maintenance</div>
-              <div class="status-badge badge-teal">Available</div>
-            </div>
-            <div class="status-item">
-              <div class="status-dot aog-live"></div>
-              <div class="status-text">24/7 AoG Response</div>
-              <div class="status-badge badge-red">Live</div>
-            </div>
-            <div class="status-item">
-              <div class="status-dot booking"></div>
-              <div class="status-text">Technical Support</div>
-              <div class="status-badge badge-blue">Flight Dept</div>
-            </div>
-          </div>
-        </div>
-      </div>
+<section class="sec platform" id="platform" aria-labelledby="h-platform"><div class="gridbg" aria-hidden="true" style="-webkit-mask-image:linear-gradient(0deg,rgba(0,0,0,.7),transparent 60%);mask-image:linear-gradient(0deg,rgba(0,0,0,.7),transparent 60%)"></div><div class="wrap"><div class="plat">
+  <div class="rv">
+    <p class="label micro">The platform</p>
+    <h2 class="d2" id="h-platform">One platform.<br><span class="grad">Powered by IronFleet.</span></h2>
+    <p class="lede">OnChain Aviation runs on IronFleet aviOS — records intelligence, compliance workflow and provenance for every aircraft we touch. We are both a builder of the platform and its anchor customer: the shop hardens the software before anyone else sees it.</p>
+    <div class="nodes">
+      <div class="node"><div><p class="lab teal">Records intelligence</p><h3>Every logbook, searchable in seconds</h3><p>Manuals, regulatory data and the aircraft’s own history in one place — so “when was this last done” is a query, not an afternoon.</p></div><div class="stat"><small>Platform</small>aviOS</div></div>
+      <div class="node"><div><p class="lab purple">Compliance workflow</p><h3>Due lists that never go stale</h3><p>ADs, calendar and hourly items tracked against the aircraft as it flies. Work orders open, close and sign off inside the same record.</p></div><div class="stat"><small>Status</small>In use on our aircraft</div></div>
+      <div class="node"><div><p class="lab amber">Provenance</p><h3>A history the next owner can trust</h3><p>Every event captured once and carried with the tail number. On-chain anchoring stays on the roadmap for when it earns its place — the record is what matters today.</p></div><div class="stat"><small>Ownership</small>Founder-operated</div></div>
     </div>
   </div>
-</section>
-
-<!-- DIFFERENTIATOR -->
-<section class="diff" id="diff">
-  <div class="container">
-    <div class="diff-layout">
-      <div class="diff-sticky">
-        <div class="section-label">The OnChain Difference</div>
-        <h2 class="section-title">Built for the <span class="gradient">flight department.</span></h2>
-        <div class="diff-tagline">
-          <p>Most shops sell a visit. We work the airworthiness program, the vendor list, and the grounding — the way a DoM needs a shop to work.</p>
-          <p>Transparency. Provenance. Truth.</p>
-          <p><strong>Truth over trust.</strong></p>
-        </div>
-      </div>
-      <div class="diff-items">
-        <div class="diff-item">
-          <div class="diff-num">01</div>
-          <h4>DoM-Shaped Support</h4>
-          <p>Airworthiness, vendors, AOG, and technical support to the flight department. Maintenance management — not a ticket queue, not a staffed CAMO held out as if it were live.</p>
-        </div>
-        <div class="diff-item">
-          <div class="diff-num">02</div>
-          <h4>Records Discipline · Provenance</h4>
-          <p>Traceability of work, parts, and who signed what. That is provenance. Not a live chain. Not cryptographic proof. Not records that “can’t be changed.”</p>
-        </div>
-        <div class="diff-item">
-          <div class="diff-num">03</div>
-          <h4>Shop to the Airplane</h4>
-          <p>Mobile Gulfstream large-cabin maintenance. We bring the shop to the aircraft when the work is on the line — a capability, not a slogan.</p>
-        </div>
-        <div class="diff-item">
-          <div class="diff-num">04</div>
-          <h4>Veteran Discipline · VOSB</h4>
-          <p>USMC veteran ownership. VOSB. Discipline and accountability in the work order — not stamped on a certificate and forgotten.</p>
-        </div>
-      </div>
+  <div class="rv">
+    <div class="ledger" role="table" aria-label="Aircraft record, illustrative">
+      <div class="l-head" role="row"><span class="t" role="columnheader">Aircraft record</span><span class="c" role="columnheader">Records current</span></div>
+      <div class="l-entry" role="row"><span class="b" role="cell">WO 0412</span><div role="cell"><div class="e">12-month calendar inspection — G550</div><div class="h">7 findings · closed · signed off</div></div><span class="ok" role="cell">Recorded</span></div>
+      <div class="l-entry" role="row"><span class="b" role="cell">WO 0411</span><div role="cell"><div class="e">AoG — hydraulic pump replacement — G450</div><div class="h">Part traced · returned to service</div></div><span class="ok" role="cell">Recorded</span></div>
+      <div class="l-entry" role="row"><span class="b" role="cell">WO 0410</span><div role="cell"><div class="e">Pre-purchase inspection report — G650</div><div class="h">Records audit · owner’s representative</div></div><span class="ok" role="cell">Recorded</span></div>
+      <div class="l-entry" role="row"><span class="b" role="cell">WO 0409</span><div role="cell"><div class="e">600-hour inspection — G550</div><div class="h">AD compliance current · due list updated</div></div><span class="ok" role="cell">Recorded</span></div>
+      <div class="l-foot"><span>Illustrative · not customer data</span><span>IronFleet aviOS</span></div>
     </div>
   </div>
-</section>
+</div></div></section>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="container">
-    <div class="section-label" style="margin-bottom:40px;">The Founder</div>
-    <div class="about-layout">
-      <div class="about-visual">
-        <!-- HUD brackets -->
-        <div class="hud-bracket tl"></div>
-        <div class="hud-bracket tr"></div>
-        <div class="hud-bracket bl"></div>
-        <div class="hud-bracket br"></div>
-        <div class="about-visual-inner">
-          <div class="about-eyebrow">Founder & Lead Technician</div>
-          <h3>Mike Brown</h3>
-          <a href="gulfstreamguru.html" class="founder-handle-link">@gulfstreamguru <span aria-hidden="true">→</span></a>
-          <div class="about-visual-title">22+ Years of Hands-On Aviation Maintenance · Gulfstream Specialist · USMC Veteran</div>
-          <div class="cred-grid">
-            <div class="cred-item"><span class="cred-dot"></span>A&P Certified</div>
-            <div class="cred-item"><span class="cred-dot"></span>NCATT AET</div>
-            <div class="cred-item"><span class="cred-dot"></span>G650 Master Tech</div>
-            <div class="cred-item"><span class="cred-dot"></span>Avionics Master Tech</div>
-            <div class="cred-item"><span class="cred-dot"></span>USMC Veteran</div>
-            <div class="cred-item"><span class="cred-dot"></span>VOSB</div>
-          </div>
-          <!-- HUD readout -->
-          <div class="hud-readout">
-            <div class="hud-row"><span class="hud-key">CERT STATUS</span><span class="hud-val">A&P · CURRENT</span></div>
-            <div class="hud-row"><span class="hud-key">SPECIALIZATION</span><span class="hud-val">Gulfstream Fleet</span></div>
-            <div class="hud-row"><span class="hud-key">YEARS EXP</span><span class="hud-val">22+ YRS</span></div>
-            <div class="hud-row"><span class="hud-key">ENTITY</span><span class="hud-val">VOSB · LLC</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="about-text">
-        <blockquote>"I kept waiting for someone to build the maintenance company I wanted to work for. Eventually I figured I'd just build it myself."</blockquote>
-        <p>OnChain Aviation is Mike Brown’s shop. The owner is the technician — 22+ years of hands-on aviation maintenance, specialized in Gulfstream, out of Savannah / Pooler / KSAV. That fact lives here, not as the first thing you see.</p>
-        <p>USMC veteran. VOSB. A&amp;P. Discipline and accountability are how the work gets signed — not a slogan, not “combat veteran,” not a certificate on the wall.</p>
-        <p>The name is a commitment to provenance: knowing what was done, which parts went on, and who signed. Not a live chain. Truth over trust.</p>
-      </div>
-    </div>
+<section class="sec proof" id="records" aria-labelledby="h-records"><div class="wrap"><div class="pgrid">
+  <div class="rv">
+    <p class="label micro">Provenance</p>
+    <h2 class="d2" id="h-records">A logbook that leaves with the aircraft.</h2>
+    <p class="lede">Maintenance records decide what an aircraft is worth. Ours are written once, kept current, and readable by whoever you authorise — at sale, at audit, at the next input.</p>
+    <ol class="psteps">
+      <li class="pstep"><span class="n">01</span><div><h3>The work is performed</h3><p>Inspection, repair or scheduled task completed and signed off exactly as it always has been.</p></div></li>
+      <li class="pstep"><span class="n">02</span><div><h3>The record is captured</h3><p>The entry, findings and sign-off are recorded in aviOS against the aircraft — not left as a PDF in someone’s inbox.</p></div></li>
+      <li class="pstep"><span class="n">03</span><div><h3>Anyone you authorise can read it</h3><p>A buyer, an insurer or a DOM sees the same history you do, in the order it happened — without calling us.</p></div></li>
+    </ol>
   </div>
-</section>
+  <figure class="pfig rv"><img src="assets/photos/turbine-dark.jpg" width="1400" height="933" alt="Turbine blade detail" loading="lazy" decoding="async"></figure>
+</div></div></section>
 
-<!-- HOW WE SUPPORT THE FLIGHT DEPT — present tense, no hope-to-do -->
-<section class="vision" id="support">
-  <div class="container">
-    <div class="vision-center">
-      <div class="section-label">What We Do</div>
-      <h2 class="section-title">Support the <span class="gradient">flight department</span></h2>
-      <p class="section-desc">Say what we do. Maintenance management, technical support, and AOG — not a path we hope to walk.</p>
-    </div>
-    <div class="vision-grid">
-      <div class="vision-card">
-        <div class="vision-icon chain">01</div>
-        <h4>Maintenance Management</h4>
-        <p>Airworthiness program support, vendor coordination, and the records discipline a DoM actually uses. Not aircraft management. Not a staffed CAMO.</p>
-        <span class="vision-tag chain">DoM-shaped</span>
-      </div>
-      <div class="vision-card">
-        <div class="vision-icon ops-icon">02</div>
-        <h4>Technical Support</h4>
-        <p>A Gulfstream technician on the line with the flight department — squawks, parts, and the call before the airplane is grounded.</p>
-        <span class="vision-tag ops">Flight Dept</span>
-      </div>
-      <div class="vision-card">
-        <div class="vision-icon ai-icon">03</div>
-        <h4>AOG &amp; Mobile MX</h4>
-        <p>24/7 AOG and scheduled large-cabin work. Shop to the airplane when the work is on the line — out of Savannah / KSAV.</p>
-        <span class="vision-tag ai">On the line</span>
-      </div>
-    </div>
+<section class="sec" id="about" aria-labelledby="h-about"><div class="wrap"><div class="diff">
+  <div class="diff-copy rv">
+    <p class="label micro">The OnChain difference</p>
+    <h2 class="d2" id="h-about">Not your average <span class="grad">maintenance shop.</span></h2>
+    <p>Most providers treat aircraft like commodities. Generic troubleshooting, reactive repairs, paper records that disappear at resale.</p>
+    <p>Everyone else brings technology to aviation. <strong>We bring aviation into technology.</strong></p>
   </div>
-</section>
+  <ol class="ditems rv">
+    <li class="ditem"><span class="n">01</span><div><h3>Operator-built, not outsider-pitched</h3><p>Founded by a twenty-five-year aviation maintenance veteran who has turned wrenches on Gulfstreams at 2am. Every process built from direct experience.</p></div></li>
+    <li class="ditem"><span class="n">02</span><div><h3>Records built for the next owner</h3><p>Every work order, inspection and part replaced — captured once, kept with the aircraft, and ready for the pre-buy before anyone asks.</p></div></li>
+    <li class="ditem"><span class="n">03</span><div><h3>AI on the flight line, not in a pitch deck</h3><p>IronFleet aviOS puts the manuals, regulatory data and the aircraft’s history in front of the technician doing the job. Less research, fewer open questions at 2am.</p></div></li>
+    <li class="ditem"><span class="n">04</span><div><h3>Veteran discipline · VOSB</h3><p>USMC veteran ownership. Discipline and accountability in every work order — not just stamped on a certificate.</p></div></li>
+  </ol>
+</div></div></section>
 
-<!-- QUOTE BANNER -->
-<div class="quote-banner">
-  <!-- Animated flight paths -->
-  <svg class="flight-path-svg" viewBox="0 0 1440 300" preserveAspectRatio="none">
-    <path class="flight-path" d="M0,150 C200,80 400,220 600,150 C800,80 1000,220 1200,150 C1300,110 1380,170 1440,150"/>
-    <path class="flight-path" style="animation-delay:-2s" d="M0,200 C300,120 600,280 900,200 C1100,140 1300,220 1440,180"/>
-    <path class="flight-path" style="animation-delay:-1s" d="M0,100 C250,160 500,50 750,100 C1000,150 1200,80 1440,120"/>
-  </svg>
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="quote-mark">"</div>
-    <blockquote>Transparency. Provenance. Truth.<br><span class="gradient-text">Truth over trust.</span></blockquote>
-    <cite>— Mike Brown, Founder · OnChain Aviation LLC</cite>
+<section class="sec faq" id="faq" aria-labelledby="h-faq"><div class="wrap"><div class="fgrid">
+  <div class="rv">
+    <p class="label micro">Questions</p>
+    <h2 class="d2" id="h-faq">What a DOM <span class="grad">asks first.</span></h2>
+    <p class="lede">Straight answers. Anything not covered here, call the hotline or send the form below.</p>
   </div>
-</div>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="section-label" style="margin-bottom:16px;">Get In Touch</div>
-    <h2 class="section-title" style="margin-bottom:48px;">Request <span class="gradient">Service</span></h2>
-    <div class="cta-layout">
-      <div class="cta-form-wrap">
-        <form onsubmit="return false;">
-          <div class="form-row">
-            <div class="form-field"><label>First Name</label><input type="text" placeholder="Michael"></div>
-            <div class="form-field"><label>Last Name</label><input type="text" placeholder="Smith"></div>
-          </div>
-          <div class="form-field"><label>Email</label><input type="email" placeholder="ops@yourflight.com"></div>
-          <div class="form-field"><label>Aircraft Tail Number</label><input type="text" placeholder="N123GV"></div>
-          <div class="form-field">
-            <label>Service Needed</label>
-            <select>
-              <option value="">Select a service...</option>
-              <option>Scheduled Maintenance</option>
-              <option>AoG Emergency Response</option>
-              <option>Project Management</option>
-              <option>Technical Support</option>
-              <option>Pre-Buy Inspection</option>
-            </select>
-          </div>
-          <div class="form-field"><label>Message</label><textarea placeholder="Describe your maintenance needs..."></textarea></div>
-          <button type="submit" class="form-submit">Send Request →</button>
-        </form>
-      </div>
-      <div class="cta-info-wrap">
-        <h3>Let's Talk About Your Aircraft.</h3>
-        <div class="contact-item">
-          <div class="contact-icon">👤</div>
-          <div><div class="contact-label">Point of Contact</div><div class="contact-value">Mike Brown</div></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div><div class="contact-label">Location</div><div class="contact-value">Savannah / Pooler, GA · KSAV</div></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">🚨</div>
-          <div><div class="contact-label">24/7 AoG Hotline</div><div class="contact-value"><a href="tel:+19125957795">+1 (912) 595-7795</a></div></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">✉️</div>
-          <div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:mike@onchain.aero">mike@onchain.aero</a></div></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">⏱️</div>
-          <div><div class="contact-label">Response Time</div><div class="contact-value">Within 2 hours for AoG events</div></div>
-        </div>
-      </div>
-    </div>
+  <div class="faq-list rv">
+    <details class="qa" open><summary><span>Which Gulfstream models do you work on?</span><i aria-hidden="true"></i></summary><div class="qa-a"><p>GIV through G800, including the G280 family. Twenty-five years in aviation maintenance, twenty of them on Gulfstream — airframe, powerplant and systems.</p></div></details>
+    <details class="qa"><summary><span>Are you mobile? Where do you respond?</span><i aria-hidden="true"></i></summary><div class="qa-a"><p>Yes. We are a mobile operation based at Savannah (KSAV). On-site service at your home base or your preferred facility; AoG response travels wherever the aircraft is.</p></div></details>
+    <details class="qa"><summary><span>What is your AoG response?</span><i aria-hidden="true"></i></summary><div class="qa-a"><p>One number, any hour: (912) 595-7795. Triage starts on the phone, parts are sourced in parallel, and a technician is moving before the quote is signed. Managed aircraft go to the front of the line.</p></div></details>
+    <details class="qa"><summary><span>Do you do pre-purchase inspections?</span><i aria-hidden="true"></i></summary><div class="qa-a"><p>We represent the buyer through the PPI — records and logbook audit, AD and compliance review, oversight of the inspecting facility, and a written report from LOI to closing. It is often the first job before a management agreement.</p></div></details>
+    <details class="qa"><summary><span>What does aircraft management include?</span><i aria-hidden="true"></i></summary><div class="qa-a"><p>One A&amp;P accountable for the maintenance program, the records, the vendors and the schedule. Calendar, hourly and light scheduled events planned and tracked; AD compliance and due lists kept current in IronFleet aviOS; sourcing and sign-off on any work sent out; priority AoG and preferred rates.</p></div></details>
+    <details class="qa"><summary><span>Do you work with management companies and Part 135 operators?</span><i aria-hidden="true"></i></summary><div class="qa-a"><p>Yes — Part 91 flight departments, Part 135 operators and management companies with Gulfstream aircraft in the fleet. Fleet arrangements are scoped per aircraft.</p></div></details>
+    <details class="qa"><summary><span>What are your credentials?</span><i aria-hidden="true"></i></summary><div class="qa-a"><p>FAA Airframe &amp; Powerplant. USMC veteran; Veteran-Owned Small Business (VOSB). NBAA member. Part 145 repair-station application in progress.</p></div></details>
   </div>
-</section>
+</div></div></section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <div class="footer-logo-icon">OC</div>
-          <div class="footer-logo-name">OnChain Aviation</div>
-        </div>
-        <p>Elite Gulfstream Maintenance. Future-Forward. Transparency. Provenance. Truth. Truth over trust. VOSB. Savannah / KSAV.</p>
-        <div class="footer-tech">
-          <span class="footer-tech-tag chain">Transparency</span>
-          <span class="footer-tech-tag avi">Provenance</span>
-          <span class="footer-tech-tag ai">Truth</span>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="#services">Scheduled Maintenance</a>
-        <a href="#services">AoG Response</a>
-        <a href="#services">Project Management</a>
-        <a href="#services">Technical Support</a>
-      </div>
-      <div class="footer-col">
-        <h4>Shop</h4>
-        <a href="#approach">Approach</a>
-        <a href="#about">About</a>
-        <a href="gulfstreamguru.html">@GulfstreamGuru</a>
-        <a href="login.html">Login</a>
-      </div>
-      <div class="footer-col">
-        <h4>Credentials</h4>
-        <a href="#about">VOSB</a>
-        <a href="#about">A&amp;P</a>
-        <a href="#about">USMC Veteran</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="eula.html">EULA</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 OnChain Aviation LLC · All Rights Reserved</span>
-      <span>Truth over trust · VOSB · Built on the flight line</span>
-    </div>
+<section class="sec contact" id="contact" aria-labelledby="h-contact"><div class="wrap">
+  <div class="sec-head rv">
+    <p class="label micro">Get in touch</p>
+    <h2 class="d2" id="h-contact">Request <span class="grad">service.</span></h2>
   </div>
-</footer>
+  <div class="cgrid">
+    <form class="form rv" id="rfq" novalidate action="https://formsubmit.co/mike@onchain.aero" method="POST" data-endpoint="https://formsubmit.co/ajax/mike@onchain.aero">
+      <input type="hidden" name="_subject" value="Service request — onchain.aero"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false">
+      <div class="frow">
+        <div class="field"><label for="fn">First name <span class="req" aria-hidden="true">*</span></label><input class="ctl" id="fn" name="first_name" type="text" autocomplete="given-name" required placeholder="Michael"></div>
+        <div class="field"><label for="ln">Last name <span class="req" aria-hidden="true">*</span></label><input class="ctl" id="ln" name="last_name" type="text" autocomplete="family-name" required placeholder="Smith"></div>
+      </div>
+      <div class="field"><label for="em">Email <span class="req" aria-hidden="true">*</span></label><input class="ctl" id="em" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="ops@example.com"></div>
+      <div class="frow">
+        <div class="field"><label for="tail">Aircraft tail number</label><input class="ctl" id="tail" name="tail" type="text" autocomplete="off" autocapitalize="characters" placeholder="N-number"></div>
+        <div class="field"><label for="svc">Service needed <span class="req" aria-hidden="true">*</span></label><div class="sel"><select class="ctl" id="svc" name="service" required><option value="">Select…</option><option>Aircraft Management</option><option>AoG Response</option><option>Technical Services</option><option>Operations &amp; AI Consulting</option><option>Pre-purchase Inspection</option></select></div></div>
+      </div>
+      <div class="field"><label for="msg">Message</label><textarea class="ctl" id="msg" name="message" placeholder="Tell us what the aircraft is doing."></textarea></div>
+      <div class="hp" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <div><button type="submit" class="btn btn-fill">Send request</button></div>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+    <address class="cinfo rv">
+      <h3 class="d3">Let's talk about your aircraft.</h3>
+      <div class="ci"><span class="k">Point of contact</span><span>Mike Brown · Founder, FAA A&amp;P</span></div>
+      <div class="ci"><span class="k">Location</span><span>Savannah, Georgia · KSAV</span></div>
+      <div class="ci"><span class="k">24/7 AoG hotline</span><a href="tel:+19125957795">(912) 595-7795</a></div>
+      <div class="ci"><span class="k">Email</span><a href="mailto:mike@onchain.aero">mike@onchain.aero</a></div>
+      <div class="ci"><span class="k">Response</span><span>Same day · AoG by phone, any hour</span></div>
+      <div class="ci"><span class="k">Memberships</span><span>NBAA · VOSB</span></div>
+    </address>
+  </div>
+</div></section>
 
-<!-- Dark / Light mode toggle -->
-<script>
-  (function() {
-    const root  = document.documentElement;
-    const btns  = document.querySelectorAll('.theme-toggle');
-    const icons = document.querySelectorAll('.theme-toggle-icon');
+</main>
 
-    // Restore saved preference, default = dark
-    const saved = localStorage.getItem('oc-theme') || 'dark';
-    applyTheme(saved);
+<footer class="foot"><div class="wrap">
+  <div class="f-top">
+    <div class="f-brand">
+      <span class="brand"><span class="brand-mark" aria-hidden="true">OA</span><span class="brand-name">OnChain Aviation</span></span>
+      <p>Gulfstream maintenance built from twenty-five years in aviation. Powered by IronFleet. Veteran-owned. NBAA member.</p>
+      <div class="f-tags"><span class="teal">Powered by IronFleet</span><span class="purple">NBAA Member</span><span class="amber">GIV–G800</span></div>
+    </div>
+    <nav class="f-col" aria-label="Services"><h3>Services</h3><a href="#services-manage">Aircraft Management</a><a href="#services-aog">AoG Response</a><a href="#services-technical">Technical Services</a><a href="#services-consult">Operations &amp; AI Consulting</a><a href="#faq">Questions</a></nav>
+    <nav class="f-col" aria-label="Platform"><h3>Platform</h3><a href="#platform">IronFleet aviOS</a><a href="#records">Aircraft records</a><a href="https://ironfleet.ai" rel="noopener">ironfleet.ai ↗</a><a href="#about">About</a></nav>
+    <nav class="f-col" aria-label="Credentials"><h3>Credentials</h3><a href="#about">FAA A&amp;P</a><a href="#about">VOSB · USMC Veteran</a><a href="https://nbaa.org/" rel="noopener">NBAA Member ↗</a><a href="https://www.linkedin.com/in/gulfstreamguru" rel="noopener">LinkedIn ↗</a><a href="https://x.com/GulfstreamGuru" rel="noopener">@GulfstreamGuru ↗</a></nav>
+  </div>
+  <div class="f-bot micro"><span>© 2026 OnChain Aviation LLC · Savannah, GA · <a href="privacy.html">Privacy</a></span><span>Powered by IronFleet · NBAA Member · Built on the flight line</span></div>
+</div></footer>
 
-    btns.forEach(btn => btn.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-      const next    = current === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
-      localStorage.setItem('oc-theme', next);
-    }));
-
-    function applyTheme(theme) {
-      if (theme === 'light') {
-        root.setAttribute('data-theme', 'light');
-        icons.forEach(i => i.textContent = '🌙');
-        btns.forEach(b => b.setAttribute('aria-label', 'Switch to dark mode'));
-      } else {
-        root.removeAttribute('data-theme');
-        icons.forEach(i => i.textContent = '☀️');
-        btns.forEach(b => b.setAttribute('aria-label', 'Switch to light mode'));
-      }
-    }
-  })();
-</script>
-
-<!-- What We Do · capability switcher (Rail + Live Widget) -->
-<script>
-(function() {
-  // Bar widget rows: [label, percent, isFull?]
-  // Event widget rows: [time, headline, sub]
-  const data = {
-    maintain: {
-      tag: 'Capability 01 · Routine',
-      title: 'Scheduled Maintenance',
-      lead: 'Light scheduled maintenance for Gulfstream operators — calendar- and hourly-driven inspections, AD compliance, and parts planning and coordination, handled end-to-end so the aircraft stays on schedule.',
-      tags: ['Calendar Inspections', 'Hourly Inspections', 'AD Compliance', 'Parts Coordination'],
-      features: [
-        ['Calendar Inspections', 'Light scheduled events on the calendar plan'],
-        ['Hourly Inspections', 'Hour-driven tasks tracked and timed'],
-        ['AD Compliance', 'Tracking, accomplishment, and sign-off'],
-        ['Parts Planning', 'Sourced and staged before downtime'],
-      ],
-      cta: { text: 'Request Quote →', href: '#contact', aog: false },
-      widget: {
-        type: 'bars',
-        title: 'Inspection Schedule',
-        status: 'On Plan',
-        statusColor: 'var(--green)',
-        rows: [
-          ['12-mo Calendar', 74],
-          ['36-mo Calendar', 42],
-          ['600-hr', 88],
-          ['AD Compliance', 100, true],
-        ],
-      },
-    },
-    aog: {
-      tag: 'Capability 02 · 24/7 Coverage',
-      title: 'AoG Emergency Response',
-      lead: 'When your Gulfstream is grounded, every minute counts. Rapid remote diagnosis, on-site repair, and parts sourcing — backed by 22+ years of flight line expertise. One call, one number, any hour.',
-      tags: ['24/7 Availability', 'Remote Diagnosis', 'Mobile Repair', 'Parts Sourcing'],
-      features: [
-        ['24/7 Hotline', 'Live triage from a real Gulfstream tech'],
-        ['Remote Diagnosis', 'Direction before parts ship'],
-        ['On-Site Repair', 'Mobile response — shop to the airplane'],
-        ['Parts Sourcing', 'Network access when you need it now'],
-      ],
-      cta: { text: 'Call AoG Hotline →', href: 'tel:+19125957795', aog: true },
-      widget: {
-        type: 'events',
-        title: 'AoG · How we answer',
-        status: '24/7',
-        statusColor: 'var(--red)',
-        statusPulse: true,
-        rows: [
-          ['01', 'Hotline', 'One number. A technician answers.'],
-          ['02', 'Triage & direction', 'Remote diagnosis before parts move.'],
-          ['03', 'On-site', 'Shop to the airplane when the work is on the line.'],
-        ],
-      },
-    },
-    acquire: {
-      tag: 'Capability 03 · Transactional',
-      title: 'Aviation Project Management',
-      lead: 'Transactional support for Gulfstream buyers and sellers — pre-purchase inspections, on-site surveys, records review, and new aircraft delivery acceptance. Boots-on-the-ground due diligence and project management from LOI to closing.',
-      tags: ['Pre-Purchase Inspection', 'On-Site Survey', 'Records Review', 'New Aircraft Delivery'],
-      features: [
-        ['Pre-Purchase Inspection', 'Hands-on, technical due diligence'],
-        ['On-Site Survey', 'In-person walk and condition report'],
-        ['Records Review', 'Logbook, AD, and compliance audit'],
-        ['New Aircraft Delivery', 'Acceptance, oversight, and turnover'],
-      ],
-      cta: { text: 'Learn More →', href: '#contact', aog: false },
-      widget: {
-        type: 'status',
-        title: 'PPI Checklist',
-        status: 'Template',
-        statusColor: 'var(--accent-bright)',
-        rows: [
-          ['Records Audit',   '✓ Complete',   'var(--green)'],
-          ['AD Compliance',   '✓ Complete',   'var(--green)'],
-          ['Logbook Review',  'In Progress',  'var(--accent-bright)'],
-          ['Borescope',       'Scheduled',    'var(--text-dim)'],
-          ['Test Flight',     'Pending',      'var(--text-dim)'],
-        ],
-      },
-    },
-    optimize: {
-      tag: 'Capability 04 · Flight Department',
-      title: 'Technical Support',
-      lead: 'Technical support to the flight department — airworthiness questions, vendor coordination, and maintenance-management help when the DoM needs a shop that answers like a shop.',
-      tags: ['Tech Support', 'Vendors', 'Airworthiness', 'Records Discipline'],
-      features: [
-        ['Technical Support', 'A Gulfstream tech on the line with the department'],
-        ['Vendor Coordination', 'The vendor list, not a black box'],
-        ['Airworthiness Support', 'ADs, inspections, and the program of record'],
-        ['Records Discipline', 'What was done, which parts, who signed'],
-      ],
-      cta: { text: 'Schedule Call →', href: '#contact', aog: false },
-      widget: {
-        type: 'status',
-        title: 'Support to the department',
-        status: 'Available',
-        statusColor: 'var(--accent-bright)',
-        rows: [
-          ['Squawk / tech call', 'Open',         'var(--accent-bright)'],
-          ['Vendor question',   'Open',         'var(--accent-bright)'],
-          ['AD / program',      'On the work',  'var(--green)'],
-          ['Records / sign-off','Provenance',   'var(--green)'],
-        ],
-      },
-    },
-  };
-
-  const tagEl    = document.getElementById('cap-tag');
-  const titleEl  = document.getElementById('cap-title');
-  const leadEl   = document.getElementById('cap-lead');
-  const featsEl  = document.getElementById('cap-features');
-  const ctaEl    = document.getElementById('cap-cta');
-  const widgetEl = document.getElementById('cap-widget');
-  const idxItems = document.querySelectorAll('.cap-idx');
-
-  function featureRow(head, sub) {
-    const row = document.createElement('div');
-    row.className = 'cap-feature';
-    row.innerHTML = '<span class="cap-feature-check">✓</span><span class="cap-feature-text">' +
-      head + '<small>' + sub + '</small></span>';
-    return row;
-  }
-  function renderWidget(w) {
-    let body = '';
-    if (w.type === 'bars') {
-      body = w.rows.map(([label, pct, full]) =>
-        '<div class="widget-row">' +
-          '<span class="widget-row-label">' + label + '</span>' +
-          '<div class="widget-bar"><div class="widget-bar-fill ' + (full ? 'full' : '') +
-          '" style="width:' + pct + '%"></div></div>' +
-          '<span class="widget-row-val">' + pct + '%</span>' +
-        '</div>'
-      ).join('');
-    } else if (w.type === 'events') {
-      body = w.rows.map(([time, head, sub]) =>
-        '<div class="widget-event">' +
-          '<span class="widget-event-time">' + time + '</span>' +
-          '<span class="widget-event-text">' + head + '<small>' + sub + '</small></span>' +
-        '</div>'
-      ).join('');
-    } else if (w.type === 'status') {
-      body = w.rows.map(([label, value, color]) =>
-        '<div class="widget-row">' +
-          '<span class="widget-row-label">' + label + '</span>' +
-          '<span class="widget-row-val" style="color:' + color + ';">' + value + '</span>' +
-        '</div>'
-      ).join('');
-    }
-    const dotStyle = 'background:' + w.statusColor + ';box-shadow:0 0 8px ' + w.statusColor + ';' +
-      (w.statusPulse ? 'animation: pulse 1.5s infinite;' : '');
-    widgetEl.innerHTML =
-      '<div class="widget-header">' +
-        '<span class="widget-title">' + w.title + '</span>' +
-        '<span class="widget-status" style="color:' + w.statusColor + ';">' +
-          '<span class="widget-status-dot" style="' + dotStyle + '"></span>' +
-          w.status +
-        '</span>' +
-      '</div>' + body;
-  }
-  function set(cap) {
-    const d = data[cap];
-    if (!d) return;
-    idxItems.forEach(i => i.classList.toggle('active', i.dataset.cap === cap));
-    tagEl.textContent = d.tag;
-    titleEl.textContent = d.title;
-    leadEl.textContent = d.lead;
-    featsEl.innerHTML = '';
-    d.features.forEach(([h, s]) => featsEl.appendChild(featureRow(h, s)));
-    ctaEl.textContent = d.cta.text;
-    ctaEl.setAttribute('href', d.cta.href);
-    ctaEl.classList.toggle('aog', d.cta.aog);
-    renderWidget(d.widget);
-  }
-
-  idxItems.forEach(i => i.addEventListener('click', () => set(i.dataset.cap)));
-  const init = document.querySelector('.cap-idx.active');
-  set(init ? init.dataset.cap : 'maintain');
-})();
-</script>
-
-<!-- Hamburger / Mobile Nav Toggle -->
-<script>
-  (function() {
-    const hamburger  = document.getElementById('hamburger');
-    const mobileNav  = document.getElementById('mobileNav');
-    const closeBtn   = document.getElementById('mobileNavClose');
-    const navLinks   = mobileNav.querySelectorAll('.mobile-nav-link, .mobile-nav-aog, .mobile-nav-cta');
-
-    function openMenu() {
-      hamburger.classList.add('open');
-      mobileNav.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeMenu() {
-      hamburger.classList.remove('open');
-      mobileNav.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    hamburger.addEventListener('click', openMenu);
-    closeBtn.addEventListener('click', closeMenu);
-    navLinks.forEach(link => link.addEventListener('click', closeMenu));
-
-    // Close on backdrop tap (click outside nav panel)
-    mobileNav.addEventListener('click', function(e) {
-      if (e.target === mobileNav) closeMenu();
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeMenu();
-    });
-  })();
-</script>
-
+<script src="assets/d2-prod.js" defer></script>
 </body>
 </html>
