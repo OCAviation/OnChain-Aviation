@@ -199,7 +199,8 @@
     payload._honey = ''; // FormSubmit honeypot
     fetch(form.dataset.endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) })
       .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(() => {
+      .then(j => {
+        if (String(j.success) !== 'true') throw new Error(j.message || 'not accepted');
         msg.textContent = 'Received. Mike will reply same day. Aircraft on the ground? Call (912) 595-7795.'; msg.className = 'form-msg ok';
         form.reset();
       })
