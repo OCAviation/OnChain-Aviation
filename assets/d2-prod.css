@@ -47,7 +47,7 @@
   --cognac:#C4813A;--cognac-lt:#D9A264;--cognac-dk:#9C5F27;
   --teal:#4ECBA1;--purple:#9B72CF;--amber:#E0A55A;
   --aog:#D9543E;--aog-lt:#E68972;
-  --paper:#F2EFE9;--paper-ink:#191817;
+  --paper:#FAFAF8;--paper-ink:#191817;
 
   /* dark theme (default) */
   --bg:#0A0A0B;--surface:#111113;--surface-2:#17171A;
@@ -63,7 +63,7 @@
   color-scheme:dark;
 }
 [data-theme="light"]{
-  --bg:#EEEBE4;--surface:#E6E2D9;--surface-2:#DDD9CF;
+  --bg:#FAFAF8;--surface:#F3F3F0;--surface-2:#EFEFEC;
   --tx:#171614;--tx-2:#4A4741;--mut:#6B665D;
   --rule:rgba(23,22,20,.16);--rule-2:rgba(23,22,20,.085);
   --accent:var(--cognac-dk);--accent-lt:#8F5A22;
@@ -71,8 +71,8 @@
   --teal:#1C7259;--purple:#6A47A0;--amber:#8F5A22;--aog:#B23A26;--aog-lt:#C24B36;
   --aog-dim:rgba(178,58,38,.08);--aog-line:rgba(178,58,38,.32);
   --grid:rgba(156,95,39,.06);
-  --nav-bg:rgba(238,235,228,.9);
-  --field:#F6F3EC;
+  --nav-bg:rgba(250,250,248,.9);
+  --field:#FFFFFF;
   --focus:var(--cognac-dk);
   color-scheme:light;
 }
@@ -194,8 +194,8 @@ ul,ol{list-style:none}
 .hero-v1,.hero-v2{position:absolute;inset:0;pointer-events:none}
 .hero-v1{background:linear-gradient(180deg,rgba(10,10,11,.62),rgba(10,10,11,.14) 34%,rgba(10,10,11,.82) 80%,var(--bg))}
 .hero-v2{background:linear-gradient(94deg,rgba(10,10,11,.9),rgba(10,10,11,.62) 32%,rgba(10,10,11,.06) 68%,transparent)}
-[data-theme="light"] .hero-v1{background:linear-gradient(180deg,rgba(238,235,228,.5),rgba(238,235,228,.06) 34%,rgba(238,235,228,.84) 80%,var(--bg))}
-[data-theme="light"] .hero-v2{background:linear-gradient(94deg,rgba(238,235,228,.9),rgba(238,235,228,.58) 32%,rgba(238,235,228,.04) 68%,transparent)}
+[data-theme="light"] .hero-v1{background:linear-gradient(180deg,rgba(250,250,248,.5),rgba(250,250,248,.06) 34%,rgba(250,250,248,.84) 80%,var(--bg))}
+[data-theme="light"] .hero-v2{background:linear-gradient(94deg,rgba(250,250,248,.9),rgba(250,250,248,.58) 32%,rgba(250,250,248,.04) 68%,transparent)}
 .hero-in{position:relative;z-index:2;width:100%;padding-block:clamp(96px,14vw,160px) clamp(56px,7vw,80px)}
 .badge{display:inline-flex;align-items:center;gap:10px;min-height:34px;padding:0 14px;border:1px solid var(--accent-line);background:var(--accent-dim);border-radius:999px;color:var(--accent-lt);margin-bottom:var(--s-6);white-space:nowrap}
 .badge .sep{opacity:.45}
@@ -300,7 +300,10 @@ ul,ol{list-style:none}
 
 /* records — light island (constant, not themed) */
 .proof{background:var(--paper);color:var(--paper-ink)}
-[data-theme="light"] .proof{background:#F8F6F1;border-block:1px solid var(--rule)}
+/* Brand v4 §05b — paper section: scoped token flip so any section can run paper inside the dark page */
+.sec.paper{--bg:#FAFAF8;--surface:#F3F3F0;--surface-2:#EFEFEC;--tx:#191817;--tx-2:#4A4845;--mut:#6B6760;--rule:rgba(25,24,23,.14);--rule-2:rgba(25,24,23,.07);--accent:var(--cognac-dk);--accent-lt:var(--cognac);--accent-dim:rgba(156,95,39,.09);--accent-line:rgba(156,95,39,.34);--grid:rgba(25,24,23,.05);background:var(--bg);color:var(--tx)}
+[data-theme="light"] .sec.paper{background:#F3F3F0}
+[data-theme="light"] .proof{background:#EFEFEC;border-block:1px solid var(--rule)}
 .proof .label{color:var(--cognac-dk)}
 .proof .lede{color:#4A4844}
 .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-16);align-items:center}
@@ -405,8 +408,8 @@ address{font-style:normal}
   .hero-img{left:0;width:100%;object-position:50% 18%}
   .hero-in{padding-top:clamp(300px,80vw,400px)}
   .badge{background:rgba(10,10,11,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-  [data-theme="light"] .badge{background:rgba(238,235,228,.8)}
-  [data-theme="light"] .hero-v2{background:linear-gradient(180deg,rgba(238,235,228,.4),rgba(238,235,228,.1) 24%,rgba(238,235,228,.82) 50%,rgba(238,235,228,.97) 74%)}
+  [data-theme="light"] .badge{background:rgba(250,250,248,.8)}
+  [data-theme="light"] .hero-v2{background:linear-gradient(180deg,rgba(250,250,248,.4),rgba(250,250,248,.1) 24%,rgba(250,250,248,.82) 50%,rgba(250,250,248,.97) 74%)}
   .badge{display:inline-block;white-space:normal;line-height:1.7;border-radius:6px;padding:8px 12px;min-height:0;text-align:left}
   .badge .sep{display:inline}
   .ribbon-item{padding:10px 18px;font-size:10px}

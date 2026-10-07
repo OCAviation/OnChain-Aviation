@@ -1,0 +1,30 @@
+# OnChain Aviation
+
+> Founder-operated, mobile Gulfstream maintenance based in Savannah, Georgia (KSAV), serving Part 91 and Part 135 operators across the United States. Aircraft management, calendar and hourly inspections, 24/7 AoG response, and owner-side pre-purchase inspection oversight and records audits on Gulfstream GIV through G800, including the G280. Veteran-Owned Small Business (VOSB). Records captured in IronFleet aviOS.
+
+Key facts:
+- Legal name: OnChain Aviation LLC (Georgia). Public location: Savannah, GA (KSAV).
+- Founder: Mike Brown — FAA A&P mechanic; 25 years in aviation maintenance, 20 of them on Gulfstream; U.S. Marine Corps veteran (F/A-18).
+- Certification: work performed under the founder's FAA A&P. FAA Part 145 repair station application in progress.
+- Gulfstream only: G280, GIV/GIV-SP (G300/G400), G450, GV/G550, G650/G650ER, G500/G600, G700/G800. No other manufacturers.
+- Mobile: work is performed at the aircraft's location — no ferry.
+- AoG: 24/7 hotline +1 (912) 595-7795. Response the same day.
+- Government: VOSB, SAM.gov active, NAICS 488190 (primary), 481212, 336413. Capability statement, CAGE and UEI on request.
+- Member: National Business Aviation Association (NBAA).
+- Platform: powered by IronFleet aviOS (records intelligence, compliance workflow, provenance).
+- Pricing is not published; work is quoted per aircraft.
+- Contact: mike@onchain.aero · +1 (912) 595-7795 · https://onchain.aero/#contact
+
+## Services
+- [Aircraft Management](https://onchain.aero/aircraft-management.html): Tier 01 for owners, flight departments and management companies — maintenance planning, calendar and hourly inspections, records management, priority AoG.
+- [Technical Services](https://onchain.aero/technical-services.html): Tier 02 for buyers, brokers and owner's representatives — pre-purchase inspection oversight, records audits, delivery acceptance, site surveys.
+- [Fleet coverage](https://onchain.aero/fleet.html): every Gulfstream family supported, with powerplants.
+
+## Company
+- [About Mike Brown](https://onchain.aero/about.html): founder background and verified credentials.
+- [Government & federal](https://onchain.aero/government.html): VOSB, SAM.gov, NAICS, core competencies.
+- [Journal](https://onchain.aero/journal/): field notes on Gulfstream maintenance, records and pre-buys.
+
+## Optional
+- [Home](https://onchain.aero/): overview and FAQ.
+- [Privacy](https://onchain.aero/privacy.html)

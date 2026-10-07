@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>OnChain Aviation Journal</title>
+<link>https://onchain.aero/journal/</link>
+<atom:link href="https://onchain.aero/feed.xml" rel="self" type="application/rss+xml"/>
+<description>Notes from the flight line — records, inspections, AoG and the tooling around Gulfstream maintenance, written by the A&amp;P who does the work.</description>
+<language>en-us</language>
+<item>
+<title>What a pre-purchase records audit actually looks at</title>
+<link>https://onchain.aero/journal/pre-buy-records-audit.html</link>
+<guid isPermaLink="true">https://onchain.aero/journal/pre-buy-records-audit.html</guid>
+<pubDate>Tue, 06 Oct 2026 09:00:00 -0400</pubDate>
+<description>Before the borescope, before the test flight, the records decide the deal. What an owner’s technical representative reads in a Gulfstream’s logbooks, and what stops the closing.</description>
+</item>
+</channel>
+</rss>
