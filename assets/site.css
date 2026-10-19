@@ -505,6 +505,10 @@ address{font-style:normal}
 .pq-ledger .v{font-family:var(--f-serif);font-size:19px}
 .contact .lede a{color:var(--aog-lt)}
 
+.contact-page{padding-top:clamp(56px,8vw,96px)}
+.contact-page .sec-head{max-width:none}.contact-page h1{font-size:clamp(38px,1.1rem + 3.8vw,68px);max-width:22ch}
+.contact-page .cgrid{margin-top:var(--s-12)}
+
 @media(max-width:1080px){
   .plat,.pgrid,.diff,.cgrid,.fgrid{gap:var(--s-12)}
   .phero-grid,.svc,.principle .wrap,.close .wrap{gap:var(--s-12)}
