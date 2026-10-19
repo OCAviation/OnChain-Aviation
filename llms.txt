@@ -13,18 +13,23 @@ Key facts:
 - Member: National Business Aviation Association (NBAA).
 - Platform: powered by IronFleet aviOS (records intelligence, compliance workflow, provenance).
 - Pricing is not published; work is quoted per aircraft.
-- Contact: mike@onchain.aero · +1 (912) 595-7795 · https://onchain.aero/#contact
+- Contact: mike@onchain.aero · +1 (912) 595-7795 · https://onchain.aero/contact.html
 
 ## Services
 - [Aircraft Management](https://onchain.aero/aircraft-management.html): Tier 01 for owners, flight departments and management companies — maintenance planning, calendar and hourly inspections, records management, priority AoG.
+- [AoG Response](https://onchain.aero/aog.html): 24/7 aircraft-on-ground response — phone triage, parts sourced in parallel, mobile technician; what to have ready when you call.
 - [Technical Services](https://onchain.aero/technical-services.html): Tier 02 for buyers, brokers and owner's representatives — pre-purchase inspection oversight, records audits, delivery acceptance, site surveys.
+- [Operations & AI Consulting](https://onchain.aero/consulting.html): Tier 03 advisory — operations review, records modernisation, AI implementation, vendor strategy.
 - [Fleet coverage](https://onchain.aero/fleet.html): every Gulfstream family supported, with powerplants.
 
 ## Company
+- [Platform — IronFleet aviOS](https://onchain.aero/platform.html): how the aircraft record is kept, who can read it, what is and is not blockchain.
 - [About Mike Brown](https://onchain.aero/about.html): founder background and verified credentials.
 - [Government & federal](https://onchain.aero/government.html): VOSB, SAM.gov, NAICS, core competencies.
 - [Journal](https://onchain.aero/journal/): field notes on Gulfstream maintenance, records and pre-buys.
+- [Questions](https://onchain.aero/faq.html): all FAQs, grouped by service.
+- [Contact](https://onchain.aero/contact.html): request service; AoG hotline.
 
 ## Optional
-- [Home](https://onchain.aero/): overview and FAQ.
+- [Home](https://onchain.aero/): overview.
 - [Privacy](https://onchain.aero/privacy.html)
